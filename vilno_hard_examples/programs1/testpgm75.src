@@ -1,0 +1,18 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm75area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat1 ;
+if (hue1=="BLUE" and hue2=="RED") num3=null ;
+if (hue1=="YELLOW") num3 = null ;
+if (hue1=="RED") deleterow ;
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 
+       where (dec2>50000 or num3 is not null) ;
+turnoff ;
+
+print(b/dat2) "TESTPGM75-1"  ;
+
+
+

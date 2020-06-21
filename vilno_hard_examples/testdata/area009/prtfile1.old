@@ -1,0 +1,11 @@
+                                                                              1 
+ PGM009-joinby                                                                  
+                                                                                
+ s1 i1 s2 i2 ct1 ct2 ct3 ct4 flg1 flg2 flg3 flg4                                
+                                                                                
+ A   1 A   1   1 _NU   1   1    1    0    1    1                                
+ A   1 A   2   2 _NU   2   2    1    0    1    1                                
+ A   2 A   1  10 _NU  10  10    1    0    1    1                                
+ A   2 A   2  11  11  11  11    1    1    1    1                                
+ A   2 A   3  12  12  12  12    1    1    1    1                                
+                                                                                

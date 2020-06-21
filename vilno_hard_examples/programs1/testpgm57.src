@@ -1,0 +1,25 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm57area" ;
+
+
+inlist ;
+addgridvars int: j=0 x2=-7 x i y1 y2 y3 y4 ;
+{ i=1; x=0; y1=0;  y2=1;  y3=2;  y4=3;  copyrow;
+  i=3; x=0; y1=4;  y2=5;  y3=6;  y4=7;  copyrow;
+  i=1; x=1; y1=8;  y2=9;  y3=10; y4=11; copyrow;
+  i=3; x=1; y1=12; y2=13; y3=14; y4=15; 
+}
+sendoff(b/dat1) x2 x i j y1 y2 y3 y4 ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat1) "TESTPGM57-1" ;
+
+inlist b/dat1 ;
+gridflip i(1,3) y1 y2 y3 y4 -> s("TEA","COFFEE","WINE","WATER") w1 w2 by x ;
+sendoff(b/dat2) x s w1 w2 ;
+turnoff ;
+
+print(b/dat2) "TESTPGM57-2" ;
+

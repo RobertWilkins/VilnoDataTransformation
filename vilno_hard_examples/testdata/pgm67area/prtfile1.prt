@@ -1,0 +1,33 @@
+                                                                              1 
+ TESTPGM67-1                                                                    
+                                                                                
+ hue1 hue2 hue3    y m1 m2 m3              g1                                   
+                                                                                
+ BLUE BLUE        -3 -1  1  1       0.0010000                                   
+ BLUE BLUE        -3 -1  1  2    1000.0010000                                   
+ RED  BLUE YELLOW -3  1  1  3     999.9990000                                   
+ RED  RED  RED    -3 -1  0  4      88.8000000                                   
+ RED  RED  RED    -3 -1  0  5 1000000.5000000                                   
+                                                                                
+                                                                              1 
+ TESTPGM67-2                                                                    
+                                                                                
+ hue1 hue2 hue3    y m1 m2 m3              g1 hue4   i1 i2    i3       f1       
+                                                                                
+ BLUE BLUE        -3 -1  1  1       0.0010000 VIOLET _N  0 -7777 25000000       
+ BLUE BLUE        -3 -1  1  2    1000.0010000 VIOLET _N  0 -7777 25000000       
+ RED  BLUE YELLOW -3  1  1  3     999.9990000 VIOLET _N  0 -7777 25000000       
+ RED  RED  RED    -3 -1  0  4      88.8000000 VIOLET _N  0 -7777 25000000       
+ RED  RED  RED    -3 -1  0  5 1000000.5000000 VIOLET _N  0 -7777 25000000       
+                                                                                
+                                                                              1 
+ TESTPGM67-3                                                                    
+                                                                                
+ hue1 hue2 hue3    y m1 m2 m3              g1 hue4   i1 i2    i3       f1       
+                                                                                
+ BLUE BLUE        -3 -1  1  1       0.0010000 VIOLET _N  0 -7777 25000000       
+ BLUE BLUE        -3 -1  1  2    1000.0010000 VIOLET _N  0 -7777 25000000       
+ RED  BLUE YELLOW -3  1  1  3     999.9990000 VIOLET _N  0 -7777 25000000       
+ RED  RED  RED    -3 -1  0  4      88.8000000 VIOLET _N  0 -7777 25000000       
+ RED  RED  RED    -3 -1  0  5 1000000.5000000 VIOLET _N  0 -7777 25000000       
+                                                                                

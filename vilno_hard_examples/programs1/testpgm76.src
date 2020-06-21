@@ -1,0 +1,25 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm76area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat1 ;
+sendoff(b/dat1) hue1 hue2 hue3   by hue3 ;
+if (hue1=="BLUE" and hue2=="RED") num3=null ;
+if (hue1=="YELLOW") num3 = null ;
+if (hue1=="RED" and hue2=="BLUE") copyrow ;
+if (hue1=="RED" and hue2=="YELLOW") deleterow ;
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 
+       where (dec2>50000 or num3 is not null) ;
+sendoff(b/dat3) c1=hue1 c2=hue2 c3=hue3 dec2
+                by dec2 
+                where (dec2>50000) ;
+turnoff ;
+
+print(b/dat1) "TESTPGM76-1"  ;
+print(b/dat2) "TESTPGM76-2"  ;
+print(b/dat3) "TESTPGM76-3"  ;
+
+
+

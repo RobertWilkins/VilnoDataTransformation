@@ -1,0 +1,140 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area004" ;
+
+
+
+inlist ;
+addgridvars str: y1 1 int: y2 c ;
+{
+  y1 = "A" ;
+  y2 = 1 ;
+  for c = 31 to 33 : copyrow ;
+  
+  y1 = "A" ;
+  y2 = 10 ;
+  for c = 41 to 44 : copyrow ;
+  
+  y1 = "B" ;
+  y2 = 1 ;
+  for c = 81 to 88 : copyrow ;
+  
+  y1 = "B" ;
+  y2 = 10 ;
+  for c = 100 to 105 : copyrow ;
+  
+  deleterow ;
+}
+sendoff(dat1) y1 y2 c ;
+turnoff ;
+
+
+inlist ;
+addgridvars str: y1 1 int: y2 c ;
+{
+  y1 = "B" ;
+  y2 = 1 ;
+  for c = 71 to 77 : copyrow ;
+  
+  y1 = "B" ;
+  y2 = 10 ;
+  for c = 100 to 105 : copyrow ;
+  
+  y1 = "C" ;
+  y2 = 1 ;
+  for c = 0 to 9 : copyrow ;
+  
+  y1 = "C" ;
+  y2 = 10 ;
+  for c = 0 to 5 : copyrow ;
+  
+  deleterow ;
+}
+sendoff(dat2) y1 y2 c ;
+turnoff ;
+
+
+
+printoptions b/prtfile1 ;
+print(dat1) "PGM004-first dset" ;
+print(dat2) "PGM004-second dset" ;
+
+//////////////////////////////////////////////////////
+
+
+inlist dat1 dat2 ;
+blockby y1 ;
+readby y2  ;
+sendoff(dat3) y1 y2 c ;
+turnoff ;
+
+print(dat3) "PGM004- blockby+readby with winsize=default" ;
+
+//////////////////////////////////////////////////////
+
+inlist dat1 dat2 ;
+recode dat2: c2=c ;
+blockby y1 ;
+joinby(excl) y2  ;
+sendoff(dat4) y1 y2 c c2 ;
+turnoff ;
+
+print(dat4) "PGM004- blockby+joinby(excl) with winsize=default" ;
+
+//////////////////////////////////////////////////////
+
+inlist dat1 dat2 ;
+recode dat2: c2=c ;
+blockby y1 ;
+joinby(incl) y2  ;
+sendoff(dat5) y1 y2 c c2 ;
+turnoff ;
+
+print(dat5) "PGM004- blockby+joinby(incl) with winsize=default" ;
+
+
+
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
+
+windowsize 3 ;
+
+
+inlist dat1 dat2 ;
+blockby y1 ;
+readby y2  ;
+sendoff(dat3) y1 y2 c ;
+turnoff ;
+
+print(dat3) "PGM004- blockby+readby with winsize=3" ;
+
+//////////////////////////////////////////////////////
+
+inlist dat1 dat2 ;
+recode dat2: c2=c ;
+blockby y1 ;
+joinby(excl) y2  ;
+sendoff(dat4) y1 y2 c c2 ;
+turnoff ;
+
+print(dat4) "PGM004- blockby+joinby(excl) with winsize=3" ;
+
+//////////////////////////////////////////////////////
+
+inlist dat1 dat2 ;
+recode dat2: c2=c ;
+blockby y1 ;
+joinby(incl) y2  ;
+sendoff(dat5) y1 y2 c c2 ;
+turnoff ;
+
+print(dat5) "PGM004- blockby+joinby(incl) with winsize=3" ;
+
+
+
+
+
+
+

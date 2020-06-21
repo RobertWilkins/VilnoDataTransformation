@@ -1,0 +1,26 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm39area" ;
+
+inputdtypes(a/dat1) int: num1 num2 num3 float: dec1 dec2 
+            str: hue1 6 hue2 6 hue3 6 ;
+
+inlist a/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+addnongridvars int: i ;
+i=0 ;
+num1 = i = i+1 ;
+num2 = i = i-1 ;
+num3 = i ;
+sendoff(b/dat2) num1 num2 num3 ;
+{ i=0 ;
+  num1 = i = i+1 ;
+  num2 = i = i-1 ;
+  num3 = i ;
+}
+sendoff(b/dat3) num1 num2 num3 ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat2) "TESTPGM39-1" ;
+print(b/dat3) "TESTPGM39-2" ;

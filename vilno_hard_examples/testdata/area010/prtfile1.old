@@ -1,0 +1,25 @@
+                                                                              1 
+ PGM010-joinby                                                                  
+                                                                                
+ b1 b2 b3 b4 b5 b6 j1 j2  ct1 ct2 flg1 flg2                                     
+                                                                                
+  1  1  1 A  A  A   2 A     4 _NU    1    0                                     
+  1  1  1 A  A  B   1 A    10 _NU    1    0                                     
+  1  1  1 A  A  B   1 B    11 _NU    1    0                                     
+  1  1  1 A  A  B   1 C    12 _NU    1    0                                     
+  1  1  1 A  A  B   2 A    13 _NU    1    0                                     
+  1  1  1 A  A  B   2 B    14 _NU    1    0                                     
+  1  1  1 A  A  B   2 C    15 _NU    1    0                                     
+  1  1  1 A  A  B   3 A    16 _NU    1    0                                     
+  1  1  1 A  A  B   3 B    17 _NU    1    0                                     
+  1  1  1 A  A  B   3 C    18 _NU    1    0                                     
+  3  3  3 C  C  C   1 A  6553 _NU    1    0                                     
+  3  3  3 C  C  C   1 B  6554 _NU    1    0                                     
+  3  3  3 C  C  C   1 C  6555 _NU    1    0                                     
+  3  3  3 C  C  C   2 A  6556 _NU    1    0                                     
+  3  3  3 C  C  C   2 B  6557 _NU    1    0                                     
+  3  3  3 C  C  C   2 C  6558 _NU    1    0                                     
+  3  3  3 C  C  C   3 A  6559 _NU    1    0                                     
+  3  3  3 C  C  C   3 B  6560 _NU    1    0                                     
+  3  3  3 C  C  C   3 C  6561 _NU    1    0                                     
+                                                                                

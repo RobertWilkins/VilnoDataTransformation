@@ -1,0 +1,32 @@
+
+directoryref b="/home/???" ;
+
+printoptions b/prtfile_03 ;   /// specify where to print 
+
+print(b/datasetA) "PGM03-1, incoming , datasetA" ;
+print(b/datasetB) "PGM03-2, incoming , datasetB" ;
+
+
+/// with mergeby statement(but not joinby statement, which is more general) 
+///  only the first dataset in the inlist statement is 
+///  allowed to have more than 1 row per subgroup 
+///  datasetA has two rows for the string1="flower" subgroup 
+///           and three rows for the string1="tree" subgroup 
+///  hence datasetA must be specified FIRST IN THE INLIST STATEMENT 
+
+
+
+
+
+inlist b/datasetA b/datasetB ;
+screen b/datasetA: string1 string2 int1 int2 float1 ; 
+screen b/datasetB: string1 color ;
+mergeby string1 ;
+sendoff(b/dset_03out) string1 string2 int1 int2 float1  color ;
+turnoff ;
+
+
+
+print(b/dset_03out) "PGM03-3, output dataset, demonstrates a mergeby" ;
+
+

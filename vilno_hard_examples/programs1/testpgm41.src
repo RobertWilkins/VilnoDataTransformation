@@ -1,0 +1,20 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm41area" ;
+
+
+printoptions b/prtfile1 ;
+
+print(a/dat1) "TESTPGM41-1" ;
+
+print(a/dat1) "TESTPGM41-2" hue1 hue2 num1 dec1 dec2 ;
+
+print(a/dat1) "TESTPGM41-3" hue1 5 hue2 num1 dec1 dec2 6 ;
+
+print(a/dat1) "TESTPGM41-4" hue1 hue2 num1 dec1 9 dec2 12 ;
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm78area" ;
+printoptions b/prtfile1 ;
+
+
+inlist ;
+addgridvars int: i=6 e=8 e2=0 float: f=-1.79769e+308 e5=0.0 ;
+
+i = 2147483640 ;
+while (i<=2147483647)
+ { e2 = e2 + 1 ;
+   i = i + 1 ;
+ }
+e5 = f + -0.00001e+308 ;
+sendoff(b/dat1) i e e2 f e5 ;
+turnoff ;
+
+print(b/dat1) "TESTPGM78-1" i 14 e 3 e2 6 f 16 e5 16 ;
+
+inlist ;
+addgridvars int: i ;
+i = -2147483640 ;
+while (i<=0)  { copyrow; i=i-1; }
+sendoff(b/dat2) i ;
+turnoff ; 
+
+print(b/dat2) "TESTPGM78-2" i 14 ;
+
+

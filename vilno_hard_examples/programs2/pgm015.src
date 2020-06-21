@@ -1,0 +1,83 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area015" ;
+
+
+windowsize 4 ;
+
+
+inlist ;
+addgridvars int: b1 ct1=0 g=1 w ;
+{
+ for b1 = 1 to 3 : 
+  for w = 1 to 5 : 
+     {   
+         if ( not b1==2 or not w>=4) 
+           { ct1=ct1+1; 
+             g=1-g ;
+             copyrow; 
+           }
+     }
+ deleterow ;
+}
+sendoff(b/dat1) b1 ct1 g ;
+turnoff ;
+
+
+
+
+
+inlist b/dat1 ;
+sendoff(b/dat3) b1 ct1 by -ct1 ;
+sendoff(b/dat4) b1 ct1 by -ct1 where (g==0) ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat3) "PGM015-first sendoff" ;
+print(b/dat4) "PGM015-second sendoff" ;
+
+
+
+
+windowsize 5 ;
+
+inlist b/dat1 ;
+screen b/dat1: b1 ct1 ; 
+addgridvars int: m=1 ;
+m = 1 - m ;
+if (m==0) deleterow ;
+sendoff(b/dat5) b1 ct1 m ;
+turnoff ;
+
+print(b/dat5) "PGM015-first deleterow example" ;
+
+
+
+inlist b/dat1 ;
+screen b/dat1: b1 ct1 ; 
+addgridvars int: m=1 ;
+m = 1 - m ;
+if (m==0) copyrow ;
+sendoff(b/dat6) b1 ct1 m ;
+turnoff ;
+
+print(b/dat6) "PGM015-first copyrow example" ;
+
+
+
+
+inlist b/dat1 bdat1copy=b/dat1 ;
+recode bdat1copy: b2=b1 g2=g ;
+readby ct1 ;
+if (firstrow(ct1)) deleterow ;
+sendoff(b/dat7) ct1 b1 g b2 g2 ;
+turnoff ;
+
+print(b/dat7) "PGM015-first firstrow() example" ;
+
+
+
+
+
+
+

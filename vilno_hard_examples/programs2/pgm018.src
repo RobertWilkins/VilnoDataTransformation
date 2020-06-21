@@ -1,0 +1,59 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area018" ;
+
+windowsize 10 ; 
+
+
+
+
+inlist ;
+addnongridvars int: bb1 ;
+addgridvars str: b1 8 int: b2 b3 ct1=0 ;
+{
+ for bb1 = 1 to 4 : 
+  for b2 = 1 to 4 : 
+   for b3 = 1 to 25 :  
+     {   if (bb1==1)       b1="BLUE"; 
+          else if (bb1==2) b1="RED";
+          else if (bb1==3) b1="YELLOW";
+          else if (bb1==4) b1="ZINC";
+         ct1=ct1+1; 
+         copyrow; 
+         
+     }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 b3 ct1 ;
+turnoff ;
+
+
+
+inlist b/dat1 ;
+blockby b1 ;
+readby b2 ;
+sendoff(b/dat2) b1 b2 b3 ct1  where( firstrow() or lastrow()  ) ;
+sendoff(b/dat3) b1 b2 b3 ct1  where( firstrow(b2) or lastrow(b2)  ) ;
+addgridvars float: g1=3.4 g2 g3 g4 ;
+g1 = g1 + 3 ;
+if (g1==0) ct1 = ct1 - 1 ;
+if (firstrow())  g1 = 9 ;
+if (lastrow())   g2 = 9 ;
+if (firstrow(b2))  g3 = 9 ;
+if (lastrow(b2))   g4 = 9 ;
+
+if (b3>3 and b3<23) deleterow ;
+sendoff(b/dat4) b1 b2 b3 ct1 g1 g2 g3 g4 ;
+turnoff ;
+
+
+
+
+
+printoptions b/prtfile1 ;
+print(b/dat2) "PGM018-1 classical, blockby and firstrow,lastrow,etc" ;
+print(b/dat3) "PGM018-2 classical, blockby and firstrow,lastrow,etc" ;
+print(b/dat4) "PGM018-3 classical, blockby and firstrow,lastrow,etc" ;
+
+
+

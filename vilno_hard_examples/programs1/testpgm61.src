@@ -1,0 +1,15 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm61area" ;
+
+
+inlist a/dat4A a/dat4B a/dat4C;
+readby s1 n1 hue n2 ;
+inflags z1 z2 z3 = a/dat4A a/dat4B a/dat4C ;
+sendoff(b/dat1) s1 n1 hue n2 z1 z2 z3 sctra fctra sctrb fctrb sctrc fctrc ;
+turnoff ;
+
+printoptions b/prtfile1 60*93 ;
+print(b/dat1) "TESTPGM61-1" s1 n1 hue n2 z1 z2 z3 sctra fctra sctrb fctrb sctrc fctrc ;
+
+

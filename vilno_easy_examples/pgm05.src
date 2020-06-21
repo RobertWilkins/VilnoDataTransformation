@@ -1,0 +1,48 @@
+
+directoryref b="/home/???" ;
+
+printoptions b/prtfile_05 ;   /// specify where to print 
+printoptions 50*50 ; // change default (rowsperline*charsperline)
+
+
+print(b/datasetC1) "PGM05-1, incoming , datasetC1" ;
+print(b/datasetC2) "PGM05-2, incoming , datasetC2" ;
+print(b/datasetC3) "PGM05-3, incoming , datasetC3" ;
+print(b/datasetC4) "PGM05-4, incoming , datasetC4" ;
+
+
+
+
+
+
+inlist b/datasetC1 b/datasetC2 ;
+readby y ;
+sendoff(b/dset_05out1) y i1 i2 ;
+turnoff ;
+
+
+inlist b/datasetC1 b/datasetC2 ;
+joinby y ;
+sendoff(b/dset_05out2) y i1 i2 ;
+turnoff ;
+
+
+inlist b/datasetC1 b/datasetC2 ;
+joinby y where (i1==11 or i1==22) ;
+sendoff(b/dset_05out3) y i1 i2 ;
+turnoff ;
+
+
+inlist b/datasetC1 b/datasetC3 b/datasetC4 ;
+mergeby y ;
+sendoff(b/dset_05out4) y i1 i2 g ;
+turnoff ;
+
+
+
+print(b/dset_05out1) "PGM05-5, output dataset, demonstrates a readby" ;
+print(b/dset_05out2) "PGM05-6, output dataset, demonstrates a joinby" ;
+print(b/dset_05out3) "PGM05-7, output dataset, joinby with where" ;
+print(b/dset_05out4) "PGM05-8, output dataset, demonstrates a mergeby" ;
+
+

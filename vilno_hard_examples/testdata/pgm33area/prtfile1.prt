@@ -1,0 +1,10 @@
+                                                                              1 
+ TESTPGM33-1                                                                    
+                                                                                
+ hue1   hue2   hue3 num1 num2 num3   dec1          dec2                         
+                                                                                
+ RED    RED    _NUL   -1    7    1 1.0000 1000000005.10                         
+ YELLOW YELLOW _NUL   -1    7    1 0.0000        105.00                         
+ RED    YELLOW _NUL    0    7    1 1.0000    1000005.00                         
+ YELLOW RED    _NUL    1    7    1 0.0000      10005.10                         
+                                                                                

@@ -1,0 +1,3 @@
+strlen strlen2 I S
+substr substr2 S S I I
+sqrt   sqrt2 F F

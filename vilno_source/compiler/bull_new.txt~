@@ -1,0 +1,36 @@
+
+
+can timing of a/b b/a conversion affect reverse age order ?
+u want to know when dset was created , not when it was converted.
+
+/////////////////////////////////////////////////////////////////////
+
+June 2011
+SOME QUIRKS between C++ bull2.cpp and the Python code base :
+BRANDNEW dset creation : any previous status info for that datref becomes irrelevant, so overwrite
+messy AB/BA convert (where .datref!=.twin_of) : for Python code, just treat as
+  brandnew dset creation
+Possible status of each datref :
+01: old dset, converted to vdt (or asc)
+02: brandnew dset made, as vdt (or as asc)
+03: brandnew dset made, as vdt (or as asc) , and then 
+      converted to asc (or vdt)
+
+Status before brandnew-dset-creation no longer matters,
+2 or more AB/BA converts is weird and bad
+AB/BA convert in wrong direction is weird and bad , an example
+brandnew dset made (as vdt) , and then convert from asc to vdt = really bad
+
+current AB/BA code allows for creating a twin file with different filename or directory, 
+but Python app only interested in twin files with same filename (only suffix is different)
+
+/////////////////////////////////////////////////////////////////////
+
+more local vars :
+
+scenarios 
+in or not-in brandnew_dset_age
+incoming bstatus = "vdt" "asc" "a+v" "vdt<-old" "asc<-old" 
+
+this is brandnew creation  or   clean-ABBA
+this is making an "asc" or "vdt" 

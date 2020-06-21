@@ -1,0 +1,51 @@
+                                                                                        1 
+ TESTPGM60-1                                                                              
+                                                                                          
+ hue1   hue2   hue3   hue3b  num1 num2 num3 m1 m2 m3    dec1            dec2          g1  
+                                                                                          
+ BLUE   BLUE                   -1    1    0 -1  1  1  0.0000  250000000.0000   0.0010000  
+ BLUE   RED           _NULL     0    1    0 _N _N _N -1.0000          3.1400       _NULL  
+ BLUE   YELLOW        _NULL     1    0    0 _N _N _N  1.0000    5000000.1000       _NULL  
+ RED    BLUE   YELLOW YELLOW    1    1    1  1  1  3  1.0000   25000000.0000 999.9990000  
+ RED    RED    RED    RED      -1    0    1 -1  0  4  1.0000 1000000000.1000  88.8000000  
+ RED    YELLOW RED    _NULL     0    1    1 _N _N _N  1.0000    1000000.0000       _NULL  
+ YELLOW BLUE   YELLOW _NULL     0    0    1 _N _N _N  0.0000     100000.0000       _NULL  
+ YELLOW RED    RED    _NULL     1    1    1 _N _N _N  0.0000      10000.1000       _NULL  
+ YELLOW YELLOW RED    _NULL    -1    1    1 _N _N _N  0.0000        100.0000       _NULL  
+                                                                                          
+                                                                                        1 
+ TESTPGM60-2                                                                              
+                                                                                          
+ hue1   hue2   hue3   hue3b  num1 num2 num3 m1 m2 m3    dec1            dec2              
+                                                                                          
+ BLUE   BLUE                   -1    1    0 -1  1  1  0.0000  250000000.0000              
+ BLUE   BLUE                   -1    1    0 -1  1  2  0.0000  250000000.0000              
+ BLUE   RED           _NULL     0    1    0 _N _N _N -1.0000          3.1400              
+ BLUE   YELLOW        _NULL     1    0    0 _N _N _N  1.0000    5000000.1000              
+ RED    BLUE   YELLOW YELLOW    1    1    1  1  1  3  1.0000   25000000.0000              
+ RED    RED    RED    RED      -1    0    1 -1  0  4  1.0000 1000000000.1000              
+ RED    RED    RED    RED      -1    0    1 -1  0  5  1.0000 1000000000.1000              
+ RED    YELLOW RED    _NULL     0    1    1 _N _N _N  1.0000    1000000.0000              
+ YELLOW BLUE   YELLOW _NULL     0    0    1 _N _N _N  0.0000     100000.0000              
+ YELLOW RED    RED    _NULL     1    1    1 _N _N _N  0.0000      10000.1000              
+ YELLOW YELLOW RED    _NULL    -1    1    1 _N _N _N  0.0000        100.0000              
+                                                                                          
+ERROR MESSAGES: 
+
+
+COLUMN OMITTED: g1 1
+                                                                                        1 
+ TESTPGM60-3                                                                              
+                                                                                          
+ hue1   hue2   hue3   hue3b  z1 z2 num1 num2 num3 m1 m2 m3                                
+                                                                                          
+ BLUE   BLUE                  1  1   -1    1    0 -1  1  1                                
+ BLUE   RED           _NULL   1  0    0    1    0 _N _N _N                                
+ BLUE   YELLOW        _NULL   1  0    1    0    0 _N _N _N                                
+ RED    BLUE   YELLOW YELLOW  1  1    1    1    1  1  1  3                                
+ RED    RED    RED    RED     1  1   -1    0    1 -1  0  4                                
+ RED    YELLOW RED    _NULL   1  0    0    1    1 _N _N _N                                
+ YELLOW BLUE   YELLOW _NULL   1  0    0    0    1 _N _N _N                                
+ YELLOW RED    RED    _NULL   1  0    1    1    1 _N _N _N                                
+ YELLOW YELLOW RED    _NULL   1  0   -1    1    1 _N _N _N                                
+                                                                                          

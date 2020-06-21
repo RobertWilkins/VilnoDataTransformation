@@ -1,0 +1,19 @@
+
+directoryref b="/home/???" ;
+
+printoptions b/prtfile_01 ;   /// specify where to print 
+
+print(b/datasetA) "PGM01-1, incoming dataset" ;
+
+
+inlist b/datasetA ;
+screen b/datasetA: string1 string2 int1 int2 float1 ; 
+if ( string1=="tree" ) float1 = float1*5 ;
+sendoff(b/dset_01out) string1 string2 int1 int2 float1  ;
+turnoff ;
+
+
+
+print(b/dset_01out) "PGM01-2, output dataset" ;
+
+

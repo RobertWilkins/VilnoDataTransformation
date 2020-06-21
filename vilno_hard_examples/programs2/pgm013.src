@@ -1,0 +1,192 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area013" ;
+
+
+
+inlist ;
+addnongridvars int: bb1 mm1  ;
+addgridvars str: b1 8 m1 8  int: b2 m2 ct1=0 w1 ;
+{
+ for bb1 = 1 to 3 : 
+  for b2 = 10 to 30 by 10 : 
+   for mm1 = 1 to 2 : 
+    for m2 = 1 to 3 : 
+     {   if (bb1==1)       b1="BLUE"; 
+          else if (bb1==2) b1="RED";
+          else if (bb1==3) b1="YELLOW";
+         if (mm1==1)       m1="RED"; 
+          else if (mm1==2) m1="WHITE";
+         if ((b1=="RED" or b1=="BLUE") and b2==10 and m2==3)
+            for w1 = 1 to 7 : { ct1=ct1+1; copyrow; } 
+         else { ct1=ct1+1; w1=1; copyrow; } 
+     }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 m1 m2 ct1 w1 ;
+turnoff ;
+
+
+
+inlist ;
+addnongridvars int: bb1 mm1  ;
+addgridvars str: b1 8 m1 8  int: b2 m2 ct2=0 w2 ;
+{
+ for bb1 = 1 to 3 : 
+  for b2 = 10 to 30 by 10 : 
+   for mm1 = 1 to 2 : 
+    for m2 = 1 to 3 : 
+     {   if (bb1==1)       b1="BLUE"; 
+          else if (bb1==2) b1="RED";
+          else if (bb1==3) b1="YELLOW";
+         if (mm1==1)       m1="RED"; 
+          else if (mm1==2) m1="WHITE";
+         if (b1=="BLUE" and b2==10 and m1=="WHITE" and m2==3)
+            for w2 = 1 to 18 : { ct2=ct2+1; copyrow; } 
+         else if (b1=="YELLOW" and b2==10 and m1=="RED" and m2==2)
+            for w2 = 1 to 9 : { ct2=ct2+1; copyrow; } 
+         else { ct2=ct2+1; w2=1; copyrow; } 
+     }
+ deleterow ;
+}
+sendoff(b/dat2) b1 b2 m1 m2 ct2 w2 ;
+turnoff ;
+
+
+
+
+
+inlist ;
+addnongridvars int: bb1 mm1  ;
+addgridvars str: b1 8 m1 8  int: b2 m2 ct3=0 w3 ;
+{
+ for bb1 = 1 to 3 : 
+  for b2 = 10 to 30 by 10 : 
+   for mm1 = 1 to 2 : 
+    for m2 = 1 to 3 : 
+     {   if (bb1==1)       b1="BLUE"; 
+          else if (bb1==2) b1="RED";
+          else if (bb1==3) b1="YELLOW";
+         if (mm1==1)       m1="RED"; 
+          else if (mm1==2) m1="WHITE";
+         if ( not (b1=="BLUE" and b2==10 and m1=="RED" and m2==3)  and 
+              not (b1=="YELLOW" and b2==30 and m1=="RED") 
+            ) 
+            { ct3=ct3+1; w3=1; copyrow; } 
+     }
+ b1="PURPLE"; b2=10; m1="PURPLE"; m2=1; w3=1; ct3=ct3+1; copyrow; 
+ deleterow ;
+}
+sendoff(b/dat3) b1 b2 m1 m2 ct3 w3 ;
+turnoff ;
+
+
+
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
+
+
+
+
+inlist b/dat1 b/dat2 b/dat3 ;
+blockby b1 b2  ;
+readby m1 m2  ;  
+inflags flg1 flg2 flg3 = b/dat1 b/dat2 b/dat3 ;
+sendoff(b/dat4) b1 b2 m1 m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3 ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat4) "PGM013-mergeby" ;
+
+
+/////////////////
+
+
+inlist b/dat1 b/dat2 b/dat3 ;
+readby b1 b2 m1 m2  ;  
+inflags flg1 flg2 flg3 = b/dat1 b/dat2 b/dat3 ;
+sendoff(b/dat5) b1 b2 m1 m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3 ;
+turnoff ;
+
+printoptions b/prtfile2 ;
+print(b/dat5) "PGM013-mergeby" ;
+
+/////////////////
+
+
+inlist b/dat1 b/dat2 b/dat3 ;
+blockby b1 b2 m1 m2  ; 
+readby ; 
+inflags flg1 flg2 flg3 = b/dat1 b/dat2 b/dat3 ;
+sendoff(b/dat6) b1 b2 m1 m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3 ;
+turnoff ;
+
+printoptions b/prtfile3 ;
+print(b/dat6) "PGM013-mergeby" ;
+
+/////////////////
+
+
+inlist b/dat1 b/dat2 b/dat3 ;
+blockby b1 b2 m1 m2  ; 
+inflags flg1 flg2 flg3 = b/dat1 b/dat2 b/dat3 ;
+sendoff(b/dat7) b1 b2 m1 m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3 ;
+turnoff ;
+
+printoptions b/prtfile4 ;
+print(b/dat7) "PGM013-mergeby" ;
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
+windowsize 3 ;
+
+
+inlist b/dat1 b/dat2 b/dat3 ;
+blockby b1 b2  ;
+readby m1 m2  ;  
+inflags flg1 flg2 flg3 = b/dat1 b/dat2 b/dat3 ;
+sendoff(b/dat8) b1 b2 m1 m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3 ;
+turnoff ;
+
+printoptions b/prtfile5 ;
+print(b/dat8) "PGM013-mergeby" ;
+
+
+/////////////////
+
+
+inlist b/dat1 b/dat2 b/dat3 ;
+readby b1 b2 m1 m2  ;  
+inflags flg1 flg2 flg3 = b/dat1 b/dat2 b/dat3 ;
+sendoff(b/dat9) b1 b2 m1 m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3 ;
+turnoff ;
+
+printoptions b/prtfile6 ;
+print(b/dat9) "PGM013-mergeby" ;
+
+/////////////////
+
+
+inlist b/dat1 b/dat2 b/dat3 ;
+blockby b1 b2 m1 m2  ; 
+readby ; 
+inflags flg1 flg2 flg3 = b/dat1 b/dat2 b/dat3 ;
+sendoff(b/dat10) b1 b2 m1 m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3 ;
+turnoff ;
+
+printoptions b/prtfile7 ;
+print(b/dat10) "PGM013-mergeby" ;
+
+////////////////////
+
+inlist b/dat1 b/dat2 b/dat3 ;
+blockby b1 b2 m1 m2  ; 
+inflags flg1 flg2 flg3 = b/dat1 b/dat2 b/dat3 ;
+sendoff(b/dat11) b1 b2 m1 m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3 ;
+turnoff ;
+
+printoptions b/prtfile8 ;
+print(b/dat11) "PGM013-mergeby" ;

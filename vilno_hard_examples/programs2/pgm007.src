@@ -1,0 +1,73 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area007" ;
+
+windowsize 3 ;
+
+inlist ;
+addnongridvars int: m2 m3 ;
+addgridvars str: b2 1  int: b1 j1 w1 ct1=0  float: b3 ;
+{
+ for b1 = 1 to 3 : 
+  for m2 = 1 to 3 : 
+   for m3 = 1 to 3 : 
+    for j1 = 1 to 3 : 
+     for w1 = 1 to 4 : 
+       { 
+        if (m2==1)        b2="A"; 
+          else if (m2==2) b2="B";
+          else if (m2==3) b2="C";
+        b3 = m3 ;
+        ct1 =ct1 + 1 ;
+        copyrow ;
+       }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 b3 j1 w1 ct1 ;
+sendoff(b/dat2) b1 b2 b3 j1 w2=w1 ct2=ct1 ;
+turnoff ;
+
+
+
+
+
+
+
+inlist b/dat1 b/dat2 ;
+blockby b1 b2 b3 ;
+joinby(incl) j1  
+ where(
+       (b1==1 and b2=="A" and b3==1.0 and j1<3 and w1==w2 )
+       
+       or 
+       (b1==2 and b2=="B" and b3==2.0 and j1==2 and w1==b1 )
+       
+       or 
+       (b1==3 and b2=="C" and b3==3.0 and j1!=b1-2 and w1>2 and w2>2)
+      )  ;
+sendoff(b/dat3) b1 b2 b3 j1 w1 w2 ct1 ct2  ;
+addgridvars str: s3 4 float: f3 ;
+{ s3 = b2 + b2 ; 
+  f3 = 1000*b1 + 100*b3 + 10*j1 + w1 ;
+}
+sendoff(b/dat4) b1 b2 b3 j1 w1 w2 ct1 ct2 s3 f3 
+               where(b1==2 and b2=="B" and b3>0.0 and j1<7) ;
+turnoff ;
+
+
+
+
+
+
+printoptions b/prtfile1 ;
+print(b/dat3) "PGM007-first joinby, large output" ;
+print(b/dat4) "PGM007-first joinby, smaller output" ;
+
+
+
+
+
+
+
+
+

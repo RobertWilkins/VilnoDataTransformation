@@ -1,0 +1,48 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm72area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat1 ;
+if (hue3=="RED") hue3=null ;
+select y1=n(hue3) y2=min(dec2) by hue1 ;
+sendoff(b/dat3) hue1 y1 y2  ;
+turnoff ;
+
+print(b/dat3) "TESTPGM72-1" hue1 y1 y2  ;
+
+
+
+
+inlist a/dat1 ;
+select y2=max(dec2) by hue1 ;
+sendoff(b/dat3) hue1 y2  ;
+turnoff ;
+
+print(b/dat3) "TESTPGM72-2" hue1 y2  ;
+
+
+
+
+
+inlist a/dat1 ;
+select y1=sum(num1) y2=sum(num2) y3=sum(num3) 
+       y4=sum(dec1) y5=sum(dec2) by hue1 ;
+sendoff(b/dat3) hue1 y1 y2 y3 y4 y5  ;
+turnoff ;
+
+print(b/dat3) "TESTPGM72-3" hue1 y1 y2 y3 y4 y5  ;
+
+
+
+inlist a/dat1 ;
+select y1=avg(num1) y2=avg(num2) y3=avg(num3) 
+       y4=avg(dec1) y5=avg(dec2) by hue1 ;
+sendoff(b/dat3) hue1 y1 y2 y3 y4 y5  ;
+turnoff ;
+
+print(b/dat3) "TESTPGM72-4" hue1 y1 y2 y3 y4 y5  ;
+
+
+

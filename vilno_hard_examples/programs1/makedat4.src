@@ -1,0 +1,30 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase"  ;
+
+convertfileformat 
+  asciitobinary("/home/???/vilno_hard_examples/testdata/smalldbase/dat4A.txt"->a/dat4A)
+  delimiter='|' 
+  varnames(s1 n1 hue n2 sctrA fctrA)
+  datatypes(s i s i s f)
+  strlengths(1 5 2) ;
+
+convertfileformat 
+  asciitobinary("/home/???/vilno_hard_examples/testdata/smalldbase/dat4B.txt"->a/dat4B)
+  delimiter='|' 
+  varnames(s1 n1 hue n2 sctrB fctrB)
+  datatypes(s i s i s f)
+  strlengths(1 5 2) ;
+
+convertfileformat 
+  asciitobinary("/home/???/vilno_hard_examples/testdata/smalldbase/dat4C.txt"->a/dat4C)
+  delimiter='|' 
+  varnames(s1 n1 hue n2 sctrC fctrC)
+  datatypes(s i s i s f)
+  strlengths(1 5 2) ;
+
+
+
+printoptions a/dat4print ;
+print(a/dat4A) "MAKEDAT4-A" ;
+print(a/dat4B) "MAKEDAT4-B" ;
+print(a/dat4C) "MAKEDAT4-C" ;

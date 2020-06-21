@@ -1,0 +1,18 @@
+
+directoryref b="/home/???" ;
+
+printoptions b/prtfile_02 ;  
+
+print(b/datasetA) "PGM02-1, incoming dataset" ;
+
+
+inlist b/datasetA ;
+select numrows=n() sum_of_f=sum(float1) min_of_int1=min(int1) ;
+sendoff(b/dset_02out) numrows sum_of_f min_of_int1  ;
+turnoff ;
+
+
+
+print(b/dset_02out) "PGM02-2, output dataset" ;
+
+

@@ -1,0 +1,67 @@
+                                                                              1 
+ TESTPGM74-1                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1           dec2                     
+                                                                                
+ BLUE   BLUE            -1    1    0  0.0000 250000000.0000                     
+ BLUE   RED              0    1 _NUL -1.0000         3.1400                     
+ BLUE   YELLOW           1    0    0  1.0000   5000000.1000                     
+ YELLOW BLUE   YELLOW    0    0 _NUL  0.0000    100000.0000                     
+ YELLOW RED    RED       1    1 _NUL  0.0000     10000.1000                     
+ YELLOW YELLOW RED      -1    1 _NUL  0.0000       100.0000                     
+                                                                                
+                                                                              1 
+ TESTPGM74-2                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1            dec2                    
+                                                                                
+ BLUE   BLUE            -1    1    0  0.0000  250000000.0000                    
+ BLUE   RED              0    1    0 -1.0000          3.1400                    
+ BLUE   YELLOW           1    0    0  1.0000    5000000.1000                    
+ RED    BLUE   YELLOW    1    1    1  1.0000   25000000.0000                    
+ RED    RED    RED      -1    0    1  1.0000 1000000000.1000                    
+ RED    YELLOW RED       0    1    1  1.0000    1000000.0000                    
+ YELLOW BLUE   YELLOW    0    0 _NUL  0.0000     100000.0000                    
+ YELLOW RED    RED       1    1 _NUL  0.0000      10000.1000                    
+ YELLOW YELLOW RED      -1    1 _NUL  0.0000        100.0000                    
+                                                                                
+                                                                              1 
+ TESTPGM74-3                                                                    
+                                                                                
+ hue1   num3 hue2   hue3   hue2b  hue3b  num1 num1b num2 num2b      dec1        
+                                                                                
+ BLUE      0 BLUE          BLUE            -1    -1    1 _NULL   -8.0000        
+ BLUE      0 BLUE          RED             -1     0    1     1 -888.0000        
+ BLUE      0 BLUE          YELLOW          -1     1    1     0 -888.0000        
+ BLUE      0 YELLOW        BLUE             1    -1    0     1 -888.0000        
+ BLUE      0 YELLOW        RED              1     0    0     1 -888.0000        
+ BLUE      0 YELLOW        YELLOW           1     1    0     0 -888.0000        
+ RED       1 _NULL  _NULL  BLUE   YELLOW _NUL     1 _NUL     1 -888.0000        
+ RED       1 _NULL  _NULL  RED    RED    _NUL    -1 _NUL     0 -888.0000        
+ RED       1 _NULL  _NULL  YELLOW RED    _NUL     0 _NUL     1 -888.0000        
+ YELLOW _NUL BLUE   YELLOW BLUE   YELLOW    0     0    0     0 -888.0000        
+ YELLOW _NUL BLUE   YELLOW RED    RED       0     1    0     1 -888.0000        
+ YELLOW _NUL BLUE   YELLOW YELLOW RED       0    -1    0     1 -888.0000        
+ YELLOW _NUL RED    RED    BLUE   YELLOW    1     0    1     0 -888.0000        
+ YELLOW _NUL YELLOW RED    BLUE   YELLOW   -1     0    1     0 -888.0000        
+                                                                                
+                                                                              1 
+ TESTPGM74-4                                                                    
+                                                                                
+ hue1   num3 hue2   hue2b          dec2           dec2b                         
+                                                                                
+ BLUE      0 BLUE   BLUE   250000000.00  250000000.0000                         
+ BLUE      0 BLUE   RED    250000000.00          3.1400                         
+ BLUE      0 BLUE   YELLOW 250000000.00    5000000.1000                         
+ BLUE      0 YELLOW BLUE     5000000.10  250000000.0000                         
+ BLUE      0 YELLOW RED      5000000.10          3.1400                         
+ BLUE      0 YELLOW YELLOW   5000000.10    5000000.1000                         
+ RED       1 _NULL  BLUE          _NULL   25000000.0000                         
+ RED       1 _NULL  RED           _NULL 1000000000.1000                         
+ RED       1 _NULL  YELLOW        _NULL    1000000.0000                         
+ YELLOW _NUL BLUE   BLUE      100000.00     100000.0000                         
+ YELLOW _NUL BLUE   RED       100000.00      10000.1000                         
+ YELLOW _NUL BLUE   YELLOW    100000.00        100.0000                         
+ YELLOW _NUL RED    BLUE       10000.10     100000.0000                         
+ YELLOW _NUL YELLOW BLUE         100.00     100000.0000                         
+                                                                                

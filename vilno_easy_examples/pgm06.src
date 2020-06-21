@@ -1,0 +1,89 @@
+
+
+//// pgm01-pgm03 are for beginners 
+//// this example is harder, but you can figure out what's going on  
+//// shows 3 non-classical transforms( gridflip, gridfunc, select ) 
+///   and firstrow()/lastrow() 
+
+
+directoryref b="/home/???" ;
+
+printoptions b/prtfile_06 ;   /// specify where to print 
+
+
+inlist ;
+addnongridvars int: i j ;
+addgridvars str: s1 5 s2 5 
+            float: f1=3.0 f2=4.0 f3=5.0 f4=6.0 ;
+{
+  for i = 1 to 2 : 
+    for j = 1 to 3 : 
+     { 
+       if (i==1) s1="P" ; 
+         else s1="Q"  ;
+       if (j==1) s2="grass" ;
+         else if (j==2) s2="herb" ;
+         else s2="tree" ;
+       if (i==2) 
+           { f1=f1+10; f2=f2+10; f3=f3+10; f4=f4+10; }
+       copyrow ;    // manufacture 2x3=6 rows 
+     }
+  deleterow ; // original row discarded 
+}
+sendoff(dat1) s1 s2 f1 f2 f3 f4 ;
+turnoff ;
+
+
+
+inlist dat1 ;
+gridflip  s2("grass","herb","tree") f1 f2 f3 f4   -> 
+          k(1,2,3,4)  g1 g2 g3  
+          by s1 ;
+sendoff(dat2)  s1 k g1 g2 g3 ;
+gridfunc r1 = rowno() ;
+gridfunc r2 = reverserowno() by s1 ;
+gridfunc min_g1 = min(g1) ;
+gridfunc average_g1 = avg(g1) ;
+gridfunc sum_g3 = sum(g3)  by s1 ;
+gridfunc sum_g2 = sum(g2) ;
+sendoff(dat3) s1 k g1 g2 g3 r1 r2 min_g1 average_g1 sum_g3 sum_g2 ;
+select min1=min(g1) sum1=sum(g2) avg1=avg(g3) ;
+sendoff(dat4) min1 sum1 avg1 ;
+turnoff ;
+
+
+
+/// gridfunc: lots of input rows, same number of output rows
+/// but 
+/// select: lots of input rows, only one output row 
+///          (or one output row per subgroup if group-by list used)
+
+
+
+inlist dat1 ;
+readby s1 s2 ;
+addgridvars int: x1=0 x2=0 x3=0 y1=0 ;
+if (firstrow()) x1=1 ;
+if (firstrow(s1)) x2=1 ;
+if (firstrow(s1 s2)) x3=1 ;
+if (lastrow(s1)) y1=1 ;
+sendoff(dat5) s1 s2 f1 f2 f3 f4 x1 x2 x3 y1 ;
+if (s1=="P") 
+   { copyrow ; copyrow ; }     /// triples number of P rows 
+if (s1=="Q") 
+     deleterow ;               /// all Q rows are gone 
+sendoff(dat6) s1 s2 f1 f2 f3 f4 ;
+turnoff ;
+
+
+print(dat1) "PGM06-1 , dat1 dataset" ;
+print(dat2) "PGM06-2 , dat2 dataset" ;
+print(dat3) "PGM06-3 , dat3 dataset" ;
+print(dat4) "PGM06-4 , dat4 dataset" ;
+print(dat5) "PGM06-5 , dat5 dataset" ;
+print(dat6) "PGM06-6 , dat6 dataset" ;
+
+
+
+
+

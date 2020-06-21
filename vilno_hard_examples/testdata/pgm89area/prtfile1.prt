@@ -1,0 +1,72 @@
+                                                                              1 
+ TESTPGM89-0 original data                                                      
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1            dec2                    
+                                                                                
+ BLUE   BLUE            -1    1    0  0.0000  250000000.0000                    
+ BLUE   RED              0    1    0 -1.0000          3.1400                    
+ BLUE   YELLOW           1    0    0  1.0000    5000000.1000                    
+ RED    BLUE   YELLOW    1    1    1  1.0000   25000000.0000                    
+ RED    RED    RED      -1    0    1  1.0000 1000000000.1000                    
+ RED    YELLOW RED       0    1    1  1.0000    1000000.0000                    
+ YELLOW BLUE   YELLOW    0    0    1  0.0000     100000.0000                    
+ YELLOW RED    RED       1    1    1  0.0000      10000.1000                    
+ YELLOW YELLOW RED      -1    1    1  0.0000        100.0000                    
+                                                                                
+                                                                              1 
+ TESTPGM89-1                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3     dec1            dec2                   
+                                                                                
+ BLUE   YELLOW           1    0    0 111.0000    5000000.1000                   
+ BLUE   BLUE            -1    1    0   1.0000  250000000.0000                   
+ BLUE   RED              0    1    0   0.0000          3.1400                   
+ RED    RED    RED      -1    0    1  11.0000 1000000000.1000                   
+ YELLOW BLUE   YELLOW    0    0    1   0.0000     100000.0000                   
+ RED    BLUE   YELLOW    1    1    1   1.0000   25000000.0000                   
+ RED    YELLOW RED       0    1    1   0.0000    1000000.0000                   
+ YELLOW RED    RED       1    1    1   0.0000      10000.1000                   
+ YELLOW YELLOW RED      -1    1    1   0.0000        100.0000                   
+                                                                                
+                                                                              1 
+ TESTPGM89-2                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1            dec2                    
+                                                                                
+ RED    RED    RED      -1    0    1  1.0000 1000000000.1000                    
+ BLUE   BLUE            -1    1    0  0.0000  250000000.0000                    
+ YELLOW YELLOW RED      -1    1    1  0.0000        100.0000                    
+ YELLOW BLUE   YELLOW    0    0    1  0.0000     100000.0000                    
+ BLUE   RED              0    1    0 -1.0000          3.1400                    
+ RED    YELLOW RED       0    1    1  1.0000    1000000.0000                    
+ BLUE   YELLOW           1    0    0  1.0000    5000000.1000                    
+ RED    BLUE   YELLOW    1    1    1  1.0000   25000000.0000                    
+ YELLOW RED    RED       1    1    1  0.0000      10000.1000                    
+                                                                                
+                                                                              1 
+ TESTPGM89-3                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1            dec2                    
+                                                                                
+ RED    RED    RED      -1    0    1  1.0000 1000000000.1000                    
+ BLUE   BLUE            -1    1    0  0.0000  250000000.0000                    
+ YELLOW BLUE   YELLOW    0    0    1  0.0000     100000.0000                    
+ BLUE   RED              0    1    0 -1.0000          3.1400                    
+ BLUE   YELLOW           1    0    0  1.0000    5000000.1000                    
+ RED    BLUE   YELLOW    1    1    1  1.0000   25000000.0000                    
+                                                                                
+                                                                              1 
+ TESTPGM89-4                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1            dec2                    
+                                                                                
+ BLUE   PURPLE           0    1    0 111.000  250000000.0000                    
+ BLUE   PURPLE           0    1    0   0.000          3.1400                    
+ BLUE   PURPLE         110    0    0   0.000    5000000.1000                    
+ RED    PURPLE YELLOW    0    1    1  11.000   25000000.0000                    
+ RED    PURPLE RED       0    0    1   0.000 1000000000.1000                    
+ RED    PURPLE RED     110    1    1   0.000    1000000.0000                    
+ YELLOW PURPLE YELLOW    0    0    1  11.000     100000.0000                    
+ YELLOW PURPLE RED       0    1    1   0.000      10000.1000                    
+ YELLOW PURPLE RED    1110    1    1   0.000        100.0000                    
+                                                                                

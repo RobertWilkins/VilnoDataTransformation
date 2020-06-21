@@ -1,0 +1,61 @@
+//  retain option affects hue4 calc for first 2 dpfs, 
+//  in next 2 dpfs, put useless classical transform to mitigate retain effect 
+//  the "i=0;" transform has no real effect EXCEPT using up retain option
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm79area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat1 ;
+addgridvars str: hue4="" 20 int: i ;
+arrayrefs gg[] hue1 hue2 hue3 ;
+for i = num1 to num3 : hue4 = hue4 + gg[i+2] ;
+hue4 = hue4 + " Z" ;
+sendoff(b/dat1) hue1 hue2 hue3 num1 num3 i hue4 ;
+turnoff ;
+
+print(b/dat1) "TESTPGM79-1" hue1 hue2 hue3 num1 num3 i hue4 ;
+
+
+inlist a/dat1 ;
+addgridvars str: hue4="" 20 int: i ;
+arrayrefs gg[] hue1 hue2 hue3 ;
+for i = num1 to num3 : hue4 = hue4 + gg[i+1] ;
+hue4 = hue4 + " Z" ;
+sendoff(b/dat1) hue1 hue2 hue3 num1 num3 i hue4 ;
+turnoff ;
+
+print(b/dat1) "TESTPGM79-2" hue1 hue2 hue3 num1 num3 i hue4 ;
+
+
+///////////////////////////////////////////////////////
+
+
+inlist a/dat1 ;
+addgridvars str: hue4="" 20 int: i ;
+arrayrefs gg[] hue1 hue2 hue3 ;
+i = 0 ;
+for i = num1 to num3 : hue4 = hue4 + gg[i+2] ;
+hue4 = hue4 + " Z" ;
+sendoff(b/dat1) hue1 hue2 hue3 num1 num3 i hue4 ;
+turnoff ;
+
+print(b/dat1) "TESTPGM79-3" hue1 hue2 hue3 num1 num3 i hue4 ;
+
+
+inlist a/dat1 ;
+addgridvars str: hue4="" 20 int: i ;
+arrayrefs gg[] hue1 hue2 hue3 ;
+i = 0 ;
+for i = num1 to num3 : hue4 = hue4 + gg[i+1] ;
+hue4 = hue4 + " Z" ;
+sendoff(b/dat1) hue1 hue2 hue3 num1 num3 i hue4 ;
+turnoff ;
+
+print(b/dat1) "TESTPGM79-4" hue1 hue2 hue3 num1 num3 i hue4 ;
+
+
+
+
+

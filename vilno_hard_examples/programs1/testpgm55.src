@@ -1,0 +1,52 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm55area" ;
+
+
+inlist ;
+addgridvars int: x2=-777 x i y1 y2 y3 y4 ;
+{ i=1; x=0; y1=0;  y2=1;  y3=2;  y4=3;  copyrow;
+  i=3; x=0; y1=4;  y2=5;  y3=6;  y4=7;  copyrow;
+  i=2; x=0; y1=8;  y2=9;  y3=10; y4=11; copyrow;
+  i=4; x=0; y1=12; y2=13; y3=14; y4=15; 
+}
+sendoff(b/dat1) x2 x i y1 y2 y3 y4 ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat1) "TESTPGM55-1" ;
+
+inlist b/dat1 ;
+addnongridvars int: j ;
+arrayrefs a[] y1 y2 y3 y4 ;
+while (x<=i) x=x+1 ;
+x=x-1;
+x=a[x];
+for j=2 to 2*i by 2:
+   x2=a[j/2];
+sendoff(b/dat2) x2 x i y1 y2 y3 y4 ;
+turnoff ;
+
+
+print(b/dat2) "TESTPGM55-2" ;
+
+
+inlist b/dat1 ;
+gridflip i(1,2,3,4) y1 y2 y3 y4 -> color("BLACK","BLUE","GREY","WHITE") c1 c2 c3 c4  ;
+sendoff(b/dat3) color c1 c2 c3 c4 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM55-3"  ;
+
+
+
+
+inlist b/dat3 ;
+gridflip color("BLACK","BLUE","GREY","WHITE") c1 c2 -> 
+         country("RUSSIA","GEORGIA") y1 y2 y3 y4 ;
+sendoff(b/dat4) country y1 y2 y3 y4 ;
+turnoff ;
+
+print(b/dat4) "TESTPGM55-4"  ;
+
+

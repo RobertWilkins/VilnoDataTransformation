@@ -1,0 +1,34 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm67area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat2 ;
+gridfunc y=sum(m1) ;
+sendoff(b/dat3) hue1 hue2 hue3 y m1 m2 m3 g1 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM67-1" ;
+
+
+
+inlist a/dat2 ;
+addgridvars str: hue4="VIOLET" 6 int: i1 i2=0 i3=-7777 float: f1=25000000 ;
+gridfunc y=sum(m1) ;
+sendoff(b/dat3) hue1 hue2 hue3 y m1 m2 m3 g1 hue4 i1 i2 i3 f1 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM67-2" ;
+
+
+
+inlist a/dat2 ;
+gridfunc y=sum(m1) ;
+addgridvars str: hue4="VIOLET" 6 int: i1 i2=0 i3=-7777 float: f1=25000000 ;
+sendoff(b/dat3) hue1 hue2 hue3 y m1 m2 m3 g1 hue4 i1 i2 i3 f1 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM67-3" ;
+
+

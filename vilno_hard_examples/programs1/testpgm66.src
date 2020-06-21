@@ -1,0 +1,32 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm66area" ;
+
+
+inlist a/dat1 a/dat2 ;
+screen a/dat1: hue1 hue2 hue3
+       a/dat2: hue1 hue2 hue3   ;
+recode a/dat2: hue3B=hue3 ;
+joinby hue1 hue2 ;
+addgridvars str: hue4="VIOLET" 6 int: i1 i2=0 i3=-7777 float: f1=25000000 ;
+sendoff(b/dat3) hue1 hue2 hue3 hue3B hue4 i1 i2 i3 f1 ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat3) "TESTPGM66-1" ;
+
+
+
+
+
+inlist a/dat1 a/dat2 ;
+screen a/dat1: hue1 hue2 hue3
+       a/dat2: hue1 hue2 hue3   ;
+recode a/dat2: hue3B=hue3 ;
+joinby hue1 hue2 ;
+inflags z1 z2 = a/dat1 a/dat2 ;
+addgridvars str: hue4="VIOLET" 6 int: i1 i2=0 i3=-7777 float: f1=25000000 ;
+sendoff(b/dat3) hue1 hue2 hue3 hue3B hue4 z1 z2 i1 i2 i3 f1 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM66-2" ;

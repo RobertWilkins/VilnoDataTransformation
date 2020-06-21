@@ -1,0 +1,71 @@
+                                                                              1 
+ TESTPGM41-1                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1            dec2                    
+                                                                                
+ BLUE   BLUE            -1    1    0  0.0000  250000000.0000                    
+ BLUE   RED              0    1    0 -1.0000          3.1400                    
+ BLUE   YELLOW           1    0    0  1.0000    5000000.1000                    
+ RED    BLUE   YELLOW    1    1    1  1.0000   25000000.0000                    
+ RED    RED    RED      -1    0    1  1.0000 1000000000.1000                    
+ RED    YELLOW RED       0    1    1  1.0000    1000000.0000                    
+ YELLOW BLUE   YELLOW    0    0    1  0.0000     100000.0000                    
+ YELLOW RED    RED       1    1    1  0.0000      10000.1000                    
+ YELLOW YELLOW RED      -1    1    1  0.0000        100.0000                    
+                                                                                
+                                                                              1 
+ TESTPGM41-2                                                                    
+                                                                                
+ hue1   hue2   num1    dec1            dec2                                     
+                                                                                
+ BLUE   BLUE     -1  0.0000  250000000.0000                                     
+ BLUE   RED       0 -1.0000          3.1400                                     
+ BLUE   YELLOW    1  1.0000    5000000.1000                                     
+ RED    BLUE      1  1.0000   25000000.0000                                     
+ RED    RED      -1  1.0000 1000000000.1000                                     
+ RED    YELLOW    0  1.0000    1000000.0000                                     
+ YELLOW BLUE      0  0.0000     100000.0000                                     
+ YELLOW RED       1  0.0000      10000.1000                                     
+ YELLOW YELLOW   -1  0.0000        100.0000                                     
+                                                                                
+                                                                              1 
+ TESTPGM41-3                                                                    
+                                                                                
+ hue1  hue2   num1    dec1   dec2                                               
+                                                                                
+ BLUE  BLUE     -1  0.0000  ERROR                                               
+ BLUE  RED       0 -1.0000 3.1400                                               
+ BLUE  YELLOW    1  1.0000  ERROR                                               
+ RED   BLUE      1  1.0000  ERROR                                               
+ RED   RED      -1  1.0000  ERROR                                               
+ RED   YELLOW    0  1.0000  ERROR                                               
+ YELLO BLUE      0  0.0000 100000                                               
+ W                                                                              
+ YELLO RED       1  0.0000  10000                                               
+ W                                                                              
+ YELLO YELLOW   -1  0.0000 100.00                                               
+ W                                                                              
+                                                                                
+ERROR MESSAGES: 
+
+
+FLOAT-VALUE OMITTED: dec2 1
+                                                                              1 
+ TESTPGM41-4                                                                    
+                                                                                
+ hue1   hue2   num1      dec1         dec2                                      
+                                                                                
+ BLUE   BLUE     -1    0.0000    250000000                                      
+ BLUE   RED       0   -1.0000       3.1400                                      
+ BLUE   YELLOW    1    1.0000 5000000.1000                                      
+ RED    BLUE      1    1.0000     25000000                                      
+ RED    RED      -1    1.0000   1000000000                                      
+ RED    YELLOW    0    1.0000 1000000.0000                                      
+ YELLOW BLUE      0    0.0000  100000.0000                                      
+ YELLOW RED       1    0.0000   10000.1000                                      
+ YELLOW YELLOW   -1    0.0000     100.0000                                      
+                                                                                
+ERROR MESSAGES: 
+
+
+FLOAT DECIMAL NOT IN LINE: dec2 1

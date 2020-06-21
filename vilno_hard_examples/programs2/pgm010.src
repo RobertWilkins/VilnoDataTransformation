@@ -1,0 +1,102 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area010" ;
+
+
+
+inlist ;
+addnongridvars int: m4 m5 m6 mm2  ;
+addgridvars str: b4 1 b5 1 b6 1 j2 1  int: b1 b2 b3 j1 ct1=0  ;
+{
+ for b1 = 1 to 3 : 
+  for b2 = 1 to 3 : 
+   for b3 = 1 to 3 : 
+    for m4 = 1 to 3 : 
+     for m5 = 1 to 3 : 
+      for m6 = 1 to 3 : 
+       for j1 = 1 to 3 : 
+        for mm2 = 1 to 3 : 
+       { 
+        if (m4==1)        b4="A"; 
+          else if (m4==2) b4="B";
+          else if (m4==3) b4="C";
+        if (m5==1)        b5="A"; 
+          else if (m5==2) b5="B";
+          else if (m5==3) b5="C";
+        if (m6==1)        b6="A"; 
+          else if (m6==2) b6="B";
+          else if (m6==3) b6="C";
+        if (mm2==1)        j2="A"; 
+          else if (mm2==2) j2="B";
+          else if (mm2==3) j2="C";
+        ct1 =ct1 + 1 ;
+        copyrow ;
+       }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 b3 b4 b5 b6 j1 j2 ct1 ;
+sendoff(b/dat2) b1 b2 b3 b4 b5 b6 j1 j2 ct2=ct1  
+       where( (b1==1 and b2==1 and b3==1 and b4=="A" and b5=="A" and b6=="A") and 
+              not(j2=="A" and j1==2)              ) ;
+turnoff ;
+
+
+
+
+
+
+
+inlist b/dat1 b/dat2 ;
+blockby b1 b2 b3 b4 b5 b6  ;
+joinby(incl) j1 j2   
+ where(
+       (b1 is not null and b2 is not null and b3 is not null and 
+        b4 is not null and b5 is not null and b6 is not null and 
+        j1 is not null and j2 is not null and 
+        ct1 is not null and ct2 is null and 
+        b1==1 and b2==1 and b3==1 and b4=="A" and b5=="A" and b6=="A" and 
+        j1==2 and j2=="A" and ct1==4
+       )
+        
+       or 
+       (b1 is not null and b2 is not null and b3 is not null and 
+        b4 is not null and b5 is not null and b6 is not null and 
+        j1 is not null and j2 is not null and 
+        ct1 is not null and ct2 is null and 
+        b1==1 and b2==1 and b3==1 and b4=="A" and b5=="A" and b6=="B" and 
+        j1!=-10000 and j2!="Z" and ct1<=1000
+       )
+        
+       or
+       (b1 is not null and b2 is not null and b3 is not null and 
+        b4 is not null and b5 is not null and b6 is not null and 
+        j1 is not null and j2 is not null and 
+        ct1 is not null and ct2 is null and 
+        b1==3 and b2==3 and b3==3 and b4=="C" and b5=="C" and b6=="C" 
+       )
+      
+      )  ;
+inflags flg1 flg2 = b/dat1 b/dat2  ;
+sendoff(b/dat5) b1 b2 b3 b4 b5 b6 j1 j2 ct1 ct2  flg1 flg2 ;
+turnoff ;
+
+
+
+
+
+
+printoptions b/prtfile1 ;
+
+// print(b/dat1) ; 
+
+print(b/dat5) "PGM010-joinby" ;
+
+
+
+
+
+
+
+
+
+

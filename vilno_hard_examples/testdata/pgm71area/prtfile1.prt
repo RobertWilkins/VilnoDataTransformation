@@ -1,0 +1,18 @@
+                                                                              1 
+ TESTPGM71-1                                                                    
+                                                                                
+ hue3   y1 y2 z3 hue4       g2                                                  
+                                                                                
+ YELLOW  1  1  8 VIOLET 3.1400                                                  
+ RED     2  2  8 VIOLET 3.1400                                                  
+         2  2  8 VIOLET 3.1400                                                  
+                                                                                
+                                                                              1 
+ TESTPGM71-2                                                                    
+                                                                                
+ hue3   y1 y2 z3 hue4       g2                                                  
+                                                                                
+ YELLOW  1  1  8 VIOLET 3.1400                                                  
+ RED     2  2  8 VIOLET 3.1400                                                  
+         2  1  8 VIOLET 3.1400                                                  
+                                                                                

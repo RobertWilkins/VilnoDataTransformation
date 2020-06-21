@@ -1,0 +1,83 @@
+// Copyright 2002-2006, Robert Wilkins (class 1984, Newton North HS, MA, USA)
+
+// #define DEBUG_READFILEBOSSMETADATA
+// #define DEBUG_BULLETIN
+// #define DO_TESTPRINTINS
+
+#include </home/robert/vilno_etc/vilno_source/compilershare/exceptclasses.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/tr2.h>
+
+//#include </home/robert/vilno_etc/vilno_source/compilershare/tempdatadirectories.h>
+
+#include </home/robert/vilno_etc/vilno_source/compilershare/filedirconvert.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/asciiconstants.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/filebossconstants.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/otherconstants.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/printconstants.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/fbossmetadata.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/insholderclasses.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/localbuffer.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/numstrconvert.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/RepeatedWord.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/sethowsort.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/ins.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/readfilebossmetadata.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/script/expire.h>
+#include </home/robert/vilno_etc/vilno_source/script/version_info.h>
+
+#include </home/robert/vilno_etc/vilno_source/compiler/globalvars.h>
+#include </home/robert/vilno_etc/vilno_source/compiler/CodeTag.h>
+#include </home/robert/vilno_etc/vilno_source/compiler/tr.h>
+#include </home/robert/vilno_etc/vilno_source/compiler/readsource.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/trhelper.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/fctnlib.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/compiler/cgfcn.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/compiler2/testprintfctns.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/bulletin.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/bull2.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/DictClasses.h>
+#include </home/robert/vilno_etc/vilno_source/compiler/treenode.h>
+#include </home/robert/vilno_etc/vilno_source/compiler2/hcode.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listTree.h>
+#include </home/robert/vilno_etc/vilno_source/compiler/listTree.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU.h>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU1.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU2.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU3.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU4.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU5.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU6.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU7.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/listCU8.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/listCU9.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/listCU10.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/listCU11.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/listCU12.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/listCU13.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/listCU14.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/listCU15.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/listCU16.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/cprint.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/printstatement.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/sortstatement.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/convertfileformat.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/errorcatch/errmsg_listCU28.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch/errmsg_listCU34.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch/errmsg_listCU56.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch/errmsg_bullprntsort.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch/errmsg_cfformat.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch/errmsg_misc1.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch/errmsg_comshare.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler/errormsg.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/compiler/mainproc.cpp>
+#include </home/robert/vilno_etc/vilno_source/compiler2/printoutins.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/compiler/mainprocdriver.cpp>
+
+
+

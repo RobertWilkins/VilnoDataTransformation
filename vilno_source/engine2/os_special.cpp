@@ -1,0 +1,31 @@
+// Copyright 2002-2006, Robert Wilkins (class 1984, Newton North HS, MA, USA)
+
+/// not the same as functions in lintools2.cpp 
+/// these two functions are only used by functions in 
+///  table3.cpp and also sortengine() 
+
+void rename_oscall(const string & oldfilename, const string & newfilename) 
+{
+int chk ;
+/// cout << "oldfilename=" << oldfilename << "**\n" ;
+/// cout << "newfilename=" << newfilename << "**\n" ;
+chk = rename(oldfilename.c_str(),newfilename.c_str()) ;
+if (chk==-1) throw fbwUnex("RENAME-RETURNNEGONE") ;
+}
+
+
+void remove_oscall(const string & filename) 
+{
+int chk ;
+/// disable remove-file for the moment for testing purposes 
+/// chk = remove(filename.c_str()) ;
+/// if (chk==-1) throw fbwUnex("REMOVE-RETURNNEGONE") ;
+}
+
+
+
+
+
+
+
+

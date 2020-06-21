@@ -1,0 +1,28 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm47area" ;
+
+
+inlist a/dat3 ;
+screen a/dat3: hue n sctr fctr dec1 ;
+sendoff(b/dat1) hue n sctrB=sctr fctrB=fctr dec1B=dec1 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(a/dat3) "TESTPGM47-orig dset" ;
+print(b/dat1) "TESTPGM47-1" ;
+
+
+inlist a/dat3 b/dat1 ;
+screen a/dat3: hue n sctr fctr dec1 ;
+screen b/dat1: hue n sctrB fctrB dec1B ;
+joinby hue n where(hue!="PINK" or dec1>=10000.1) ;
+sendoff(b/dat2) hue n sctr sctrB fctr fctrB dec1 dec1B ;
+turnoff ;
+
+
+
+
+print(b/dat2) "TESTPGM47-2"  hue n sctr sctrB fctr fctrB dec1 dec1B ;
+

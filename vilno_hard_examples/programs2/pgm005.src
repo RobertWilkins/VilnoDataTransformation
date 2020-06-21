@@ -1,0 +1,55 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area005" ;
+
+
+windowsize 3 ;
+
+
+
+inlist ;
+addgridvars str: y1 1 int: y2 i ;
+{
+  y1 = "C" ;
+  for i = 1 to 5 : 
+  { y2=6-i ; 
+    copyrow ; 
+  }
+  
+  y1 = "B" ;
+  for i = 1 to 7 : 
+  { y2=8-i ; 
+    copyrow ; 
+  }
+  
+  y1 = "A" ;
+  for i = 1 to 6 : 
+  { y2=7-i ; 
+    copyrow ; 
+  }
+  
+  deleterow ;
+}
+sendoff(b/dat1) y1 y2 ;
+sendoff(b/dat2) y1 y2  where(y1=="U") ;
+turnoff ;
+
+
+
+printoptions b/prtfile1 ;
+print(b/dat1) "PGM005-first dset" ;
+print(b/dat2) "PGM005-second dset will be empty" ;
+
+//////////////////////////////////////////////////////
+
+
+sort(b/dat1->b/dat3) y1 ;
+
+print(b/dat3) "PGM005-third dset, after 1st sort" ;
+
+sort(b/dat3->b/dat4) y1 y2 ;
+
+print(b/dat4) "PGM005-fourth dset, after 2nd sort" ;
+
+
+

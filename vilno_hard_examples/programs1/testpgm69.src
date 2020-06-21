@@ -1,0 +1,25 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm69area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat1 ;
+gridflip num1 num2 num3 -> g(1,2,3) num1  by hue1 hue2 hue3 ;
+select num1=sum(num1) by hue1 hue2 hue3 ;
+sendoff(b/dat3) hue1 hue2 hue3 num1  ;
+turnoff ;
+
+print(b/dat3) "TESTPGM69-1" ;
+
+
+
+
+inlist a/dat1 ;
+gridflip dec1 dec2 -> g(1,2) dec1  by hue1 hue2 hue3 ;
+select dec1=sum(dec1) by hue1 hue2 hue3 ;
+sendoff(b/dat3) hue1 hue2 hue3 dec1  ;
+turnoff ;
+
+print(b/dat3) "TESTPGM69-2" ;
+

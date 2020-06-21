@@ -1,0 +1,112 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area014" ;
+
+
+windowsize 4 ;
+
+
+inlist ;
+addnongridvars int: bb1 w ;
+addgridvars float: b1 ct1=0 ;
+{
+ for bb1 = 1 to 3 : 
+  for w = 1 to 5 : 
+     {   b1=bb1 ;
+         if ( not b1==2.0 or not w>=4) 
+           { ct1=ct1+1; 
+             copyrow; 
+           }
+     }
+ deleterow ;
+}
+sendoff(b/dat1) b1 ct1 ;
+sendoff(b/dat2) b1 ct2=ct1 ;
+turnoff ;
+
+
+
+
+
+inlist b/dat1 b/dat2 ;
+blockby b1 ;
+joinby     ;  
+addgridvars float: p=3.14 ;
+sendoff(b/dat3) b1 ct1 ct2 p ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat3) "PGM014-joinby" ;
+
+
+inlist b/dat1 b/dat2 ;
+recode b/dat2: b2=b1 ;
+joinby     ;  
+addgridvars float: p=3.14 ;
+sendoff(b/dat4) b1 b2 ct1 ct2 p ;
+turnoff ;
+
+print(b/dat4) "PGM014-joinby" ;
+
+
+
+inlist b/dat1 b/dat2 ;
+blockby b1 ;
+joinby  where( b1==2 or ct1<3 or ct2<3 ) ;  
+addgridvars float: p=3.14 ;
+sendoff(b/dat5) b1 ct1 ct2 p ;
+turnoff ;
+
+print(b/dat5) "PGM014-joinby" ;
+
+
+
+
+inlist b/dat1 b/dat2 ;
+recode b/dat2: b2=b1 ;
+joinby   where(b1==2 and ct1==ct2)  ;  
+addgridvars float: p=3.14 ;
+sendoff(b/dat6) b1 b2 ct1 ct2 p ;
+turnoff ;
+
+print(b/dat6) "PGM014-joinby" ;
+
+
+
+////////////////////////////////////
+
+
+
+
+
+inlist b/dat1 b/dat2 ;
+joinby  b1   ;  
+addgridvars float: p=3.14 ;
+sendoff(b/dat7) b1 ct1 ct2 p ;
+turnoff ;
+
+print(b/dat7) "PGM014-joinby" ;
+
+
+inlist b/dat1 ;
+addgridvars float: b1b ;
+b1b=b1 ;
+sendoff(b/dat1b) b1 b1b ct1 ;
+turnoff ; 
+
+inlist b/dat2 ;
+addgridvars float: b1b ;
+b1b=b1 ;
+sendoff(b/dat2b) b1 b1b ct2 ;
+turnoff ; 
+
+
+
+inlist b/dat1b b/dat2b ;
+joinby  b1 b1b  ;  
+addgridvars float: p=3.14 ;
+sendoff(b/dat8) b1 b1b ct1 ct2 p ;
+turnoff ;
+
+print(b/dat8) "PGM014-joinby" ;
+

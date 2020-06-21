@@ -1,0 +1,19 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm38area" ;
+
+
+
+inlist a/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+addnongridvars  int:  j str: s ;
+j=0 ; 
+s="" ; 
+num3 = j = j + num1 + num2 + num3 ;
+hue1 = s = s + "B" ;
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(b/dat2) "TESTPGM38-1" ;

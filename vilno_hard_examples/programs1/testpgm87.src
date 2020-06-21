@@ -1,0 +1,55 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm87area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat1 ;
+readby hue1 hue2 ;
+{ dec1 = 0.0 ;
+  if ( firstrow() ) dec1 = dec1 + 100 ;
+  if ( firstrow(hue1) ) dec1 = dec1 + 10 ;
+  if (firstrow(hue1 hue2) ) dec1 = dec1 + 1 ;
+}
+sendoff(b/dat1) hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+turnoff ;
+
+print(b/dat1) "TESTPGM87-1" hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+
+
+inlist a/dat1 ;
+readby hue1 -hue3 ;
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+sendoff(b/dat3) hue1 hue2 hue3 num1 num2 num3 dec1 dec2  
+                where ( firstrow(hue1 hue3) ) ;
+turnoff ;
+
+print(b/dat2) "TESTPGM87-2" hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+print(b/dat3) "TESTPGM87-3" hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+
+
+
+
+
+
+inlist a/dat1 ;
+readby hue1 -hue3 ;
+{ dec1 = 0.0 ;
+  num3 = 0 ;
+  if ( firstrow() ) dec1 = dec1 + 100 ;
+  if ( firstrow(hue1) ) dec1 = dec1 + 10 ;
+  if (firstrow(hue1 hue3) ) dec1 = dec1 + 1 ;
+
+  if (lastrow()) num3 = num3 + 1000 ;
+  if (lastrow(hue1)) num3 = num3 + 100 ;
+  if (lastrow(hue1 hue3)) num3 = num3 + 10 ;
+  if (onlyrow(hue1 hue3)) num3 = num3 + 1 ;
+  if (not onlyrow(hue1) ) hue2="PURPLE" ;
+}
+sendoff(b/dat4) hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+turnoff ;
+
+print(b/dat4) "TESTPGM87-4" hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+
+
+

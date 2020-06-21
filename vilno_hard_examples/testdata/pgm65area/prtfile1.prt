@@ -1,0 +1,40 @@
+                                                                              1 
+ TESTPGM65-1                                                                    
+                                                                                
+ hue1   hue2   hue3   hue4   i1 i2    i3       f1                               
+                                                                                
+ BLUE   BLUE          VIOLET _N  0 -7777 25000000                               
+ BLUE   RED           VIOLET _N  0 -7777 25000000                               
+ BLUE   YELLOW        VIOLET _N  0 -7777 25000000                               
+ RED    BLUE   YELLOW VIOLET _N  0 -7777 25000000                               
+ RED    RED    RED    VIOLET _N  0 -7777 25000000                               
+ RED    YELLOW RED    VIOLET _N  0 -7777 25000000                               
+ YELLOW BLUE   YELLOW VIOLET _N  0 -7777 25000000                               
+ YELLOW RED    RED    VIOLET _N  0 -7777 25000000                               
+ YELLOW YELLOW RED    VIOLET _N  0 -7777 25000000                               
+ BLUE   BLUE          VIOLET _N  0 -7777 25000000                               
+ BLUE   BLUE          VIOLET _N  0 -7777 25000000                               
+ RED    BLUE   YELLOW VIOLET _N  0 -7777 25000000                               
+ RED    RED    RED    VIOLET _N  0 -7777 25000000                               
+ RED    RED    RED    VIOLET _N  0 -7777 25000000                               
+                                                                                
+                                                                              1 
+ TESTPGM65-2                                                                    
+                                                                                
+ hue1   hue2   hue3   hue4   z1 z2 i1 i2    i3       f1                         
+                                                                                
+ BLUE   BLUE          VIOLET  1  0 _N  0 -7777 25000000                         
+ BLUE   RED           VIOLET  1  0 _N  0 -7777 25000000                         
+ BLUE   YELLOW        VIOLET  1  0 _N  0 -7777 25000000                         
+ RED    BLUE   YELLOW VIOLET  1  0 _N  0 -7777 25000000                         
+ RED    RED    RED    VIOLET  1  0 _N  0 -7777 25000000                         
+ RED    YELLOW RED    VIOLET  1  0 _N  0 -7777 25000000                         
+ YELLOW BLUE   YELLOW VIOLET  1  0 _N  0 -7777 25000000                         
+ YELLOW RED    RED    VIOLET  1  0 _N  0 -7777 25000000                         
+ YELLOW YELLOW RED    VIOLET  1  0 _N  0 -7777 25000000                         
+ BLUE   BLUE          VIOLET  0  1 _N  0 -7777 25000000                         
+ BLUE   BLUE          VIOLET  0  1 _N  0 -7777 25000000                         
+ RED    BLUE   YELLOW VIOLET  0  1 _N  0 -7777 25000000                         
+ RED    RED    RED    VIOLET  0  1 _N  0 -7777 25000000                         
+ RED    RED    RED    VIOLET  0  1 _N  0 -7777 25000000                         
+                                                                                

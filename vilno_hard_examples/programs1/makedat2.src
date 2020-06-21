@@ -1,0 +1,13 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase"  ;
+
+convertfileformat 
+  asciitobinary("/home/???/vilno_hard_examples/testdata/smalldbase/dat2.txt"->a/dat2)
+  delimiter='|' 
+  trailingblankflag='~'
+  varnames(hue1 hue2 hue3 m1 m2 m3 g1)
+  datatypes(str str str int int int float)
+  strlengths(6 6 6) ;
+
+printoptions a/dat2print ;
+print(a/dat2) "MAKEDAT2-1" ;

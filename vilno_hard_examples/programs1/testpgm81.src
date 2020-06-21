@@ -1,0 +1,42 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm81area" ;
+printoptions b/prtfile1 ;
+
+
+inlist ;
+addgridvars int: k i j e e2 e3 e4 ;
+{
+k=0 ;
+e=-77 ;
+e2=100 ;
+e3=e4=1 ;
+for i = e to e2 by e3+e4 : 
+  for j = 1 to 10 :
+                     k = k+1 ;
+copyrow ;
+
+
+e3 = -256*256*256*128 ;
+for i = -256*256*256*128 to e3 by -2 : { k = k + 1 ; copyrow ; }
+copyrow ;
+
+e3 = 2147483647 ;
+for i = 2147483640 to e3 : { k = k + 1 ; copyrow ; }
+copyrow ;
+
+e3 = -256*256*256*128 ;
+for i = -2147483640 to e3 by -2 : { k = k + 1 ; copyrow ; }
+copyrow ;
+
+}
+
+
+sendoff(b/dat1) k i j e e2 e3 e4 ;
+turnoff ;
+
+print(b/dat1) "TESTPGM81-1" k i e3 j e e2 e4 ;
+
+
+
+

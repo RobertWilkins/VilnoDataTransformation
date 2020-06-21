@@ -1,0 +1,57 @@
+                                                                              1 
+ TESTPGM46-orig dset                                                            
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1            dec2                    
+                                                                                
+ BLUE   BLUE            -1    1    0  0.0000  250000000.0000                    
+ BLUE   RED              0    1    0 -1.0000          3.1400                    
+ BLUE   YELLOW           1    0    0  1.0000    5000000.1000                    
+ RED    BLUE   YELLOW    1    1    1  1.0000   25000000.0000                    
+ RED    RED    RED      -1    0    1  1.0000 1000000000.1000                    
+ RED    YELLOW RED       0    1    1  1.0000    1000000.0000                    
+ YELLOW BLUE   YELLOW    0    0    1  0.0000     100000.0000                    
+ YELLOW RED    RED       1    1    1  0.0000      10000.1000                    
+ YELLOW YELLOW RED      -1    1    1  0.0000        100.0000                    
+                                                                                
+                                                                              1 
+ TESTPGM46-1                                                                    
+                                                                                
+ hue1   hue2b  hue3b  x1 x2 x3   dec1b           dec2b                          
+                                                                                
+ BLUE   BLUE          -1  1  0  0.0000  250000000.0000                          
+ BLUE   RED            0  1  0 -1.0000          3.1400                          
+ BLUE   YELLOW         1  0  0  1.0000    5000000.1000                          
+ RED    BLUE   YELLOW  1  1  1  1.0000   25000000.0000                          
+ RED    RED    RED    -1  0  1  1.0000 1000000000.1000                          
+ RED    YELLOW RED     0  1  1  1.0000    1000000.0000                          
+ YELLOW BLUE   YELLOW  0  0  1  0.0000     100000.0000                          
+ YELLOW RED    RED     1  1  1  0.0000      10000.1000                          
+ YELLOW YELLOW RED    -1  1  1  0.0000        100.0000                          
+                                                                                
+                                                                              1 
+ TESTPGM46-2                                                                    
+                                                                                
+ hue1   hue2   hue2b  hue3   hue3b             dec2           dec2b             
+                                                                                
+ BLUE   BLUE   BLUE                  250000000.0000  250000000.0000             
+ BLUE   BLUE   RED                   250000000.0000          3.1400             
+ BLUE   BLUE   YELLOW                250000000.0000    5000000.1000             
+ BLUE   RED    BLUE                          3.1400  250000000.0000             
+ BLUE   RED    RED                           3.1400          3.1400             
+ BLUE   RED    YELLOW                        3.1400    5000000.1000             
+ BLUE   YELLOW BLUE                    5000000.1000  250000000.0000             
+ BLUE   YELLOW RED                     5000000.1000          3.1400             
+ BLUE   YELLOW YELLOW                  5000000.1000    5000000.1000             
+ RED    BLUE   BLUE   YELLOW YELLOW   25000000.0000   25000000.0000             
+ RED    BLUE   RED    YELLOW RED      25000000.0000 1000000000.1000             
+ RED    BLUE   YELLOW YELLOW RED      25000000.0000    1000000.0000             
+ RED    RED    BLUE   RED    YELLOW 1000000000.1000   25000000.0000             
+ RED    RED    RED    RED    RED    1000000000.1000 1000000000.1000             
+ RED    RED    YELLOW RED    RED    1000000000.1000    1000000.0000             
+ RED    YELLOW BLUE   RED    YELLOW    1000000.0000   25000000.0000             
+ RED    YELLOW RED    RED    RED       1000000.0000 1000000000.1000             
+ RED    YELLOW YELLOW RED    RED       1000000.0000    1000000.0000             
+ YELLOW BLUE   BLUE   YELLOW YELLOW     100000.0000     100000.0000             
+ YELLOW RED    RED    RED    RED         10000.1000      10000.1000             
+ YELLOW YELLOW YELLOW RED    RED           100.0000        100.0000             
+                                                                                

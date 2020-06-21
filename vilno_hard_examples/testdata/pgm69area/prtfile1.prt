@@ -1,0 +1,30 @@
+                                                                              1 
+ TESTPGM69-1                                                                    
+                                                                                
+ hue1   hue2   hue3   num1                                                      
+                                                                                
+ BLUE   BLUE             0                                                      
+ BLUE   RED              1                                                      
+ BLUE   YELLOW           1                                                      
+ RED    BLUE   YELLOW    3                                                      
+ RED    RED    RED       0                                                      
+ RED    YELLOW RED       2                                                      
+ YELLOW BLUE   YELLOW    1                                                      
+ YELLOW RED    RED       3                                                      
+ YELLOW YELLOW RED       1                                                      
+                                                                                
+                                                                              1 
+ TESTPGM69-2                                                                    
+                                                                                
+ hue1   hue2   hue3              dec1                                           
+                                                                                
+ BLUE   BLUE           250000000.0000                                           
+ BLUE   RED                    2.1400                                           
+ BLUE   YELLOW           5000001.1000                                           
+ RED    BLUE   YELLOW   25000001.0000                                           
+ RED    RED    RED    1000000001.1000                                           
+ RED    YELLOW RED       1000001.0000                                           
+ YELLOW BLUE   YELLOW     100000.0000                                           
+ YELLOW RED    RED         10000.1000                                           
+ YELLOW YELLOW RED           100.0000                                           
+                                                                                

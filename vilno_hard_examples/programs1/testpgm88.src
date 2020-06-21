@@ -1,0 +1,54 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm88area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat1 ;
+addgridvars str: s1 5 s2 5 ;
+s1=s2="";
+if ( firstrow() ) s1="FIRST" ;
+if ( lastrow() ) s2="LAST" ;
+sendoff(b/dat1) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 s1 s2  ;
+turnoff ;
+
+print(b/dat1) "TESTPGM88-1" hue1 hue2 hue3 s1 s2 dec2  ;
+
+sort(a/dat1->b/dat2) hue1 hue2 ;
+
+print(b/dat2) "TESTPGM88-2, b/dat2=same as a/dat1, but knows it is sorted"  ;
+
+inlist b/dat2 ;
+addgridvars str: s1 5 s2 5 ;
+s1=s2="";
+if ( firstrow() ) s1="FIRST" ;
+if ( lastrow() ) s2="LAST" ;
+sendoff(b/dat3) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 s1 s2  ;
+turnoff ;
+
+print(b/dat3) "TESTPGM88-3" hue1 hue2 hue3 s1 s2 dec2  ;
+
+/////////////////////////////////////////////
+/////////////////////////////////////////////
+
+
+inlist a/dat1 ;
+sendoff(b/dat4) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 
+                where ( firstrow() or lastrow() )  ;
+turnoff ;
+
+print(b/dat4) "TESTPGM88-4" hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+
+
+
+
+inlist b/dat2 ;
+sendoff(b/dat5) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 
+                where ( firstrow() or lastrow() )  ;
+turnoff ;
+
+print(b/dat5) "TESTPGM88-5" hue1 hue2 hue3 num1 num2 num3 dec1 dec2  ;
+
+
+
+

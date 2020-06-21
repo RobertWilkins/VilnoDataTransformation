@@ -1,0 +1,28 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm46area" ;
+
+
+inlist a/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+sendoff(b/dat1) hue1 hue2B=hue2 hue3B=hue3 x1=num1 x2=num2 x3=num3 dec1B=dec1 dec2B=dec2 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(a/dat1) "TESTPGM46-orig dset" ;
+print(b/dat1) "TESTPGM46-1" ;
+
+
+inlist a/dat1 b/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+screen b/dat1: hue1 hue2B hue3B x1 x2 x3 dec1B dec2B ;
+joinby hue1 where(hue1!="YELLOW" or hue2==hue2B) ;
+sendoff(b/dat2) hue1 hue2 hue2B hue3 hue3B num1 x1 num2 x2 num3 x3 dec1 dec1B dec2 dec2B ;
+turnoff ;
+
+
+
+
+print(b/dat2) "TESTPGM46-2" hue1 hue2 hue2B hue3 hue3B dec2 dec2B ;
+

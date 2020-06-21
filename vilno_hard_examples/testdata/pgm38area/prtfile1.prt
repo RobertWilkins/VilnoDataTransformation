@@ -1,0 +1,15 @@
+                                                                              1 
+ TESTPGM38-1                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3    dec1            dec2                    
+                                                                                
+ B      BLUE            -1    1    0  0.0000  250000000.0000                    
+ BB     RED              0    1    1 -1.0000          3.1400                    
+ BBB    YELLOW           1    0    2  1.0000    5000000.1000                    
+ BBBB   BLUE   YELLOW    1    1    5  1.0000   25000000.0000                    
+ BBBBB  RED    RED      -1    0    5  1.0000 1000000000.1000                    
+ BBBBBB YELLOW RED       0    1    7  1.0000    1000000.0000                    
+ BBBBBB BLUE   YELLOW    0    0    8  0.0000     100000.0000                    
+ BBBBBB RED    RED       1    1   11  0.0000      10000.1000                    
+ BBBBBB YELLOW RED      -1    1   12  0.0000        100.0000                    
+                                                                                

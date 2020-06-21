@@ -1,0 +1,24 @@
+
+//#include <cconio>
+#include <cmath>
+#include <cctype>
+#include <cerrno>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <utility>
+#include <list>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+#include <map>
+#include <set>
+using namespace std ;
+#include </home/robert/vilno_etc/vilno_source/compiler/compilerall.cpp>
+
+int main(int argc,char ** argv)
+{
+  mainprocdriver(argc,argv);
+}

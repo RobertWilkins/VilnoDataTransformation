@@ -1,0 +1,55 @@
+// float2 multiplication , add/subtract 
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm86area" ;
+printoptions b/prtfile1 ;
+
+
+inlist ;
+addgridvars float: i=20000000000.0 j=0 k=-1 
+                   m1=1.79769e+308 m2=-1.79769e+308 n1 n2 
+            int: i1=2147483647 i2=-2147483647 i3 i4 ;
+{ 
+  i3=60000 ;
+  i4=10000 ;
+  j=i3*i4 ;
+  copyrow ;
+
+  n1=1.7e+308 ;
+  n2=-0.09e+308 ;
+  j=n1-n2 ;
+  copyrow ;
+
+  n1=1000000000000.00 ;
+  n2=1000000000 ;
+  j=n1+n2 ;
+  copyrow ;
+
+  i3=2000000000 ;
+  i4=1000000000 ;
+  j=i3+i4 ;
+  copyrow ;
+
+  n1=2000000000 ;
+  n2=1000000000 ;
+  j=n1+n2 ;
+  copyrow ;
+
+  i3=0 ;
+  i4=0 ;
+  j=i3/i4 ;
+  copyrow ;
+
+  n1=0 ;
+  i4=0 ;
+  j=n1/i4 ;
+  copyrow ;
+
+}
+sendoff(b/dat1) i j k m1 m2 n1 n2 i1 i2 i3   ;
+turnoff ;
+
+print(b/dat1) "TESTPGM86-1"  ;
+
+
+

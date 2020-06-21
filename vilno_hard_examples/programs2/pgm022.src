@@ -1,0 +1,82 @@
+
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area022" ;
+
+windowsize 5 ; 
+
+
+
+
+inlist ;
+addgridvars int: b1 b2 b3 ct1=0  float: f1   str: s1 14  ;
+{
+ for b1 = 1 to 4 : 
+  for b2 = 1 to 4 : 
+   for b3 = 1 to 10 :
+     {   ct1=ct1+1; 
+         f1 = ct1*100 ;
+         if (s1=="red") s1="purple" ; 
+           else s1="red" ;
+         copyrow; 
+     }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 b3 ct1 f1 s1  ;
+turnoff ;
+
+
+
+/////////////////////
+
+
+inlist b/dat1 ;
+blockby b1 ;
+readby b2  ;
+addgridvars  int: ct2 float: f2 str: s2 14 ;
+{ ct2 = nextval(ct1) ;
+  f2 =  nextval(f1) ;
+  s2 =  nextval(s1) ;
+}
+sendoff(b/dat2) b1 b2 b3 ct1 ct2 f1 f2 s1 s2  ;
+sendoff(b/dat3) b1 b2 b3 ct1 ct2 f1 f2 s1 s2 
+      where((b1==4 or b1==3) and nextval(s1)=="red") ; 
+turnoff ;
+
+
+//////////////////////////
+
+
+
+inlist b/dat1 ;
+blockby b1 ;
+readby b2  ;
+addgridvars  int: ct2 float: f2 str: s2 14 ;
+{ ct2 = prevval(ct1) ;
+  f2 =  prevval(f1) ;
+  s2 =  prevval(s1) ;
+}
+sendoff(b/dat4) b1 b2 b3 ct1 ct2 f1 f2 s1 s2  ;
+sendoff(b/dat5) b1 b2 b3 ct1 ct2 f1 f2 s1 s2 
+      where((b1==4 or b1==3) and prevval(s1)=="red") ; 
+turnoff ;
+
+
+
+
+
+//////////////////////////
+
+
+printoptions b/prtfile1 ;
+
+print(b/dat2) "PGM022-1 : classical and nextval" ;
+
+print(b/dat3) "PGM022-2 : sendoff and nextval" ;
+
+print(b/dat4) "PGM022-3 : classical and prevval" ;
+
+print(b/dat5) "PGM022-4 : sendoff and prevval" ;
+
+
+

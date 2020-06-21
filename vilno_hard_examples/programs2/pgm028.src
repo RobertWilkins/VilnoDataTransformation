@@ -1,0 +1,118 @@
+
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area028" ;
+
+printoptions b/prtfile1 60*115 ;
+
+
+
+
+
+
+inlist ;
+addnongridvars int: j1 j2 ;
+addgridvars int: c i2=2 i4=4    
+            float: f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 ;
+arrayrefs ff[] f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 ;
+{
+ for c = 1 to 7 : 
+ { for j2 = 1 to 14 : 
+     ff[j2] = j2 + 0.001*c ;
+   copyrow ;
+ }
+ deleterow ;
+}
+sendoff(b/dat1) c i2 i4 
+                f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 
+                 by -c ;
+turnoff ;
+
+
+
+
+
+inlist b/dat1 ;
+if (c==6) c=100 ;
+if (c==2) deleterow ;
+if (c==4) 
+{ copyrow ;
+  f1 = f14 = -999 ;
+  copyrow ;
+}
+sendoff(b/dat2) c i2 i4 
+                f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 ;
+turnoff ;
+
+
+
+
+
+
+
+
+/////////////////////
+
+
+inlist b/dat1 ;
+gridflip  c(1,2,3,4,5,6,7) 
+          f1 i2 f3 i4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 
+          -> 
+          d(1,2,3,4,5,6,7,8,9,10,11,12,13,14) 
+          f1 f2 f3 f4 f5 f6 f7   ;
+sendoff(b/dat3)  d f1 f2 f3 f4 f5 f6 f7 ;
+turnoff ;
+
+
+inlist b/dat2 ;
+gridflip  c(1,2,3,4,5,6,7) 
+          f1 i2 f3 i4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 
+          -> 
+          d(1,2,3,4,5,6,7,8,9,10,11,12,13,14) 
+          f1 f2 f3 f4 f5 f6 f7   ;
+sendoff(b/dat4)  d f1 f2 f3 f4 f5 f6 f7 ;
+turnoff ;
+
+
+
+print(b/dat1) "PGM028-1 : original dset" ;
+print(b/dat2) "PGM028-1b : original dset altered" ;
+
+print(b/dat3) "PGM028-1 : dat3" ;
+print(b/dat4) "PGM028-1 : dat4" ;
+
+
+
+
+//////////////////////////
+
+
+
+
+windowsize 3 ;
+
+
+
+
+inlist b/dat1 ;
+gridflip  c(1,2,3,4,5,6,7) 
+          f1 i2 f3 i4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 
+          -> 
+          d(1,2,3,4,5,6,7,8,9,10,11,12,13,14) 
+          f1 f2 f3 f4 f5 f6 f7   ;
+sendoff(b/dat3b)  d f1 f2 f3 f4 f5 f6 f7 ;
+turnoff ;
+
+
+inlist b/dat2 ;
+gridflip  c(1,2,3,4,5,6,7) 
+          f1 i2 f3 i4 f5 f6 f7 f8 f9 f10 f11 f12 f13 f14 
+          -> 
+          d(1,2,3,4,5,6,7,8,9,10,11,12,13,14) 
+          f1 f2 f3 f4 f5 f6 f7   ;
+sendoff(b/dat4b)  d f1 f2 f3 f4 f5 f6 f7 ;
+turnoff ;
+
+print(b/dat3b) "PGM028-1 : dat3b" ;
+print(b/dat4b) "PGM028-1 : dat4b" ;
+

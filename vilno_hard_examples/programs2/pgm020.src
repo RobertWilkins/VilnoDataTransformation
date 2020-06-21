@@ -1,0 +1,67 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area020" ;
+
+windowsize 100 ; 
+
+
+
+
+inlist ;
+addnongridvars int: bb1 bb3 ;
+addgridvars str: b1 8 b3 8 int: b2 b4 b5 ct1=0 ;
+{
+ for bb1 = 1 to 4 : 
+  for b2 = 1 to 4 : 
+   for bb3 = 1 to 4 :
+    for b4 = 1 to 4 : 
+     for b5 = 1 to 25 :  
+     {   if (bb1==1)       b1="BLUE"; 
+          else if (bb1==2) b1="RED";
+          else if (bb1==3) b1="YELLOW";
+          else if (bb1==4) b1="ZINC";
+         if (bb3==1)       b3="BLUE"; 
+          else if (bb3==2) b3="RED";
+          else if (bb3==3) b3="YELLOW";
+          else if (bb3==4) b3="ZINC";
+         ct1=ct1+1; 
+         copyrow; 
+         
+     }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 b3 b4 b5 ct1 ;
+turnoff ;
+
+
+
+inlist b/dat1 ;
+blockby -b1 -b2 ;
+readby -b3 -b4 ;
+sendoff(b/dat2) b1 b2 b3 b4 b5 ct1  where( (firstrow() or lastrow())  and b1=="ZINC" and b2==4 ) ;
+sendoff(b/dat3) b1 b2 b3 b4 b5 ct1  where( (firstrow(b3) or lastrow(b3))   and b1=="ZINC" and b2==4 ) ;
+sendoff(b/dat4) b1 b2 b3 b4 b5 ct1  where( (firstrow(b3 b4) or lastrow(b3 b4))  and b1=="ZINC" and b2==4 ) ;
+addgridvars float: g1=3.4 g2 g3 g4 ;
+g1 = g1 + 3 ;
+if (g1==0) ct1 = ct1 - 1 ;
+if (firstrow())  g1 = 9 ;
+if (lastrow())   g2 = 9 ;
+if (firstrow(b3 b4))  g3 = 9 ;
+if (lastrow(b3 b4))   g4 = 9 ;
+
+if (b5>2 and b5<24) deleterow ;
+sendoff(b/dat5) b1 b2 b3 b4 b5 ct1 g1 g2 g3 g4  where (b1=="ZINC" and b2==4);
+turnoff ;
+
+
+
+
+
+printoptions b/prtfile1 ;
+print(b/dat2) "PGM020-1 bb, firstrow() & lastrow()" ;
+print(b/dat3) "PGM020-2 bb, firstrow(b3) & lastrow(b3)" ;
+print(b/dat4) "PGM020-3 bb, firstrow(b3 b4) & lastrow(b3 b4)" ;
+print(b/dat5) "PGM020-3 bb , classical first/lastrow" ;
+
+
+

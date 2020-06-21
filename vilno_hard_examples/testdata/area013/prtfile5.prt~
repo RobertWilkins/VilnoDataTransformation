@@ -1,0 +1,238 @@
+                                                                              1 
+ PGM013-mergeby                                                                 
+                                                                                
+ b1   b2 m1    m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3                           
+                                                                                
+ BLUE 10 RED    1  1 _N _N   1 _NU _NU    1    0    0                           
+ BLUE 10 RED    1 _N  1 _N _NU   1 _NU    0    1    0                           
+ BLUE 10 RED    1 _N _N  1 _NU _NU   1    0    0    1                           
+ 
+ BLUE 10 RED    2  1 _N _N   2 _NU _NU    1    0    0                           
+ BLUE 10 RED    2 _N  1 _N _NU   2 _NU    0    1    0                           
+ BLUE 10 RED    2 _N _N  1 _NU _NU   2    0    0    1                           
+ 
+ BLUE 10 RED    3  1 _N _N   3 _NU _NU    1    0    0                           
+ BLUE 10 RED    3  2 _N _N   4 _NU _NU    1    0    0                           
+ BLUE 10 RED    3  3 _N _N   5 _NU _NU    1    0    0                           
+ BLUE 10 RED    3  4 _N _N   6 _NU _NU    1    0    0                           
+ BLUE 10 RED    3  5 _N _N   7 _NU _NU    1    0    0                           
+ BLUE 10 RED    3  6 _N _N   8 _NU _NU    1    0    0                           
+ BLUE 10 RED    3  7 _N _N   9 _NU _NU    1    0    0                           
+ BLUE 10 RED    3 _N  1 _N _NU   3 _NU    0    1    0                           
+ 
+ BLUE 10 WHITE  1  1 _N _N  10 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  1 _N  1 _N _NU   4 _NU    0    1    0                           
+ BLUE 10 WHITE  1 _N _N  1 _NU _NU   3    0    0    1                           
+ 
+ BLUE 10 WHITE  2  1 _N _N  11 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  2 _N  1 _N _NU   5 _NU    0    1    0                           
+ BLUE 10 WHITE  2 _N _N  1 _NU _NU   4    0    0    1                           
+ 
+ BLUE 10 WHITE  3  1 _N _N  12 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  3  2 _N _N  13 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  3  3 _N _N  14 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  3  4 _N _N  15 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  3  5 _N _N  16 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  3  6 _N _N  17 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  3  7 _N _N  18 _NU _NU    1    0    0                           
+ BLUE 10 WHITE  3 _N  1 _N _NU   6 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N  2 _N _NU   7 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N  3 _N _NU   8 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N  4 _N _NU   9 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N  5 _N _NU  10 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N  6 _N _NU  11 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N  7 _N _NU  12 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N  8 _N _NU  13 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N  9 _N _NU  14 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 10 _N _NU  15 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 11 _N _NU  16 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 12 _N _NU  17 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 13 _N _NU  18 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 14 _N _NU  19 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 15 _N _NU  20 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 16 _N _NU  21 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 17 _N _NU  22 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N 18 _N _NU  23 _NU    0    1    0                           
+ BLUE 10 WHITE  3 _N _N  1 _NU _NU   5    0    0    1                           
+ 
+ BLUE 20 RED    1  1 _N _N  19 _NU _NU    1    0    0                           
+ BLUE 20 RED    1 _N  1 _N _NU  24 _NU    0    1    0                           
+ BLUE 20 RED    1 _N _N  1 _NU _NU   6    0    0    1                           
+ BLUE 20 RED    2  1 _N _N  20 _NU _NU    1    0    0                           
+ BLUE 20 RED    2 _N  1 _N _NU  25 _NU    0    1    0                           
+ BLUE 20 RED    2 _N _N  1 _NU _NU   7    0    0    1                           
+ BLUE 20 RED    3  1 _N _N  21 _NU _NU    1    0    0                           
+ BLUE 20 RED    3 _N  1 _N _NU  26 _NU    0    1    0                           
+                                                                                
+                                                                              2 
+ PGM013-mergeby                                                                 
+                                                                                
+ b1     b2 m1     m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3                        
+                                                                                
+ BLUE   20 RED     3 _N _N  1 _NU _NU   8    0    0    1                        
+ BLUE   20 WHITE   1  1 _N _N  22 _NU _NU    1    0    0                        
+ BLUE   20 WHITE   1 _N  1 _N _NU  27 _NU    0    1    0                        
+ BLUE   20 WHITE   1 _N _N  1 _NU _NU   9    0    0    1                        
+ BLUE   20 WHITE   2  1 _N _N  23 _NU _NU    1    0    0                        
+ BLUE   20 WHITE   2 _N  1 _N _NU  28 _NU    0    1    0                        
+ BLUE   20 WHITE   2 _N _N  1 _NU _NU  10    0    0    1                        
+ BLUE   20 WHITE   3  1 _N _N  24 _NU _NU    1    0    0                        
+ BLUE   20 WHITE   3 _N  1 _N _NU  29 _NU    0    1    0                        
+ BLUE   20 WHITE   3 _N _N  1 _NU _NU  11    0    0    1                        
+ BLUE   30 RED     1  1 _N _N  25 _NU _NU    1    0    0                        
+ BLUE   30 RED     1 _N  1 _N _NU  30 _NU    0    1    0                        
+ BLUE   30 RED     1 _N _N  1 _NU _NU  12    0    0    1                        
+ BLUE   30 RED     2  1 _N _N  26 _NU _NU    1    0    0                        
+ BLUE   30 RED     2 _N  1 _N _NU  31 _NU    0    1    0                        
+ BLUE   30 RED     2 _N _N  1 _NU _NU  13    0    0    1                        
+ BLUE   30 RED     3  1 _N _N  27 _NU _NU    1    0    0                        
+ BLUE   30 RED     3 _N  1 _N _NU  32 _NU    0    1    0                        
+ BLUE   30 RED     3 _N _N  1 _NU _NU  14    0    0    1                        
+ BLUE   30 WHITE   1  1 _N _N  28 _NU _NU    1    0    0                        
+ BLUE   30 WHITE   1 _N  1 _N _NU  33 _NU    0    1    0                        
+ BLUE   30 WHITE   1 _N _N  1 _NU _NU  15    0    0    1                        
+ BLUE   30 WHITE   2  1 _N _N  29 _NU _NU    1    0    0                        
+ BLUE   30 WHITE   2 _N  1 _N _NU  34 _NU    0    1    0                        
+ BLUE   30 WHITE   2 _N _N  1 _NU _NU  16    0    0    1                        
+ BLUE   30 WHITE   3  1 _N _N  30 _NU _NU    1    0    0                        
+ BLUE   30 WHITE   3 _N  1 _N _NU  35 _NU    0    1    0                        
+ BLUE   30 WHITE   3 _N _N  1 _NU _NU  17    0    0    1                        
+ PURPLE 10 PURPLE  1 _N _N  1 _NU _NU  51    0    0    1                        
+ RED    10 RED     1  1 _N _N  31 _NU _NU    1    0    0                        
+ RED    10 RED     1 _N  1 _N _NU  36 _NU    0    1    0                        
+ RED    10 RED     1 _N _N  1 _NU _NU  18    0    0    1                        
+ RED    10 RED     2  1 _N _N  32 _NU _NU    1    0    0                        
+ RED    10 RED     2 _N  1 _N _NU  37 _NU    0    1    0                        
+ RED    10 RED     2 _N _N  1 _NU _NU  19    0    0    1                        
+ RED    10 RED     3  1 _N _N  33 _NU _NU    1    0    0                        
+ RED    10 RED     3  2 _N _N  34 _NU _NU    1    0    0                        
+ RED    10 RED     3  3 _N _N  35 _NU _NU    1    0    0                        
+ RED    10 RED     3  4 _N _N  36 _NU _NU    1    0    0                        
+ RED    10 RED     3  5 _N _N  37 _NU _NU    1    0    0                        
+ RED    10 RED     3  6 _N _N  38 _NU _NU    1    0    0                        
+ RED    10 RED     3  7 _N _N  39 _NU _NU    1    0    0                        
+ RED    10 RED     3 _N  1 _N _NU  38 _NU    0    1    0                        
+ RED    10 RED     3 _N _N  1 _NU _NU  20    0    0    1                        
+ RED    10 WHITE   1  1 _N _N  40 _NU _NU    1    0    0                        
+ RED    10 WHITE   1 _N  1 _N _NU  39 _NU    0    1    0                        
+ RED    10 WHITE   1 _N _N  1 _NU _NU  21    0    0    1                        
+ RED    10 WHITE   2  1 _N _N  41 _NU _NU    1    0    0                        
+ RED    10 WHITE   2 _N  1 _N _NU  40 _NU    0    1    0                        
+ RED    10 WHITE   2 _N _N  1 _NU _NU  22    0    0    1                        
+ RED    10 WHITE   3  1 _N _N  42 _NU _NU    1    0    0                        
+ RED    10 WHITE   3  2 _N _N  43 _NU _NU    1    0    0                        
+ RED    10 WHITE   3  3 _N _N  44 _NU _NU    1    0    0                        
+ RED    10 WHITE   3  4 _N _N  45 _NU _NU    1    0    0                        
+                                                                                
+                                                                              3 
+ PGM013-mergeby                                                                 
+                                                                                
+ b1     b2 m1    m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3                         
+                                                                                
+ RED    10 WHITE  3  5 _N _N  46 _NU _NU    1    0    0                         
+ RED    10 WHITE  3  6 _N _N  47 _NU _NU    1    0    0                         
+ RED    10 WHITE  3  7 _N _N  48 _NU _NU    1    0    0                         
+ RED    10 WHITE  3 _N  1 _N _NU  41 _NU    0    1    0                         
+ RED    10 WHITE  3 _N _N  1 _NU _NU  23    0    0    1                         
+ RED    20 RED    1  1 _N _N  49 _NU _NU    1    0    0                         
+ RED    20 RED    1 _N  1 _N _NU  42 _NU    0    1    0                         
+ RED    20 RED    1 _N _N  1 _NU _NU  24    0    0    1                         
+ RED    20 RED    2  1 _N _N  50 _NU _NU    1    0    0                         
+ RED    20 RED    2 _N  1 _N _NU  43 _NU    0    1    0                         
+ RED    20 RED    2 _N _N  1 _NU _NU  25    0    0    1                         
+ RED    20 RED    3  1 _N _N  51 _NU _NU    1    0    0                         
+ RED    20 RED    3 _N  1 _N _NU  44 _NU    0    1    0                         
+ RED    20 RED    3 _N _N  1 _NU _NU  26    0    0    1                         
+ RED    20 WHITE  1  1 _N _N  52 _NU _NU    1    0    0                         
+ RED    20 WHITE  1 _N  1 _N _NU  45 _NU    0    1    0                         
+ RED    20 WHITE  1 _N _N  1 _NU _NU  27    0    0    1                         
+ RED    20 WHITE  2  1 _N _N  53 _NU _NU    1    0    0                         
+ RED    20 WHITE  2 _N  1 _N _NU  46 _NU    0    1    0                         
+ RED    20 WHITE  2 _N _N  1 _NU _NU  28    0    0    1                         
+ RED    20 WHITE  3  1 _N _N  54 _NU _NU    1    0    0                         
+ RED    20 WHITE  3 _N  1 _N _NU  47 _NU    0    1    0                         
+ RED    20 WHITE  3 _N _N  1 _NU _NU  29    0    0    1                         
+ RED    30 RED    1  1 _N _N  55 _NU _NU    1    0    0                         
+ RED    30 RED    1 _N  1 _N _NU  48 _NU    0    1    0                         
+ RED    30 RED    1 _N _N  1 _NU _NU  30    0    0    1                         
+ RED    30 RED    2  1 _N _N  56 _NU _NU    1    0    0                         
+ RED    30 RED    2 _N  1 _N _NU  49 _NU    0    1    0                         
+ RED    30 RED    2 _N _N  1 _NU _NU  31    0    0    1                         
+ RED    30 RED    3  1 _N _N  57 _NU _NU    1    0    0                         
+ RED    30 RED    3 _N  1 _N _NU  50 _NU    0    1    0                         
+ RED    30 RED    3 _N _N  1 _NU _NU  32    0    0    1                         
+ RED    30 WHITE  1  1 _N _N  58 _NU _NU    1    0    0                         
+ RED    30 WHITE  1 _N  1 _N _NU  51 _NU    0    1    0                         
+ RED    30 WHITE  1 _N _N  1 _NU _NU  33    0    0    1                         
+ RED    30 WHITE  2  1 _N _N  59 _NU _NU    1    0    0                         
+ RED    30 WHITE  2 _N  1 _N _NU  52 _NU    0    1    0                         
+ RED    30 WHITE  2 _N _N  1 _NU _NU  34    0    0    1                         
+ RED    30 WHITE  3  1 _N _N  60 _NU _NU    1    0    0                         
+ RED    30 WHITE  3 _N  1 _N _NU  53 _NU    0    1    0                         
+ RED    30 WHITE  3 _N _N  1 _NU _NU  35    0    0    1                         
+ YELLOW 10 RED    1  1 _N _N  61 _NU _NU    1    0    0                         
+ YELLOW 10 RED    1 _N  1 _N _NU  54 _NU    0    1    0                         
+ YELLOW 10 RED    1 _N _N  1 _NU _NU  36    0    0    1                         
+ YELLOW 10 RED    2  1 _N _N  62 _NU _NU    1    0    0                         
+ YELLOW 10 RED    2 _N  1 _N _NU  55 _NU    0    1    0                         
+ YELLOW 10 RED    2 _N  2 _N _NU  56 _NU    0    1    0                         
+ YELLOW 10 RED    2 _N  3 _N _NU  57 _NU    0    1    0                         
+ YELLOW 10 RED    2 _N  4 _N _NU  58 _NU    0    1    0                         
+ YELLOW 10 RED    2 _N  5 _N _NU  59 _NU    0    1    0                         
+ YELLOW 10 RED    2 _N  6 _N _NU  60 _NU    0    1    0                         
+ YELLOW 10 RED    2 _N  7 _N _NU  61 _NU    0    1    0                         
+ YELLOW 10 RED    2 _N  8 _N _NU  62 _NU    0    1    0                         
+ YELLOW 10 RED    2 _N  9 _N _NU  63 _NU    0    1    0                         
+                                                                                
+                                                                              4 
+ PGM013-mergeby                                                                 
+                                                                                
+ b1     b2 m1    m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3                         
+                                                                                
+ YELLOW 10 RED    2 _N _N  1 _NU _NU  37    0    0    1                         
+ YELLOW 10 RED    3  1 _N _N  63 _NU _NU    1    0    0                         
+ YELLOW 10 RED    3 _N  1 _N _NU  64 _NU    0    1    0                         
+ YELLOW 10 RED    3 _N _N  1 _NU _NU  38    0    0    1                         
+ YELLOW 10 WHITE  1  1 _N _N  64 _NU _NU    1    0    0                         
+ YELLOW 10 WHITE  1 _N  1 _N _NU  65 _NU    0    1    0                         
+ YELLOW 10 WHITE  1 _N _N  1 _NU _NU  39    0    0    1                         
+ YELLOW 10 WHITE  2  1 _N _N  65 _NU _NU    1    0    0                         
+ YELLOW 10 WHITE  2 _N  1 _N _NU  66 _NU    0    1    0                         
+ YELLOW 10 WHITE  2 _N _N  1 _NU _NU  40    0    0    1                         
+ YELLOW 10 WHITE  3  1 _N _N  66 _NU _NU    1    0    0                         
+ YELLOW 10 WHITE  3 _N  1 _N _NU  67 _NU    0    1    0                         
+ YELLOW 10 WHITE  3 _N _N  1 _NU _NU  41    0    0    1                         
+ YELLOW 20 RED    1  1 _N _N  67 _NU _NU    1    0    0                         
+ YELLOW 20 RED    1 _N  1 _N _NU  68 _NU    0    1    0                         
+ YELLOW 20 RED    1 _N _N  1 _NU _NU  42    0    0    1                         
+ YELLOW 20 RED    2  1 _N _N  68 _NU _NU    1    0    0                         
+ YELLOW 20 RED    2 _N  1 _N _NU  69 _NU    0    1    0                         
+ YELLOW 20 RED    2 _N _N  1 _NU _NU  43    0    0    1                         
+ YELLOW 20 RED    3  1 _N _N  69 _NU _NU    1    0    0                         
+ YELLOW 20 RED    3 _N  1 _N _NU  70 _NU    0    1    0                         
+ YELLOW 20 RED    3 _N _N  1 _NU _NU  44    0    0    1                         
+ YELLOW 20 WHITE  1  1 _N _N  70 _NU _NU    1    0    0                         
+ YELLOW 20 WHITE  1 _N  1 _N _NU  71 _NU    0    1    0                         
+ YELLOW 20 WHITE  1 _N _N  1 _NU _NU  45    0    0    1                         
+ YELLOW 20 WHITE  2  1 _N _N  71 _NU _NU    1    0    0                         
+ YELLOW 20 WHITE  2 _N  1 _N _NU  72 _NU    0    1    0                         
+ YELLOW 20 WHITE  2 _N _N  1 _NU _NU  46    0    0    1                         
+ YELLOW 20 WHITE  3  1 _N _N  72 _NU _NU    1    0    0                         
+ YELLOW 20 WHITE  3 _N  1 _N _NU  73 _NU    0    1    0                         
+ YELLOW 20 WHITE  3 _N _N  1 _NU _NU  47    0    0    1                         
+ YELLOW 30 RED    1  1 _N _N  73 _NU _NU    1    0    0                         
+ YELLOW 30 RED    1 _N  1 _N _NU  74 _NU    0    1    0                         
+ YELLOW 30 RED    2  1 _N _N  74 _NU _NU    1    0    0                         
+ YELLOW 30 RED    2 _N  1 _N _NU  75 _NU    0    1    0                         
+ YELLOW 30 RED    3  1 _N _N  75 _NU _NU    1    0    0                         
+ YELLOW 30 RED    3 _N  1 _N _NU  76 _NU    0    1    0                         
+ YELLOW 30 WHITE  1  1 _N _N  76 _NU _NU    1    0    0                         
+ YELLOW 30 WHITE  1 _N  1 _N _NU  77 _NU    0    1    0                         
+ YELLOW 30 WHITE  1 _N _N  1 _NU _NU  48    0    0    1                         
+ YELLOW 30 WHITE  2  1 _N _N  77 _NU _NU    1    0    0                         
+ YELLOW 30 WHITE  2 _N  1 _N _NU  78 _NU    0    1    0                         
+ YELLOW 30 WHITE  2 _N _N  1 _NU _NU  49    0    0    1                         
+ YELLOW 30 WHITE  3  1 _N _N  78 _NU _NU    1    0    0                         
+ YELLOW 30 WHITE  3 _N  1 _N _NU  79 _NU    0    1    0                         
+ YELLOW 30 WHITE  3 _N _N  1 _NU _NU  50    0    0    1                         
+                                                                                

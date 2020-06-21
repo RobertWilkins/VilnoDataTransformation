@@ -1,0 +1,107 @@
+
+directoryref b="/home/???" ;
+
+
+convertfileformat 
+  asciitobinary("/home/???/asciidataA.txt"->b/datasetA)
+  delimiter='|' 
+  varnames(string1 string2 int1 int2 float1)
+  datatypes(s s i i f)
+  strlengths(8 11) ;
+
+
+
+
+printoptions b/make_data_print ;
+
+print(b/datasetA) "just made from ascii file: datasetA" ;
+
+
+
+/////////////////////////////////////////////////////////////
+
+
+
+convertfileformat 
+  asciitobinary("/home/???/asciidataB.txt"->b/datasetB)
+  delimiter='|' 
+  varnames(string1 color)
+  datatypes(s s)
+  strlengths(8 8) ;
+
+
+print(b/datasetB) "just made from ascii file: datasetB" ;
+
+
+
+///////////////////////////////////////////////////////////
+
+
+
+
+convertfileformat 
+  asciitobinary("/home/???/asciidataC1.txt"->b/datasetC1)
+  delimiter='|' 
+  varnames(y i1)
+  datatypes(s i)
+  strlengths(1) ;
+
+print(b/datasetC1) "just made from ascii file: datasetC1" ;
+
+
+convertfileformat 
+  asciitobinary("/home/???/asciidataC2.txt"->b/datasetC2)
+  delimiter='|' 
+  varnames(y i2)
+  datatypes(s i)
+  strlengths(1) ;
+
+print(b/datasetC2) "just made from ascii file: datasetC2" ;
+
+
+
+convertfileformat 
+  asciitobinary("/home/???/asciidataC3.txt"->b/datasetC3)
+  delimiter='|' 
+  varnames(y i2)
+  datatypes(s i)
+  strlengths(1) ;
+
+print(b/datasetC3) "just made from ascii file: datasetC3" ;
+
+
+
+convertfileformat 
+  asciitobinary("/home/???/asciidataC4.txt"->b/datasetC4)
+  delimiter='|' 
+  varnames(y g)
+  datatypes(s s)
+  strlengths(1 5) ;
+
+print(b/datasetC4) "just made from ascii file: datasetC4" ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

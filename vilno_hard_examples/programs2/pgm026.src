@@ -1,0 +1,175 @@
+
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area026" ;
+
+printoptions b/prtfile1 ;
+
+
+
+
+
+
+inlist ;
+addnongridvars int: j1 j2 ;
+addgridvars int: i1 i2 i3 i4 i5 i6 i7 i8   str: c 1   float: f2 f5 f6 ;
+arrayrefs ii[] i1 i2 i3 i4 i5 i6 i7 i8 ;
+{
+ for j1 = 1 to 4 : 
+ { for j2 = 1 to 8 : 
+     ii[j2] = (j1-1)*8 + j2 ;
+   if (j1==1) c="A" ;
+     else if (j1==2) c="B" ;
+     else if (j1==3) c="C" ;
+     else if (j1==4) c="D" ;
+   f2 = i2 ; 
+   f5 = i5 ;
+   f6 = i6 ;
+   if (f6==30) f6 = 30.003 ;
+   copyrow ;
+ }
+ deleterow ;
+}
+sendoff(b/dat1) c i1 i2=f2 i3 i4 i5=f5 i6=f6 i7 i8 ;
+turnoff ;
+
+
+
+/////////////////////
+
+
+inlist b/dat1 ;
+gridflip  c('A','B','C','D') i1 i2 i3 i4 i5 i6 i7 i8   -> 
+          d('A','B','C','D','E','F','G','H')   m1 m2 m3 m4     ;
+sendoff(b/dat2)  d m1 m2 m3 m4  ;
+turnoff ;
+
+
+inlist b/dat2 ;
+gridflip  d('A','B','C','D','E','F','G','H')  m1 m2 m3 m4   ->
+          c('A','B','C','D') i1 i2 i3 i4 i5 i6 i7 i8   ;
+sendoff(b/dat3)  c i1 i2 i3 i4 i5 i6 i7 i8 ;
+turnoff ;
+
+
+
+
+
+print(b/dat1) "PGM026-1 : original dset" ;
+
+print(b/dat2) "PGM026-1 : dat2" ;
+print(b/dat3) "PGM026-1 : dat3" ;
+
+
+
+
+//////////////////////////
+
+
+windowsize 3 ; 
+
+
+
+inlist b/dat1 ;
+gridflip  c('A','B','C','D') i1 i2 i3 i4 i5 i6 i7 i8   -> 
+          d('A','B','C','D','E','F','G','H')   m1 m2 m3 m4     ;
+sendoff(b/dat4)  d m1 m2 m3 m4  ;
+turnoff ;
+
+
+inlist b/dat4 ;
+gridflip  d('A','B','C','D','E','F','G','H')  m1 m2 m3 m4   ->
+          c('A','B','C','D') i1 i2 i3 i4 i5 i6 i7 i8   ;
+sendoff(b/dat5)  c i1 i2 i3 i4 i5 i6 i7 i8 ;
+turnoff ;
+
+
+print(b/dat4) "PGM026-1 : dat4" ;
+print(b/dat5) "PGM026-1 : dat5" ;
+
+
+
+
+///////////////////////////////
+
+
+
+
+
+inlist b/dat1 sub1=b/dat1 sub2=b/dat1 ;
+inflags t1 t2 t3 = b/dat1 sub1 sub2 ;
+addgridvars str: hue 10 ;
+if (t1==1) hue="blue" ;
+ else if (t2==1) hue="green" ;
+ else if (t3==1) hue="red" ;
+sendoff(b/dat1big) hue c i1 i2 i3 i4 i5 i6 i7 i8 ;
+turnoff ;
+
+
+print(b/dat1big) "PGM026-1 : dat1big" ;
+
+/////////////////////////////////
+
+
+
+
+windowsize 3 ; 
+
+
+inlist b/dat1big ;
+gridflip  c('A','B','C','D') i1 i2 i3 i4 i5 i6 i7 i8   -> 
+          d('A','B','C','D','E','F','G','H')   m1 m2 m3 m4  
+            by hue   ;
+sendoff(b/dat6)  hue d m1 m2 m3 m4  ;
+turnoff ;
+
+
+inlist b/dat6 ;
+gridflip  d('A','B','C','D','E','F','G','H')  m1 m2 m3 m4   ->
+          c('A','B','C','D') i1 i2 i3 i4 i5 i6 i7 i8  
+            by hue ;
+sendoff(b/dat7)  hue c i1 i2 i3 i4 i5 i6 i7 i8 ;
+turnoff ;
+
+
+print(b/dat6) "PGM026-1 : dat6" ;
+print(b/dat7) "PGM026-1 : dat7" ;
+
+
+
+
+///////////////////////////////////////
+
+
+
+
+
+
+windowsize 5 ; 
+
+
+inlist b/dat1big ;
+gridflip  c('A','B','C','D') i1 i2 i3 i4 i5 i6 i7 i8   -> 
+          d('A','B','C','D','E','F','G','H')   m1 m2 m3 m4  
+            by hue   ;
+sendoff(b/dat8)  hue d m1 m2 m3 m4  ;
+turnoff ;
+
+
+inlist b/dat8 ;
+gridflip  d('A','B','C','D','E','F','G','H')  m1 m2 m3 m4   ->
+          c('A','B','C','D') i1 i2 i3 i4 i5 i6 i7 i8  
+            by hue ;
+sendoff(b/dat9)  hue c i1 i2 i3 i4 i5 i6 i7 i8 ;
+turnoff ;
+
+
+print(b/dat8) "PGM026-1 : dat8" ;
+print(b/dat9) "PGM026-1 : dat9" ;
+
+
+
+
+
+
+

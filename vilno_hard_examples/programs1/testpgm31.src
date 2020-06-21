@@ -1,0 +1,25 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm31area" ;
+
+convertfileformat 
+  asciitobinary("/home/???/vilno_hard_examples/testdata/smalldbase/dat1.txt"->b/dat1)
+  delimiter='|' 
+  varnames(hue1 hue2 hue3 num1 num2 num3 dec1 dec2)
+  datatypes(s s s i i i f f)
+  strlengths(6 6 6) ;
+
+
+inlist b/dat1 ;
+if(hue3>"RED") hue3="BIGRED" ;
+if(dec1<0) num3=-9 ;
+while(num1!=1)
+ { num1=num1 + 1 ;
+   num2=num2 + 1 ;
+ }
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(b/dat2) "TESTPGM31-1" ;

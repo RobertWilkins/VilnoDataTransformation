@@ -1,0 +1,34 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm73area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat1 ;
+if (hue1=="BLUE" and hue2=="RED") num3=null ;
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+print(b/dat2) "TESTPGM73-1"  ;
+
+inlist a/dat1 ;
+if (hue1=="YELLOW" and hue2=="BLUE") num3=null ;
+else if (hue1=="RED" and hue2=="RED") deleterow ;
+sendoff(b/dat3) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM73-2"  ;
+
+inlist b/dat2 b/dat3 ;
+recode b/dat3: hue2B=hue2 hue3B=hue3 num1B=num1 num2B=num2 dec1B=dec1 dec2B=dec2 ;
+joinby hue1 num3 where(num3 is not null) ;
+if (hue1==hue2 and hue2==hue2B and hue1=="BLUE") num2B=null ;
+if (num2B is null) dec1=-8 ;
+if (num2B is not null) dec1=-888 ;
+sendoff(b/dat4) hue1 num3 hue2 hue3 hue2B hue3B num1 num1B num2 num2B dec1 dec1B dec2 dec2B ;
+turnoff ;
+
+
+print(b/dat4) "TESTPGM73-3" hue1 num3 hue2 hue3 hue2B hue3B num1 num1B num2 num2B dec1 ;
+
+

@@ -1,0 +1,29 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm34area" ;
+
+sort(a/dat1->b/dat1) dec2 ;
+
+
+inlist b/dat1 ;
+screen b/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+addnongridvars int: i j ;
+{
+num2 = 0 ;
+dec1 = 20 ;
+for i = num1 to num3 : 
+  for j = -2 to num3 : 
+    num2 = num2 + 1 ;
+j = 0 ;
+while (dec1>num2) 
+ { dec1 = dec1 -1 ;
+   j = j + 1 ;
+ }
+dec1 = dec1 + 0.01*j ;
+}     
+sendoff(b/dat1) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(b/dat1) "TESTPGM34-1" ;

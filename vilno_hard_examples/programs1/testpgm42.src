@@ -1,0 +1,28 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm42area" ;
+
+
+printoptions b/prtfile1 10*80 ;
+print(a/dat1) ;
+print(a/dat1) num1 num2 num3 ;
+
+
+printoptions b/prtfile2 60*80 ;
+print(a/dat1) dec1 7 dec2 7 ;
+
+
+printoptions b/prtfile1 valuewrap ;
+print(a/dat1) hue1 6 hue2 5 hue3 2 dec2 6 ;
+
+
+printoptions 60*30 ;
+print(a/dat1) ;
+print(a/dat1) hue1 6 hue2 6 hue3 6 num1 4 num2 4 num3 4 dec1 10 dec2 10 ;
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area002" ;
+
+windowsize 3 ;
+
+inlist ;
+addgridvars str: y1 1 int: y2 c ;
+{
+  y1 = "A" ;
+  y2 = 6 ;
+  for c = 1 to 7 : copyrow ;
+  
+  y1 = "A" ;
+  y2 = 7 ;
+  for c = 1 to 5 : copyrow ;
+  
+  y1 = "B" ;
+  y2 = 4 ;
+  for c = 1 to 3 : copyrow ;
+  
+  deleterow ;
+}
+sendoff(b/dat1) y1 y2 c1=c ;
+sendoff(b/dat2) y1 y2 c2=c ;
+sendoff(b/dat3) y1 y2 c3=c ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat1) "PGM002-first dset" ;
+print(b/dat2) "PGM002-second dset" ;
+print(b/dat3) "PGM002-third dset" ;
+
+inlist b/dat1 b/dat2 b/dat3 ;
+joinby y1 y2 where(c1+c2+c3==9)  ;
+sendoff(b/dat4) y1 y2 c1 c2 c3 ;
+turnoff ;
+
+print(b/dat4) "PGM002- joinby with winsize=3" ;
+
+/////////////////////////////////////
+
+windowsize 5 ;
+
+inlist b/dat1 b/dat2 b/dat3 ;
+joinby y1 y2 where(c1+c2+c3==9)  ;
+sendoff(b/dat4) y1 y2 c1 c2 c3 ;
+turnoff ;
+
+print(b/dat4) "PGM002- joinby with winsize=5" ;
+
+///////////////////////////////////////
+
+windowsize 1000 ;
+
+inlist b/dat1 b/dat2 b/dat3 ;
+joinby y1 y2 where(c1+c2+c3==9)  ;
+sendoff(b/dat4) y1 y2 c1 c2 c3 ;
+turnoff ;
+
+print(b/dat4) "PGM002- joinby with winsize=1000" ;
+
+

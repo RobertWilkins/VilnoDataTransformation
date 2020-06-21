@@ -1,0 +1,105 @@
+                                                                                           1 
+ TESTPGM61-1                                                                                 
+                                                                                             
+ s1 n1 hue    n2 z1 z2 z3 sctra         fctra sctrb         fctrb sctrc         fctrc        
+                                                                                             
+ a   7 BLUE    1  1  0  0 01     1000000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE    1  1  0  0 02           2.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE    1  1  0  0 03        3000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE    1  1  0  0 04     4000000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE    1  0  1  0 _NULL         _NULL 01     1000000.0000 _NULL         _NULL        
+ a   7 BLUE    1  0  1  0 _NULL         _NULL 02           2.0000 _NULL         _NULL        
+ a   7 BLUE    1  0  1  0 _NULL         _NULL 03        3000.0000 _NULL         _NULL        
+ a   7 BLUE    1  0  1  0 _NULL         _NULL 04     4000000.0000 _NULL         _NULL        
+ a   7 BLUE    1  0  0  1 _NULL         _NULL _NULL         _NULL 01     1000000.0000        
+ a   7 BLUE    1  0  0  1 _NULL         _NULL _NULL         _NULL 02           2.0000        
+ a   7 BLUE    1  0  0  1 _NULL         _NULL _NULL         _NULL 03        3000.0000        
+ a   7 BLUE    1  0  0  1 _NULL         _NULL _NULL         _NULL 04     4000000.0000        
+ a   7 BLUE   10  1  0  0 05           5.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE   10  1  0  0 06        6000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE   10  1  0  0 07     7000000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE   10  0  1  0 _NULL         _NULL 05           5.0000 _NULL         _NULL        
+ a   7 BLUE   10  0  1  0 _NULL         _NULL 06        6000.0000 _NULL         _NULL        
+ a   7 BLUE   10  0  1  0 _NULL         _NULL 07     7000000.0000 _NULL         _NULL        
+ a   7 BLUE   10  0  0  1 _NULL         _NULL _NULL         _NULL 05           5.0000        
+ a   7 BLUE   10  0  0  1 _NULL         _NULL _NULL         _NULL 06        6000.0000        
+ a   7 BLUE   10  0  0  1 _NULL         _NULL _NULL         _NULL 07     7000000.0000        
+ a   7 BLUE  100  1  0  0 08           8.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE  100  1  0  0 09        9000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 BLUE  100  0  1  0 _NULL         _NULL 08           8.0000 _NULL         _NULL        
+ a   7 BLUE  100  0  1  0 _NULL         _NULL 09        9000.0000 _NULL         _NULL        
+ a   7 BLUE  100  0  0  1 _NULL         _NULL _NULL         _NULL 08           8.0000        
+ a   7 BLUE  100  0  0  1 _NULL         _NULL _NULL         _NULL 09        9000.0000        
+ a   7 GREEN   1  1  0  0 10    10000000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 GREEN   1  0  1  0 _NULL         _NULL 10    10000000.0000 _NULL         _NULL        
+ a   7 GREEN   1  0  0  1 _NULL         _NULL _NULL         _NULL 10    10000000.0000        
+ a   7 GREEN 100  1  0  0 11          11.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 GREEN 100  1  0  0 12       12000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 GREEN 100  1  0  0 13    13000000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 GREEN 100  1  0  0 14          14.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 GREEN 100  0  0  1 _NULL         _NULL _NULL         _NULL 11          11.0000        
+ a   7 GREEN 100  0  0  1 _NULL         _NULL _NULL         _NULL 12       12000.0000        
+ a   7 GREEN 100  0  0  1 _NULL         _NULL _NULL         _NULL 13    13000000.0000        
+ a   7 GREEN 100  0  0  1 _NULL         _NULL _NULL         _NULL 14          14.0000        
+ a   7 RED     1  1  0  0 15       15000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 RED     1  1  0  0 16    16000000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 RED     1  1  0  0 17          17.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 RED     1  0  1  0 _NULL         _NULL 15       15000.0000 _NULL         _NULL        
+ a   7 RED     1  0  1  0 _NULL         _NULL 16    16000000.0000 _NULL         _NULL        
+ a   7 RED     1  0  1  0 _NULL         _NULL 17          17.0000 _NULL         _NULL        
+ a   7 RED     1  0  0  1 _NULL         _NULL _NULL         _NULL 15       15000.0000        
+ a   7 RED     1  0  0  1 _NULL         _NULL _NULL         _NULL 16    16000000.0000        
+ a   7 RED     1  0  0  1 _NULL         _NULL _NULL         _NULL 17          17.0000        
+ a   7 RED   100  1  0  0 18       18000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 RED   100  1  0  0 19    19000000.0000 _NULL         _NULL _NULL         _NULL        
+ a   7 RED   100  0  1  0 _NULL         _NULL 18       18000.0000 _NULL         _NULL        
+ a   7 RED   100  0  1  0 _NULL         _NULL 19    19000000.0000 _NULL         _NULL        
+ a   7 RED   100  0  0  1 _NULL         _NULL _NULL         _NULL 18       18000.0000        
+ a   7 RED   100  0  0  1 _NULL         _NULL _NULL         _NULL 19    19000000.0000        
+ a   8 BLUE    1  1  0  0 20          20.0000 _NULL         _NULL _NULL         _NULL        
+                                                                                             
+                                                                                           2 
+ TESTPGM61-1                                                                                 
+                                                                                             
+ s1 n1 hue    n2 z1 z2 z3 sctra        fctra sctrb        fctrb sctrc        fctrc           
+                                                                                             
+ a   8 BLUE    1  0  1  0 _NULL        _NULL 20          20.000 _NULL        _NULL           
+ a   8 BLUE    1  0  0  1 _NULL        _NULL _NULL        _NULL 20          20.000           
+ a   8 RED   100  1  0  0 21       21000.000 _NULL        _NULL _NULL        _NULL           
+ a   8 RED   100  1  0  0 22    22000000.000 _NULL        _NULL _NULL        _NULL           
+ a   8 RED   100  1  0  0 23          23.000 _NULL        _NULL _NULL        _NULL           
+ a   8 RED   100  0  1  0 _NULL        _NULL 21       21000.000 _NULL        _NULL           
+ a   8 RED   100  0  1  0 _NULL        _NULL 22    22000000.000 _NULL        _NULL           
+ a   8 RED   100  0  1  0 _NULL        _NULL 23          23.000 _NULL        _NULL           
+ a   8 RED   100  0  0  1 _NULL        _NULL _NULL        _NULL 21       21000.000           
+ a   8 RED   100  0  0  1 _NULL        _NULL _NULL        _NULL 22    22000000.000           
+ a   8 RED   100  0  0  1 _NULL        _NULL _NULL        _NULL 23          23.000           
+ a   9 BLUE    1  1  0  0 24       24000.000 _NULL        _NULL _NULL        _NULL           
+ a   9 BLUE    1  1  0  0 25    25000000.000 _NULL        _NULL _NULL        _NULL           
+ a   9 BLUE    1  0  1  0 _NULL        _NULL 24       24000.000 _NULL        _NULL           
+ a   9 BLUE    1  0  1  0 _NULL        _NULL 25    25000000.000 _NULL        _NULL           
+ a   9 BLUE    1  0  0  1 _NULL        _NULL _NULL        _NULL 24       24000.000           
+ a   9 BLUE    1  0  0  1 _NULL        _NULL _NULL        _NULL 25    25000000.000           
+ a   9 RED   100  1  0  0 26          26.000 _NULL        _NULL _NULL        _NULL           
+ a   9 RED   100  0  1  0 _NULL        _NULL 26          26.000 _NULL        _NULL           
+ a   9 RED   100  0  0  1 _NULL        _NULL _NULL        _NULL 26          26.000           
+ b   8 BLUE    1  1  0  0 27       27000.000 _NULL        _NULL _NULL        _NULL           
+ b   8 BLUE    1  1  0  0 28    28000000.000 _NULL        _NULL _NULL        _NULL           
+ b   8 BLUE    1  1  0  0 29          29.000 _NULL        _NULL _NULL        _NULL           
+ b   8 BLUE    1  0  1  0 _NULL        _NULL 27       27000.000 _NULL        _NULL           
+ b   8 BLUE    1  0  1  0 _NULL        _NULL 28    28000000.000 _NULL        _NULL           
+ b   8 BLUE    1  0  1  0 _NULL        _NULL 29          29.000 _NULL        _NULL           
+ b   9 BLUE  100  1  0  0 30       30000.000 _NULL        _NULL _NULL        _NULL           
+ b   9 BLUE  100  1  0  0 31    31000000.000 _NULL        _NULL _NULL        _NULL           
+ b   9 BLUE  100  0  1  0 _NULL        _NULL 30       30000.000 _NULL        _NULL           
+ b   9 BLUE  100  0  1  0 _NULL        _NULL 31    31000000.000 _NULL        _NULL           
+ b   9 BLUE  100  0  0  1 _NULL        _NULL _NULL        _NULL 30       30000.000           
+ b   9 BLUE  100  0  0  1 _NULL        _NULL _NULL        _NULL 31    31000000.000           
+ c   7 BLUE    1  1  0  0 32          32.000 _NULL        _NULL _NULL        _NULL           
+ c   7 BLUE    1  0  1  0 _NULL        _NULL 32          32.000 _NULL        _NULL           
+ c   7 BLUE    1  0  0  1 _NULL        _NULL _NULL        _NULL 32          32.000           
+ c   9 BLUE  100  1  0  0 33       33000.000 _NULL        _NULL _NULL        _NULL           
+ c   9 BLUE  100  1  0  0 34    34000000.000 _NULL        _NULL _NULL        _NULL           
+ c  10 BLUE    1  0  1  0 _NULL        _NULL 35          35.000 _NULL        _NULL           
+ c  10 BLUE    1  0  0  1 _NULL        _NULL _NULL        _NULL 35          35.000           
+                                                                                             

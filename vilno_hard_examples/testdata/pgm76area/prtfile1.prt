@@ -1,0 +1,39 @@
+                                                                              1 
+ TESTPGM76-1                                                                    
+                                                                                
+ hue1   hue2   hue3                                                             
+                                                                                
+ BLUE   BLUE                                                                    
+ BLUE   RED                                                                     
+ BLUE   YELLOW                                                                  
+ RED    RED    RED                                                              
+ RED    YELLOW RED                                                              
+ YELLOW RED    RED                                                              
+ YELLOW YELLOW RED                                                              
+ RED    BLUE   YELLOW                                                           
+ YELLOW BLUE   YELLOW                                                           
+                                                                                
+                                                                              1 
+ TESTPGM76-2                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num2 num3   dec1       dec2                          
+                                                                                
+ BLUE   BLUE            -1    1    0 0.0000  250000000                          
+ BLUE   YELLOW           1    0    0 1.0000    5000000                          
+ RED    BLUE   YELLOW    1    1    1 1.0000   25000000                          
+ RED    BLUE   YELLOW    1    1    1 1.0000   25000000                          
+ RED    RED    RED      -1    0    1 1.0000 1000000000                          
+ YELLOW BLUE   YELLOW    0    0 _NUL 0.0000     100000                          
+                                                                                
+                                                                              1 
+ TESTPGM76-3                                                                    
+                                                                                
+ c1     c2     c3           dec2                                                
+                                                                                
+ YELLOW BLUE   YELLOW     100000                                                
+ BLUE   YELLOW           5000000                                                
+ RED    BLUE   YELLOW   25000000                                                
+ RED    BLUE   YELLOW   25000000                                                
+ BLUE   BLUE           250000000                                                
+ RED    RED    RED    1000000000                                                
+                                                                                

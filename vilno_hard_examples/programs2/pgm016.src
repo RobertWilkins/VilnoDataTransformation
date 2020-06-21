@@ -1,0 +1,67 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area016" ;
+
+windowsize 4 ; 
+
+inlist ;
+addnongridvars int: bb1 bb2  ;
+addgridvars str: b1 1 b2 1  int: j1 j2 j1b   m1 m2 xx=0 g=0 ct=0  ;
+{
+ for bb1 = 1 to 2 : 
+  for bb2 = 1 to 2 : 
+   for j1 = 1 to 3 : 
+    for j2 = 1 to 3 : 
+     {   if (bb1==1)       b1="A"; 
+          else if (bb1==2) b1="B";
+         if (bb2==1)       b2="A"; 
+          else if (bb2==2) b2="B";
+         ct = ct + 1 ;
+         j1b = j1 ;
+         copyrow ;
+     }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 j1 j2 j1b m1 m2 xx g ct ;
+turnoff ;
+
+
+
+inlist b/dat1 ;
+blockby b1 b2  ;
+for m1 = j1 to j2 : 
+  for m2 = j1 to m1 : 
+      xx = xx + m2 ;
+while (b1=="A" and b2=="A" and j1b!=0) 
+ { g=g+1 ; 
+   j1b=j1b-1; 
+ }
+sendoff(b/dat2) b1 b2 j1 j2 j1b m1 m2 xx g ct ;
+turnoff ;
+
+inlist b/dat1 ;
+blockby b1 b2  ;
+if (b1=="A" and b2=="A" and j1==1) 
+  for m1 = j1 to j2 : 
+    for m2 = j1 to j2 : 
+        if (j1==1 and j2==3) copyrow ;
+        else deleterow ;
+while (b1=="A" and b2=="B" and j1b<8) 
+ { if (j1b==5) copyrow ;
+    else if (j1b==6) deleterow ;
+   g=g+1 ; 
+   j1b=j1b+1; 
+ }
+sendoff(b/dat3) b1 b2 j1 j2 j1b m1 m2 xx g ct ;
+turnoff ;
+
+
+
+
+printoptions b/prtfile1 ;
+print(b/dat2) "PGM016-classical" ;
+print(b/dat3) "PGM016-classical" ;
+
+
+/////////////////
+

@@ -1,0 +1,45 @@
+
+directoryref b="/home/???" ;
+
+printoptions b/prtfile_04 ;   /// specify where to print 
+
+
+convertfileformat asciitobinary("/home/???/asciidataweights.txt"->b/dset_04wgt) 
+     delimiter=','   varnames(patid weight) datatypes(int float) ;
+
+convertfileformat asciitobinary("/home/???/asciidataages.txt"->b/dset_04age) 
+     delimiter=','   varnames(patid age) datatypes(int int) ;
+
+
+
+
+
+inlist b/dset_04wgt b/dset_04age ;
+mergeby patid ;
+addgridvars str: agegrp 1 ;
+sendoff(b/dset_04a) patid age weight agegrp ;
+if (age<50) agegrp = "A" ;
+      else  agegrp = "B" ;
+sendoff(b/dset_04b) patid age weight agegrp ;
+select pat_wgt = avg(weight) by agegrp patid ;
+sendoff(b/dset_04c) agegrp patid pat_wgt ;
+if (patid==4) pat_wgt=2.2*pat_wgt ;
+sendoff(b/dset_04d) agegrp patid pat_wgt;
+select avg_weight = avg(pat_wgt) by agegrp ;
+sendoff(b/dset_04result) agegrp avg_weight;
+turnoff ;
+
+
+
+print(b/dset_04wgt) "PGM04-1, The weight data, just read in from input ascii data" ;
+print(b/dset_04age) "PGM04-2, The age data, just read in from input ascii data" ;
+print(b/dset_04a) "PGM04-3, After merge-in and adding the agegrp column" ;
+print(b/dset_04b) "PGM04-4, After first classical transform (agegrp = A or B)" ;
+print(b/dset_04c) "PGM04-5, After first select transform(person #2, use average of 2 weights)" ;
+print(b/dset_04d) "PGM04-6, After second classical transform(# 4 , convert weight to pounds)" ;
+print(b/dset_04result) "PGM04-7, Weight averages (final results for this example)" ;
+
+
+convertfileformat binarytoascii(b/dset_04result->"/home/???/asciidata04result.txt") 
+     delimiter=','   varnames(agegrp avg_weight)  ;
+

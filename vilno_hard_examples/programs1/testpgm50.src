@@ -1,0 +1,18 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm50area" ;
+
+
+inlist a/dat4A a/dat4B a/dat4C ;
+screen a/dat4A: s1 n1 hue n2 sctrA fctrA ;
+screen a/dat4B: s1 n1 hue n2 sctrB fctrB ;
+screen a/dat4C: s1 n1 hue n2 sctrC fctrC ;
+joinby(incl) s1 n1 hue n2  where(s1<"bb" and not fctrA==10000000) ;
+sendoff(b/dat1) s1 n1 hue n2 sctrA sctrB sctrC fctrA fctrB fctrC ;
+turnoff ;
+
+
+
+printoptions b/prtfile1 ;
+print(b/dat1) "TESTPGM50-1" s1 n1 hue n2 sctrA sctrB sctrC fctrA fctrB fctrC  ;
+

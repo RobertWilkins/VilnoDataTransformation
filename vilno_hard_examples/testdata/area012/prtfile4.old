@@ -1,0 +1,91 @@
+                                                                              1 
+ PGM012-mergeby                                                                 
+                                                                                
+ b1     b2 m1     m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3                        
+                                                                                
+ BLUE   10 RED     1  1  1  1   1   1   1    1    1    1                        
+ BLUE   10 RED     2  1  1  1   2   2   2    1    1    1                        
+ BLUE   10 RED     3  1  1 _N   3   3 _NU    1    1    0                        
+ BLUE   10 RED     3  2  1 _N   4   3 _NU    1    1    0                        
+ BLUE   10 RED     3  3  1 _N   5   3 _NU    1    1    0                        
+ BLUE   10 RED     3  4  1 _N   6   3 _NU    1    1    0                        
+ BLUE   10 RED     3  5  1 _N   7   3 _NU    1    1    0                        
+ BLUE   10 RED     3  6  1 _N   8   3 _NU    1    1    0                        
+ BLUE   10 RED     3  7  1 _N   9   3 _NU    1    1    0                        
+ BLUE   10 WHITE   1  1  1  1  10   4   3    1    1    1                        
+ BLUE   10 WHITE   2  1  1  1  11   5   4    1    1    1                        
+ BLUE   10 WHITE   3  1  1  1  12   6   5    1    1    1                        
+ BLUE   10 WHITE   3  2  1  1  13   6   5    1    1    1                        
+ BLUE   10 WHITE   3  3  1  1  14   6   5    1    1    1                        
+ BLUE   10 WHITE   3  4  1  1  15   6   5    1    1    1                        
+ BLUE   10 WHITE   3  5  1  1  16   6   5    1    1    1                        
+ BLUE   10 WHITE   3  6  1  1  17   6   5    1    1    1                        
+ BLUE   10 WHITE   3  7  1  1  18   6   5    1    1    1                        
+ BLUE   20 RED     1  1  1  1  19  24   6    1    1    1                        
+ BLUE   20 RED     2  1  1  1  20  25   7    1    1    1                        
+ BLUE   20 RED     3  1  1  1  21  26   8    1    1    1                        
+ BLUE   20 WHITE   1  1  1  1  22  27   9    1    1    1                        
+ BLUE   20 WHITE   2  1  1  1  23  28  10    1    1    1                        
+ BLUE   20 WHITE   3  1  1  1  24  29  11    1    1    1                        
+ BLUE   30 RED     1  1  1  1  25  30  12    1    1    1                        
+ BLUE   30 RED     2  1  1  1  26  31  13    1    1    1                        
+ BLUE   30 RED     3  1  1  1  27  32  14    1    1    1                        
+ BLUE   30 WHITE   1  1  1  1  28  33  15    1    1    1                        
+ BLUE   30 WHITE   2  1  1  1  29  34  16    1    1    1                        
+ BLUE   30 WHITE   3  1  1  1  30  35  17    1    1    1                        
+ PURPLE 10 PURPLE  1 _N _N  1 _NU _NU  51    0    0    1                        
+ RED    10 RED     1  1  1  1  31  36  18    1    1    1                        
+ RED    10 RED     2  1  1  1  32  37  19    1    1    1                        
+ RED    10 RED     3  1  1  1  33  38  20    1    1    1                        
+ RED    10 RED     3  2  1  1  34  38  20    1    1    1                        
+ RED    10 RED     3  3  1  1  35  38  20    1    1    1                        
+ RED    10 RED     3  4  1  1  36  38  20    1    1    1                        
+ RED    10 RED     3  5  1  1  37  38  20    1    1    1                        
+ RED    10 RED     3  6  1  1  38  38  20    1    1    1                        
+ RED    10 RED     3  7  1  1  39  38  20    1    1    1                        
+ RED    10 WHITE   1  1  1  1  40  39  21    1    1    1                        
+ RED    10 WHITE   2  1  1  1  41  40  22    1    1    1                        
+ RED    10 WHITE   3  1  1  1  42  41  23    1    1    1                        
+ RED    10 WHITE   3  2  1  1  43  41  23    1    1    1                        
+ RED    10 WHITE   3  3  1  1  44  41  23    1    1    1                        
+ RED    10 WHITE   3  4  1  1  45  41  23    1    1    1                        
+ RED    10 WHITE   3  5  1  1  46  41  23    1    1    1                        
+ RED    10 WHITE   3  6  1  1  47  41  23    1    1    1                        
+ RED    10 WHITE   3  7  1  1  48  41  23    1    1    1                        
+ RED    20 RED     1  1  1  1  49  42  24    1    1    1                        
+ RED    20 RED     2  1  1  1  50  43  25    1    1    1                        
+ RED    20 RED     3  1  1  1  51  44  26    1    1    1                        
+ RED    20 WHITE   1  1  1  1  52  45  27    1    1    1                        
+ RED    20 WHITE   2  1  1  1  53  46  28    1    1    1                        
+                                                                                
+                                                                              2 
+ PGM012-mergeby                                                                 
+                                                                                
+ b1     b2 m1    m2 w1 w2 w3 ct1 ct2 ct3 flg1 flg2 flg3                         
+                                                                                
+ RED    20 WHITE  3  1  1  1  54  47  29    1    1    1                         
+ RED    30 RED    1  1  1  1  55  48  30    1    1    1                         
+ RED    30 RED    2  1  1  1  56  49  31    1    1    1                         
+ RED    30 RED    3  1  1  1  57  50  32    1    1    1                         
+ RED    30 WHITE  1  1  1  1  58  51  33    1    1    1                         
+ RED    30 WHITE  2  1  1  1  59  52  34    1    1    1                         
+ RED    30 WHITE  3  1  1  1  60  53  35    1    1    1                         
+ YELLOW 10 RED    1  1  1  1  61  54  36    1    1    1                         
+ YELLOW 10 RED    2  1  1  1  62  55  37    1    1    1                         
+ YELLOW 10 RED    3  1  1  1  63  64  38    1    1    1                         
+ YELLOW 10 WHITE  1  1  1  1  64  65  39    1    1    1                         
+ YELLOW 10 WHITE  2  1  1  1  65  66  40    1    1    1                         
+ YELLOW 10 WHITE  3  1  1  1  66  67  41    1    1    1                         
+ YELLOW 20 RED    1  1  1  1  67  68  42    1    1    1                         
+ YELLOW 20 RED    2  1  1  1  68  69  43    1    1    1                         
+ YELLOW 20 RED    3  1  1  1  69  70  44    1    1    1                         
+ YELLOW 20 WHITE  1  1  1  1  70  71  45    1    1    1                         
+ YELLOW 20 WHITE  2  1  1  1  71  72  46    1    1    1                         
+ YELLOW 20 WHITE  3  1  1  1  72  73  47    1    1    1                         
+ YELLOW 30 RED    1  1  1 _N  73  74 _NU    1    1    0                         
+ YELLOW 30 RED    2  1  1 _N  74  75 _NU    1    1    0                         
+ YELLOW 30 RED    3  1  1 _N  75  76 _NU    1    1    0                         
+ YELLOW 30 WHITE  1  1  1  1  76  77  48    1    1    1                         
+ YELLOW 30 WHITE  2  1  1  1  77  78  49    1    1    1                         
+ YELLOW 30 WHITE  3  1  1  1  78  79  50    1    1    1                         
+                                                                                

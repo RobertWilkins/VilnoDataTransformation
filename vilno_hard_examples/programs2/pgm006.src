@@ -1,0 +1,100 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area006" ;
+
+windowsize 1000 ;
+
+inlist ;
+addnongridvars int: m1 m2 m3 ;
+addgridvars str: s3 1 s2 1 s1 1  int: i3 i2 i1 k1 w=0 ;
+{
+ for m1 = 1 to 3 : 
+  for i1 = 1 to 4 : 
+   for m2 = 1 to 3 : 
+    for i2 = 1 to 4 : 
+     for m3 = 1 to 3 : 
+      for i3 = 1 to 4 : 
+       for k1 = 1 to 10 : 
+       { 
+        if (m1==1) s1="A"; 
+        else if (m1==2) s1="B";
+        else if (m1==3) s1="C";
+        
+        if (m2==1) s2="A"; 
+        else if (m2==2) s2="B";
+        else if (m2==3) s2="C";
+        
+        if (m3==1) s3="A"; 
+        else if (m3==2) s3="B";
+        else if (m3==3) s3="C";
+        
+        w = w + 1 ;
+        copyrow ;
+       }
+ deleterow ;
+}
+
+sendoff(b/dat1a) s3 s2 s1 i3 i2 i1 k1 w 
+ where(not(s1=="C" and i1==1 and s2=="C" and i2==1 and s3=="C" and i3==3)) ;
+
+sendoff(b/dat2a) s3 s2 s1 i3 i2 i1 k2=k1 w2=w 
+ where(
+       not(s1=="C" and i1==1 and s2=="C" and i2==1 and s3=="C" and i3==1)
+       and 
+       not(s1=="C" and i1==1 and s2=="C" and i2==1 and s3=="B" and i3==2)
+       ) ;
+
+turnoff ;
+
+
+
+sort(b/dat1a->b/dat1) s1 i1 s2 i2 s3 i3 ;
+sort(b/dat2a->b/dat2) s1 i1 s2 i2 s3 i3 ;
+
+
+
+
+inlist b/dat1 b/dat2 ;
+joinby(incl) s1 i1 s2 i2 s3 i3 
+ where(
+       
+       (s1=="B" and i1==2 and s2=="B" and i2==2 and s3=="B" and i3==2 and 
+         k1>=3 and k1<=7 and k2>=6 and k2<=10 )
+       
+       or 
+       (s1==s2 and s2==s3 and i1==i2 and i2==i3 and i3==k1 and k1==k2) 
+       
+       or 
+       (s1=="C" and i1==1 and s2=="C" and i2==1 and s3=="C" and i3==1 and 
+          k2 is null   and   k1 is not null )
+       
+       or 
+       (s1=="C" and i1==1 and s2=="C" and i2==1 and s3=="C" and i3==3 and 
+          k2 is not null   and   k1 is null )
+       
+       or 
+       (s1=="C" and i1==1 and s2=="C" and i2==1 and s3=="B" and i3==2 and 
+          k2 is not null )
+       
+      )  ;
+
+inflags r1 r2 = b/dat1 b/dat2 ;
+sendoff(b/dat3) s1 i1 s2 i2 s3 i3 k1 k2 w w2 r1 r2 ;
+turnoff ;
+
+
+
+
+
+
+printoptions b/prtfile1 ;
+print(b/dat3) "PGM006-first joinby" ;
+
+
+
+
+
+
+
+
+

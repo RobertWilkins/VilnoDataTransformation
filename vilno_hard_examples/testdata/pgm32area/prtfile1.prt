@@ -1,0 +1,10 @@
+                                                                              1 
+ TESTPGM32-1                                                                    
+                                                                                
+ hue1 hue2   hue3   num1 num2 num3   dec1       dec2                            
+                                                                                
+ BLUE YELLOW           1    0    0 1.0000    5000000                            
+ RED  BLUE   YELLOW    1    1    1 1.0000   25000000                            
+ RED  RED    BIGRED   -1    0    1 1.0000 1000000000                            
+ RED  YELLOW BIGRED    0    1    1 1.0000    1000000                            
+                                                                                

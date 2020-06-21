@@ -1,0 +1,5 @@
+BLUE  |BLUE  |      | -1|  1|  1|       0.001
+BLUE  |BLUE  |      | -1|  1|  2|    1000.001
+RED   |BLUE  |YELLOW|  1|  1|  3|     999.999
+RED   |RED   |RED   | -1|  0|  4|      88.8
+RED   |RED   |RED   | -1|  0|  5| 1000000.5

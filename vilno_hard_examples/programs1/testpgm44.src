@@ -1,0 +1,23 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm44area" ;
+
+
+inlist a/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+addnongridvars int: i j k ;
+i=k=j=0;
+num1 = j = j+1 ;
+if (num1>1) deleterow ;
+{ for i = 1 to 10 by 2 : 
+    for j = 1 to 10 by 5 : 
+      { num1=i ; num2=j; copyrow;}
+  for k=0 to 3*i+3*j by i+j :
+    { num1=k; copyrow;}
+}
+sendoff(b/dat1) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(b/dat1) "TESTPGM44-1" ;

@@ -1,0 +1,64 @@
+
+// This is a test program to run right after installing
+// Vilno Data Transformation. 
+// Copy the file over to the main temp directory ( /tmp )
+// and run the program by opening Linux command-line terminal and running
+// the command:
+// vilno vdt_test
+// Then examine the file vdt_test_out.prt to verify the test program ran.
+
+directoryref b="/tmp" ;      /// test printout will be in /tmp directory
+
+printoptions b/vdt_test_out ;   /// specify where to print 
+
+
+inlist ;    /// no input data set, create rows of data from thin air 
+addnongridvars int: i j ;
+addgridvars str: s1 5 s2 5 
+            float: f1 f2 ;
+{
+  for i = 1 to 2 : 
+    for j = 1 to 3 : 
+     { 
+       if (i==1) s1="P" ; 
+         else s1="Q"  ;
+       if (j==1)         s2="grass" ;
+         else if (j==2)  s2="herb" ;
+         else            s2="tree" ;
+       f1 = i+j ;
+       f2 = i-j ;
+       copyrow ;    // manufacture 2x3=6 rows 
+     }
+  deleterow ; // original "buffer" row discarded 
+}
+sendoff(dat1) s1 s2 f1 f2 ;    // write processed data out to output dataset
+turnoff ;                      // end of this data-processing paragraph
+
+/// For dataset created above: name of dataset = dat1  , and also
+///                            names of columns are: s1, s2, f1, f2
+
+/// When there are no input datasets at all, a single "buffer" row is 
+///  created, because without the buffer row, the code (the for loops and 
+///  if-else statements) will not execute at all
+///  (typically, the procedural code runs once for each incoming row)
+
+/// The next data processing step does some summary statistics of values in 
+///  the first dataset, sum, maximum, minimum, and stores the results in a 
+///  second dataset.
+
+inlist dat1 ;     // read in dataset just created (name of dataset = dat1)
+select min1=min(f1) max1=max(f1) sum1=sum(f1) sum2=sum(f2) ;
+sendoff(dat2) min1 max1 sum1 sum2 ;   // name of output dataset = dat2
+                                      // names of columns: min1,max1,sum1,sum2
+turnoff ;
+
+/// the dataset dat1 has 6 rows (generated in the above for loop)
+/// the dataset dat2 has just 1 row, with summary statistics (sum, max, minimum)
+///  now print out both datasets, to finish the test.
+
+print(dat1) "program: vdt_test.src , printout of dataset: dat1" ;
+print(dat2) "program: vdt_test.src , printout of dataset: dat2" ;
+
+
+
+

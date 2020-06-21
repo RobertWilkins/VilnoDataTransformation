@@ -1,0 +1,17 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm35area" ;
+
+
+
+inlist a/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+arrayrefs gg[] hue1 hue2 hue3   ii[] num1 num2 num3 ;
+gg[num1+2]="NUM1+2" ;
+dec1=ii[num2+num3+1] ;
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(b/dat2) "TESTPGM35-1" ;

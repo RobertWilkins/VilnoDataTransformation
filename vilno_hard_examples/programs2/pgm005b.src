@@ -1,0 +1,27 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area005" ;
+
+
+windowsize 3 ;
+
+
+
+
+printoptions b/prtfile1b ;
+/// print(b/dat1) "PGM005-first dset" ;
+/// print(b/dat2) "PGM005-second dset will be empty" ;
+
+//////////////////////////////////////////////////////
+
+
+/// sort(b/dat1->b/dat3) y1 ;
+
+/// print(b/dat3) "PGM005-third dset, after 1st sort" ;
+
+sort(b/dat3->b/dat5) y1 y2 ;
+
+print(b/dat5) "PGM005b-fourth dset, after 2nd sort" ;
+
+
+

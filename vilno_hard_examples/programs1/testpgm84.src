@@ -1,0 +1,82 @@
+// int2 multiplication , add/subtract 
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm84area" ;
+printoptions b/prtfile1 ;
+
+
+inlist ;
+addgridvars int: i=2147483647 j=0 k=-1 m m2 n1 n2 float: f1=0 ;
+{ 
+  m2 = -i-1 ;
+  m=i*i ;
+  copyrow ;
+  m=-1*i ;
+  copyrow ;
+  m=-1*m2 ;
+  copyrow ;
+  m=0*0 ;
+  copyrow ;
+  m=100000*70;
+  copyrow ;
+  m=40000*40000 ;
+  copyrow ;
+  n1=380 ;
+  n2=4000 ;
+  m=n1*n2 ;
+  copyrow ;
+  n1=-70000 ;
+  n2=40000 ;
+  m=n1*n2 ;
+  copyrow ;
+  n1=-70000 ;
+  n2=30000 ;
+  m=n1*n2 ;
+  copyrow ;
+  m=(-8)*(-8) ;
+  copyrow ;
+}
+sendoff(b/dat1) m i j k m2 n1 n2 f1  ;
+turnoff ;
+
+print(b/dat1) "TESTPGM84-1"  ;
+
+
+inlist ;
+addgridvars int: i=2147483647 j=0 k=-1 m m2 n1 n2 float: f1=0 ;
+{ 
+  m2 = -i-1 ;
+  m=-m2 ;
+  copyrow ;
+  m=1+m ;
+  copyrow ;
+  m=-m ;
+  copyrow ;
+  m = 500000 + 500000 ;
+  copyrow ;
+  m= -3000000 + 13000000 ;
+  copyrow ;
+  n1 = -12000000 ;
+  n2 = -1000000000 ;
+  m = n1 - (-n2) ;
+  copyrow ;
+  m=i+2 ;
+  copyrow ;
+  m=m2-2 ;
+  copyrow ;
+  m = -2000000000 -2000000000 ;
+  copyrow ;
+  m = 2100000000 + 80000000 ;
+  copyrow ;
+  m = 2100000000 + 47483647 ;
+  copyrow ;
+  m=null ;
+  m2=1/m ;
+}
+sendoff(b/dat1) m i j k m2 n1 n2 f1  ;
+turnoff ;
+
+print(b/dat1) "TESTPGM84-2"  ;
+
+
+

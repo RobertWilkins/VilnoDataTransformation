@@ -1,0 +1,130 @@
+
+December 2018  -  January 2019
+
+Read this Readme file before you install the software
+
+To install Vilno Data Transformation software, run install.sh. However,
+before you do that, you should read the following:
+The default installation makes the following assumptions about WHERE you 
+install, and that default choice should be acceptable for any variant of Linux.
+The Vilno Data Transformation application (VDT app), including source code, is 
+contained in a directory called vilno_etc. vilno_etc contains not only files
+(such as install.sh and how_to_install.txt) but also it's own sub-directories
+(in particular vilno_etc/vilno_source, which contains the VDT source code, 
+written in C++). When downloading the VDT app, the entire contents should be 
+deposited in 
+/usr/local/src/vilno_etc
+
+If you placed the VDT materials in another directory, you will need to move
+them to /usr/local/src/vilno_etc (before you can run install.sh).
+
+If you have moved the VDT materials to the proper location, then the 
+directory /usr/local/src/vilno_etc will contain the files how_to_install.txt and
+install.sh (along with several other files) and, in addition, the directory
+ /usr/local/src/vilno_etc will contain the sub-directory vilno_source ( this 
+subdirectory contains a great deal of C++ source code files).
+
+During the default installation of VDT, using install.sh, contents are placed in 
+these locations:
+/tmp , /usr/local/src/vilno_etc, /usr/local/bin, /usr/local/lib
+
+Assuming you downloaded the VDT materials to the proper location, open up a 
+Linux terminal and do the following:
+
+cd /usr/local/src/vilno_etc
+sudo ./install.sh
+
+(I am assuming you already have GCC (C++ compiler) already installed. And I 
+am assuming that GCC can be called with the reference "c++". The code in 
+install.sh makes that assumption.)
+
+Now, having run install.sh, Vilno Data Transformation is now installed.
+
+
+
+
+#######################################################################
+
+Now after you have installed the software, there are a couple of things to 
+check:
+
+Next, you should run a test program to verify that Vilno Data Transformation
+has been installed properly. To make that quick and easy, I have provided an 
+easy test program, called     vdt_test.src
+
+Copy that file over to the directory /tmp , activate the bash shell terminal 
+(the line by line console that is well known to Linux users), go to the 
+directory where you copied the test program.
+
+Then run this command:
+
+vilno vdt_test.src
+
+If VDT is properly installed, then a test printout will be generated,
+(the filename is vdt_test_out.prt ). Take a look at it.
+
+It produces a printout, the file vdt_test_out.prt, which contains a printout
+of a dataset with only 6 rows, and a dataset with only 1 row containing 
+simple summary statistics. Look at this printout to verify that Vilno Data 
+Transformation has been installed without error.
+
+########################################################################
+
+Next, I mention a couple of configuration details that might complicate the 
+install:
+
+First, the $PATH environment variable (an option that is well known to 
+experienced users of Linux or Unix). The $PATH variable is probably not an issue
+because $PATH probably already includes /usr/local/bin .
+Verify that the $PATH variable includes:  /usr/local/bin
+If $PATH does not yet include that path, it must be added. This is a Linux/Unix
+administration detail. Most likely, $PATH already includes this path, in which 
+case, you are all set regarding that detail.
+(Type $PATH at the terminal to verify that /usr/local/bin is one of the paths
+in $PATH).
+/usr/local/bin is where any binary executables were placed when VDT was 
+installed in the default manner.
+
+
+Next, file permissions for the file install.sh . Again, this is likely not an
+issue because install.sh should already have the proper file permissions. This 
+is a technical issue that experienced users of Linux or Unix should be familiar
+with: each file has permissions for three actions: read, write, and execute. 
+If for some reason, the file install.sh does not have the correct Unix file
+permissions, you can try this:
+sudo chmod +x install.sh
+By executing the above command, the file will have, in addition to read/write
+permissions, execute permissions.
+
+
+Next, if you're using Ubuntu Linux, I assume you know what "sudo" means. You run
+any command with full root permissions by typing sudo before typing the command
+itself.
+For example, instead of 
+./install.sh
+you type the command
+sudo ./install.sh
+If you are using a version of Linux other than Ubuntu, just login as root when
+installing VDT.
+
+Another detail:
+When running the command:
+sudo ./install.sh
+you are essentially executing the file install.sh (with root permission).
+So why do you have to do ./install.sh instead of just install.sh ?
+While annoying, that is because $PATH often does NOT include the 
+current working directory.
+
+
+
+[ By the way, if you are curious, you may have noticed that you were not 
+required to copy over any 
+data files, only that one test program file. Most programs read in existing 
+input data files, process and transform the data and write out the results to
+new output data files. The first data-processing paragraph in the test program
+reads in NO input data files, generates multiple rows with artificial data (via
+a loop), and writes the generated rows to a new output data file. Hence you may
+run the test program with no input data files.]
+
+
+

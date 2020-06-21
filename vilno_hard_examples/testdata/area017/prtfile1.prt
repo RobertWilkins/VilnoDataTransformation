@@ -1,0 +1,26 @@
+                                                                              1 
+ PGM017-classical, strlen + substr                                              
+                                                                                
+  i      f     f2 s1        s2   s3        s4                                   
+                                                                                
+  1 4.0000 5.0000 horseshit orse h         PP                                   
+  2 4.0000 5.0000 horseshit rses ho        PP                                   
+  3 4.0000 5.0000 horseshit sesh hor       PP                                   
+  4 4.0000 5.0000 horseshit eshi hors      PP                                   
+  5 4.0000 5.0000 horseshit shit horse     PP                                   
+  6 3.0000 5.0000 horseshit hit  horses    PP                                   
+  7 2.0000 5.0000 horseshit it   horsesh   PP                                   
+  8 1.0000 5.0000 horseshit t    horseshi  PP                                   
+  9 0.0000 5.0000 horseshit      horseshit PP                                   
+ 10 0.0000 5.0000 horseshit      horseshit PP                                   
+ 11 0.0000 5.0000 horseshit      horseshit PP                                   
+ 12 0.0000 5.0000 horseshit      horseshit PP                                   
+ 13 0.0000 5.0000 horseshit      horseshit PP                                   
+ 14 0.0000 5.0000 horseshit      horseshit PP                                   
+ 15 0.0000 5.0000 horseshit      horseshit PP                                   
+ 16 0.0000 5.0000 horseshit      horseshit PP                                   
+ 17 0.0000 5.0000 horseshit      horseshit PP                                   
+ 18 0.0000 5.0000 horseshit      horseshit PP                                   
+ 19 0.0000 5.0000 horseshit      horseshit PP                                   
+ 20 0.0000 5.0000 horseshit      horseshit PP                                   
+                                                                                

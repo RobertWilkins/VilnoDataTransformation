@@ -1,0 +1,21 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm68area" ;
+printoptions b/prtfile1 ;
+
+
+inlist a/dat2 ;
+select y=max(hue3) ;
+sendoff(b/dat3) y ;
+turnoff ;
+
+print(b/dat3) "TESTPGM68-1" ;
+
+
+
+inlist a/dat2 ;
+select y=min(hue3) by hue1 ;
+sendoff(b/dat3) hue1 y ;
+turnoff ;
+
+print(b/dat3) "TESTPGM68-2" ;

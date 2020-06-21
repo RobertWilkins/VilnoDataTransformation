@@ -1,0 +1,58 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm54area" ;
+
+
+inlist ;
+addgridvars int: x y str: z 20 ;
+{ x=1; y=0; z=null;      copyrow;
+  x=2; y=0; z="FRANCE";  copyrow;
+  x=3; y=0; z="LATVIA";  copyrow;
+  x=4; y=0; z="ESTONIA"; 
+}
+sendoff(b/dat1) x y z ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat1) "TESTPGM54-1" x y z ;
+
+inlist b/dat1 ;
+{
+  { for y=1 to x :
+      z = "_"+z ;
+  } 
+  { while (x>0 and not z is null)
+     { if (x+y>y+1)
+         z = z+"_" ;
+       else z = z+"?" ;
+       x=x-1 ;
+     }
+  }
+}
+sendoff(b/dat2) x y z ;
+turnoff ;
+
+
+print(b/dat2) "TESTPGM54-2" x y z ;
+
+
+
+inlist b/dat1 ;
+gridflip x(1,2,3,4) y -> y1 y2 y3 y4  ;
+sendoff(b/dat3) y1 y2 y3 y4 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM54-3" y1 y2 y3 y4 ;
+
+inlist b/dat3 ;
+y1=7;y2=77;y3=777;y4=7777;
+gridflip y1 y2 y3 y4 -> x(8,7,6,5) y ;
+sendoff(b/dat4) x y ;
+turnoff;
+
+print(b/dat4) "TESTPGM54-4" x y  ;
+
+
+
+
+

@@ -1,0 +1,60 @@
+                                                                              1 
+ TESTPGM70-1                                                                    
+                                                                                
+ hue1   hue2   hue3   hue4    y z3     g2 num1 num2 num3 m1 m2 m3               
+                                                                                
+ YELLOW BLUE   YELLOW VIOLET 14  8 3.1400    0    0    1 _N _N _N               
+ YELLOW RED    RED    VIOLET 14  8 3.1400    1    1    1 _N _N _N               
+ YELLOW YELLOW RED    VIOLET 14  8 3.1400   -1    1    1 _N _N _N               
+ RED    BLUE   YELLOW VIOLET 14  8 3.1400    1    1    1 _N _N _N               
+ RED    BLUE   YELLOW VIOLET 14  8 3.1400 _NUL _NUL _NUL  1  1  3               
+ RED    RED    RED    VIOLET 14  8 3.1400   -1    0    1 _N _N _N               
+ RED    RED    RED    VIOLET 14  8 3.1400 _NUL _NUL _NUL -1  0  4               
+ RED    RED    RED    VIOLET 14  8 3.1400 _NUL _NUL _NUL -1  0  5               
+ RED    YELLOW RED    VIOLET 14  8 3.1400    0    1    1 _N _N _N               
+ BLUE   BLUE          VIOLET 14  8 3.1400   -1    1    0 _N _N _N               
+ BLUE   BLUE          VIOLET 14  8 3.1400 _NUL _NUL _NUL -1  1  1               
+ BLUE   BLUE          VIOLET 14  8 3.1400 _NUL _NUL _NUL -1  1  2               
+ BLUE   RED           VIOLET 14  8 3.1400    0    1    0 _N _N _N               
+ BLUE   YELLOW        VIOLET 14  8 3.1400    1    0    0 _N _N _N               
+                                                                                
+                                                                              1 
+ TESTPGM70-2                                                                    
+                                                                                
+ hue1   hue2   hue3   hue4   y z3     g2 num1 num2 num3 m1 m2 m3                
+                                                                                
+ YELLOW BLUE   YELLOW VIOLET 1  8 3.1400    0    0    1 _N _N _N                
+ YELLOW RED    RED    VIOLET 1  8 3.1400    1    1    1 _N _N _N                
+ YELLOW YELLOW RED    VIOLET 1  8 3.1400   -1    1    1 _N _N _N                
+ RED    BLUE   YELLOW VIOLET 2  8 3.1400    1    1    1 _N _N _N                
+ RED    BLUE   YELLOW VIOLET 2  8 3.1400 _NUL _NUL _NUL  1  1  3                
+ RED    RED    RED    VIOLET 3  8 3.1400   -1    0    1 _N _N _N                
+ RED    RED    RED    VIOLET 3  8 3.1400 _NUL _NUL _NUL -1  0  4                
+ RED    RED    RED    VIOLET 3  8 3.1400 _NUL _NUL _NUL -1  0  5                
+ RED    YELLOW RED    VIOLET 1  8 3.1400    0    1    1 _N _N _N                
+ BLUE   BLUE          VIOLET 3  8 3.1400   -1    1    0 _N _N _N                
+ BLUE   BLUE          VIOLET 3  8 3.1400 _NUL _NUL _NUL -1  1  1                
+ BLUE   BLUE          VIOLET 3  8 3.1400 _NUL _NUL _NUL -1  1  2                
+ BLUE   RED           VIOLET 1  8 3.1400    0    1    0 _N _N _N                
+ BLUE   YELLOW        VIOLET 1  8 3.1400    1    0    0 _N _N _N                
+                                                                                
+                                                                              1 
+ TESTPGM70-3                                                                    
+                                                                                
+ hue1   hue2   hue3   hue4   y z2 z3     g2 num1 num2 num3 m1 m2 m3             
+                                                                                
+ YELLOW BLUE   YELLOW VIOLET 1  0  8 3.1400    0    0    1 _N _N _N             
+ YELLOW RED    RED    VIOLET 1  0  8 3.1400    1    1    1 _N _N _N             
+ YELLOW YELLOW RED    VIOLET 1  0  8 3.1400   -1    1    1 _N _N _N             
+ RED    BLUE   YELLOW VIOLET 1  0  8 3.1400    1    1    1 _N _N _N             
+ RED    BLUE   YELLOW VIOLET 2  1  8 3.1400 _NUL _NUL _NUL  1  1  3             
+ RED    RED    RED    VIOLET 1  0  8 3.1400   -1    0    1 _N _N _N             
+ RED    RED    RED    VIOLET 2  1  8 3.1400 _NUL _NUL _NUL -1  0  4             
+ RED    RED    RED    VIOLET 3  1  8 3.1400 _NUL _NUL _NUL -1  0  5             
+ RED    YELLOW RED    VIOLET 1  0  8 3.1400    0    1    1 _N _N _N             
+ BLUE   BLUE          VIOLET 1  0  8 3.1400   -1    1    0 _N _N _N             
+ BLUE   BLUE          VIOLET 2  1  8 3.1400 _NUL _NUL _NUL -1  1  1             
+ BLUE   BLUE          VIOLET 3  1  8 3.1400 _NUL _NUL _NUL -1  1  2             
+ BLUE   RED           VIOLET 1  0  8 3.1400    0    1    0 _N _N _N             
+ BLUE   YELLOW        VIOLET 1  0  8 3.1400    1    0    0 _N _N _N             
+                                                                                

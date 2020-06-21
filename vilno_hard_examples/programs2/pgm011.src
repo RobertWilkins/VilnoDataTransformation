@@ -1,0 +1,67 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area011" ;
+
+
+
+inlist ;
+addnongridvars int: m2 mm2  ;
+addgridvars str: b2 1 j2 1  int: b1 j1 ct1=0 w ;
+{
+ for b1 = 1 to 2 : 
+  for m2 = 1 to 2 : 
+   for j1 = 1 to 2 : 
+    for mm2 = 1 to 3 : 
+     for w = 1 to 3 : 
+       { 
+        if (m2==1)        b2="A"; 
+          else if (m2==2) b2="B";
+          else if (m2==3) b2="C";
+        if (mm2==1)        j2="A"; 
+          else if (mm2==2) j2="B";
+          else if (mm2==3) j2="C";
+        ct1 =ct1 + 1 ;
+        copyrow ;
+       }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 j1 j2 ct1 w 
+       where(not(b1==2 and b2=="B" and j1==2 and j2=="B"));
+if (not(w==1 or (b1==7) )) deleterow ;
+if (b1==1 and b2=="B" and j1==1 and j2=="B") deleterow ;
+sendoff(b/dat2) b1 b2 j1 j2 ct2=ct1  ;
+turnoff ;
+
+
+
+
+
+
+
+inlist b/dat1 b/dat2 ;
+blockby b1 b2  ;
+mergeby j1 j2  ;  
+inflags flg1 flg2 = b/dat1 b/dat2  ;
+sendoff(b/dat5) b1 b2 j1 j2 w ct1 ct2  flg1 flg2 ;
+turnoff ;
+
+
+
+
+
+
+printoptions b/prtfile1 ;
+
+// print(b/dat1) ; 
+
+print(b/dat5) "PGM011-mergeby" ;
+
+
+
+
+
+
+
+
+
+

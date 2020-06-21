@@ -1,0 +1,19 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm52area" ;
+
+
+inlist a/dat4A a/dat4B a/dat4C ;
+screen a/dat4A: s1 n1 hue n2 sctrA fctrA ;
+screen a/dat4B: s1 n1 hue n2 sctrB fctrB ;
+screen a/dat4C: s1 n1 hue n2 sctrC fctrC ;
+joinby(incl) s1 n1 hue n2  
+      where(sctrA=="03" or sctrC=="03" or (n1==7 and n2==10) ) ;
+sendoff(b/dat1) s1 n1 hue n2 sctrA sctrB sctrC fctrA fctrB fctrC ;
+turnoff ;
+
+
+
+printoptions b/prtfile1 ;
+print(b/dat1) "TESTPGM52-1" s1 n1 hue n2 sctrA sctrB sctrC fctrA fctrB fctrC  ;
+

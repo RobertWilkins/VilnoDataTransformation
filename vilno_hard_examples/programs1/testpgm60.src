@@ -1,0 +1,41 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm60area" ;
+
+
+inlist a/dat1 a/dat2 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2
+       a/dat2: hue1 hue2 hue3 m1   m2   m3        g1   ;
+recode a/dat2: hue3B=hue3 ;
+mergeby hue1 hue2 ;
+sendoff(b/dat3) hue1 hue2 hue3 hue3B num1 num2 num3 m1 m2 m3 dec1 dec2 g1 ;
+turnoff ;
+
+printoptions b/prtfile1 60*90 ;
+print(b/dat3) "TESTPGM60-1" hue1 hue2 hue3 hue3B num1 num2 num3 m1 m2 m3 dec1 dec2 g1 ;
+
+
+inlist a/dat2 a/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2
+       a/dat2: hue1 hue2 hue3 m1   m2   m3        g1   ;
+recode a/dat2: hue3B=hue3 ;
+mergeby hue1 hue2 ;
+sendoff(b/dat3) hue1 hue2 hue3 hue3B num1 num2 num3 m1 m2 m3 dec1 dec2 g1 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM60-2" hue1 hue2 hue3 hue3B num1 num2 num3 m1 m2 m3 dec1 dec2 g1 ;
+
+
+inlist a/dat1 a/dat2 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2
+       a/dat2: hue1 hue2 hue3 m1   m2   m3        g1   ;
+recode a/dat2: hue3B=hue3 ;
+mergeby hue1 hue2 ;
+inflags z1 z2 = a/dat1 a/dat2 ;
+sendoff(b/dat3) hue1 hue2 hue3 hue3B z1 z2 num1 num2 num3 m1 m2 m3 dec1 dec2 g1 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM60-3" hue1 hue2 hue3 hue3B z1 z2 num1 num2 num3 m1 m2 m3 ;
+
+
+

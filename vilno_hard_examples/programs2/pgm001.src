@@ -1,0 +1,29 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area001" ;
+
+windowsize 3 ;
+
+inlist a/dat3 ;
+screen a/dat3: hue n sctr fctr dec1 ;
+sendoff(b/dat1) hue nB=n sctrB=sctr fctrB=fctr dec1B=dec1 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(a/dat3) "PGM001-orig dset" ;
+print(b/dat1) "PGM001-1" ;
+
+
+inlist a/dat3 b/dat1 ;
+screen a/dat3: hue n sctr fctr dec1 ;
+screen b/dat1: hue nB sctrB fctrB dec1B ;
+joinby hue  ;
+sendoff(b/dat2) hue n nB sctr sctrB fctr fctrB dec1 dec1B ;
+turnoff ;
+
+
+
+
+print(b/dat2) "PGM001-2"  hue n nB sctr sctrB fctr fctrB dec1 dec1B ;
+

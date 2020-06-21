@@ -1,0 +1,33 @@
+
+//#include <cconio>
+#include <cmath>
+#include <cctype>
+#include <cerrno>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <iostream>
+#include <fstream>
+#include <utility>
+#include <list>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+#include <map>
+#include <set>
+
+#include <cstring>
+
+using namespace std ;
+#include </home/robert/vilno_etc/vilno_source/compilershare/quickpreview.cpp>
+
+int main(int argc,char ** argv)
+{
+  mainprocdriver(argc,argv);
+}
+
+int main(int argc, char** argv)
+{
+// argv[1] is the binary data filename to open ;
+previewSPECS(argv[1]) ;
+}

@@ -1,0 +1,85 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area009" ;
+
+
+
+inlist ;
+addnongridvars int: m1 m2 ;
+addgridvars str: s1 1 s2 1  int: i1 i2 ct1=0  ;
+{
+ for m1 = 1 to 3 : 
+  for i1 = 1 to 3 : 
+   for m2 = 1 to 3 : 
+    for i2 = 1 to 3 : 
+       { 
+        if (m1==1)        s1="A"; 
+          else if (m1==2) s1="B";
+          else if (m1==3) s1="C";
+        if (m2==1)        s2="A"; 
+          else if (m2==2) s2="B";
+          else if (m2==3) s2="C";
+        ct1 =ct1 + 1 ;
+        copyrow ;
+       }
+ deleterow ;
+}
+sendoff(b/dat1) s1 i1 s2 i2 ct1 ;
+sendoff(b/dat2) s1 i1 s2 i2 ct2=ct1  
+       where(not( (s1=="A" and i1==1) or (s1=="A" and i1==2 and s2=="A" and i2==1) )) ;
+sendoff(b/dat3) s1 i1 s2 i2 ct3=ct1  ;
+sendoff(b/dat4) s1 i1 s2 i2 ct4=ct1  ;
+turnoff ;
+
+
+
+
+
+
+
+inlist b/dat1 b/dat2 b/dat3 b/dat4 ;
+blockby s1 i1  ;
+joinby(incl) s2 i2   
+ where(
+       (s1 is not null and i1 is not null and s2 is not null and i2 is not null and 
+        ct2 is null and ct1 is not null and ct3 is not null and ct4 is not null and 
+        ct1<3 and ct4<3 and 
+        s1=="A" and i1==1 and (s2=="A" or s2=="B") and i2<4 )
+        
+       or 
+       (s1 is not null and i1 is not null and s2 is not null and i2 is not null and 
+        ct2 is null and ct1 is not null and ct3 is not null and ct4 is not null and 
+        ct1<15 and ct3<15 and ct4<15 and 
+        s1=="A" and i1==2 and s2=="A" and i2==1 )
+       
+       or 
+       (s1 is not null and i1 is not null and s2 is not null and i2 is not null and 
+        ct2 is not null and ct1 is not null and ct3 is not null and ct4 is not null and 
+        ct1<150 and ct3<150 and ct4<150 and 
+        s1=="A" and i1==2 and s2=="A" and i2>1 )
+      
+      )  ;
+inflags flg1 flg2 flg3 flg4 = b/dat1 b/dat2 b/dat3 b/dat4 ;
+sendoff(b/dat5) s1 i1 s2 i2 ct1 ct2 ct3 ct4  flg1 flg2 flg3 flg4 ;
+turnoff ;
+
+
+
+
+
+
+printoptions b/prtfile1 ;
+
+// print(b/dat1) ; 
+
+print(b/dat5) "PGM009-joinby" ;
+
+
+
+
+
+
+
+
+
+

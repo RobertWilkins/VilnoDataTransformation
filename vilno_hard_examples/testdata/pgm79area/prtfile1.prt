@@ -1,0 +1,60 @@
+                                                                              1 
+ TESTPGM79-1                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num3 i hue4                                          
+                                                                                
+ BLUE   BLUE            -1    0 1 BLUEBLUE Z                                    
+ BLUE   RED              0    0 1 BLUEBLUERED Z                                 
+ BLUE   YELLOW           1    0 1 BLUEBLUERED Z                                 
+ RED    BLUE   YELLOW    1    1 2 BLUEBLUEREDYELLOW Z                           
+ RED    RED    RED      -1    1 2 BLUEBLUEREDYELLOWRED                          
+ RED    YELLOW RED       0    1 2 BLUEBLUEREDYELLOWRED                          
+ YELLOW BLUE   YELLOW    0    1 2 BLUEBLUEREDYELLOWRED                          
+ YELLOW RED    RED       1    1 2 BLUEBLUEREDYELLOWRED                          
+ YELLOW YELLOW RED      -1    1 2 BLUEBLUEREDYELLOWRED                          
+                                                                                
+                                                                              1 
+ TESTPGM79-2                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num3 i hue4                                          
+                                                                                
+ BLUE   BLUE            -1    0 1 _NUL                                          
+ BLUE   RED              0    0 1 _NUL                                          
+ BLUE   YELLOW           1    0 1 _NUL                                          
+ RED    BLUE   YELLOW    1    1 2 _NUL                                          
+ RED    RED    RED      -1    1 2 _NUL                                          
+ RED    YELLOW RED       0    1 2 _NUL                                          
+ YELLOW BLUE   YELLOW    0    1 2 _NUL                                          
+ YELLOW RED    RED       1    1 2 _NUL                                          
+ YELLOW YELLOW RED      -1    1 2 _NUL                                          
+                                                                                
+                                                                              1 
+ TESTPGM79-3                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num3 i hue4                                          
+                                                                                
+ BLUE   BLUE            -1    0 1 BLUEBLUE Z                                    
+ BLUE   RED              0    0 1 RED Z                                         
+ BLUE   YELLOW           1    0 1  Z                                            
+ RED    BLUE   YELLOW    1    1 2 YELLOW Z                                      
+ RED    RED    RED      -1    1 2 REDREDRED Z                                   
+ RED    YELLOW RED       0    1 2 YELLOWRED Z                                   
+ YELLOW BLUE   YELLOW    0    1 2 BLUEYELLOW Z                                  
+ YELLOW RED    RED       1    1 2 RED Z                                         
+ YELLOW YELLOW RED      -1    1 2 YELLOWYELLOWRED Z                             
+                                                                                
+                                                                              1 
+ TESTPGM79-4                                                                    
+                                                                                
+ hue1   hue2   hue3   num1 num3 i hue4                                          
+                                                                                
+ BLUE   BLUE            -1    0 1 _NULL                                         
+ BLUE   RED              0    0 1 BLUE Z                                        
+ BLUE   YELLOW           1    0 1  Z                                            
+ RED    BLUE   YELLOW    1    1 2 BLUE Z                                        
+ RED    RED    RED      -1    1 2 _NULL                                         
+ RED    YELLOW RED       0    1 2 REDYELLOW Z                                   
+ YELLOW BLUE   YELLOW    0    1 2 YELLOWBLUE Z                                  
+ YELLOW RED    RED       1    1 2 RED Z                                         
+ YELLOW YELLOW RED      -1    1 2 _NULL                                         
+                                                                                

@@ -1,0 +1,50 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm56area" ;
+
+
+inlist ;
+addgridvars int: j=0 x2=-7 x i y1 y2 y3 y4 ;
+{ i=1; x=0; y1=0;  y2=1;  y3=2;  y4=3;  copyrow;
+  i=3; x=0; y1=4;  y2=5;  y3=6;  y4=7;  copyrow;
+  i=2; x=0; y1=8;  y2=9;  y3=10; y4=11; copyrow;
+  i=4; x=0; y1=12; y2=13; y3=14; y4=15; 
+}
+sendoff(b/dat1) x2 x i j y1 y2 y3 y4 ;
+turnoff ;
+
+printoptions b/prtfile1 ;
+print(b/dat1) "TESTPGM56-1" ;
+
+inlist b/dat1 ;
+if (y3/2==i or (y4>=12 and y4<=15))
+ while (j<10) 
+  { while (x!=10 and x<y4) { x=x+1;j=j+1; }
+    x=x-2;
+  }
+sendoff(b/dat2) x2 x j i y1 y2 y3 y4 ;
+turnoff ;
+
+print(b/dat2) "TESTPGM56-2" ;
+
+
+inlist b/dat1 ;
+select count=n() y4=sum(y4) ;
+sendoff(b/dat3) count y4 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM56-3" ;
+
+
+
+inlist b/dat1 ;
+if (y1==0) x=0 ;
+else x=1 ;
+select count=n() y4=sum(y4) by x ;
+sendoff(b/dat4) count y4  ;
+turnoff ;
+
+
+print(b/dat4) "TESTPGM56-4" ;
+
+

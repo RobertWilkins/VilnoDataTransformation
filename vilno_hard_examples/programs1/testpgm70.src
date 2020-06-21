@@ -1,0 +1,54 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm70area" ;
+printoptions b/prtfile1 ;
+
+
+
+inlist a/dat1 a/dat2 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2
+       a/dat2: hue1 hue2 hue3 m1   m2   m3        g1   ;
+readby -hue1 hue2 ;
+gridfunc y=n() ;
+addgridvars int: z3=8 str: hue4="VIOLET" 6  float: g2=3.14 ;
+sendoff(b/dat3) hue1 hue2 hue3 hue4 y z3 g2 num1 num2 num3 m1 m2 m3 dec1 dec2 g1 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM70-1" hue1 hue2 hue3 hue4 y z3 g2 num1 num2 num3 m1 m2 m3 ;
+
+
+
+
+
+inlist a/dat1 a/dat2 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2
+       a/dat2: hue1 hue2 hue3 m1   m2   m3        g1   ;
+readby -hue1 hue2 ;
+addgridvars int: z3=8 ;
+gridfunc y=n() by hue1 hue2 ;
+addgridvars str: hue4="VIOLET" 6  float: g2=3.14 ;
+sendoff(b/dat3) hue1 hue2 hue3 hue4 y z3 g2 num1 num2 num3 m1 m2 m3 dec1 dec2 g1 
+       by -hue1 hue2 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM70-2" hue1 hue2 hue3 hue4 y z3 g2 num1 num2 num3 m1 m2 m3 ;
+
+
+
+
+
+inlist a/dat1 a/dat2 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2
+       a/dat2: hue1 hue2 hue3 m1   m2   m3        g1   ;
+readby -hue1 hue2 ;
+inflags z2 = a/dat2 ;
+gridfunc y=rowno() by hue1 hue2 ;
+addgridvars int: z3=8 ;
+addgridvars str: hue4="VIOLET" 6  float: g2=3.14 ;
+sendoff(b/dat3) hue1 hue2 hue3 hue4 y z2 z3 g2 num1 num2 num3 m1 m2 m3 dec1 dec2 g1 
+       by -hue1 hue2 ;
+turnoff ;
+
+print(b/dat3) "TESTPGM70-3" hue1 hue2 hue3 hue4 y z2 z3 g2 num1 num2 num3 m1 m2 m3 ;
+
+

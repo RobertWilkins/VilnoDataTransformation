@@ -1,0 +1,17 @@
+
+
+can timing of a/b b/a conversion affect reverse age order ?
+u want to know when dset was created , not when it was converted.
+
+/////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
+
+more local vars :
+
+scenarios 
+in or not-in brandnew_dset_age
+incoming bstatus = "vdt" "asc" "a+v" "vdt<-old" "asc<-old" 
+
+this is brandnew creation  or   clean-ABBA
+this is making an "asc" or "vdt" 

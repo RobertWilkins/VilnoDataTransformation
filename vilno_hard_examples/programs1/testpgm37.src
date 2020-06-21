@@ -1,0 +1,36 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm37area" ;
+
+inputdtypes(a/dat1) str: hue1 6 hue2 6 hue3 6  
+                    int: num1 num2 num3 float: dec1 dec2 ;
+
+inlist a/dat1 ;
+addnongridvars  int: i ii[3] str: s ss[2]  ;
+{ ss[1]=ss[2]=null ;
+  if (num1==-1) ss[num2+1] = "ZZ" ;
+  hue3 = ss[num2+1] + hue3 + ss[num2+1] ;
+  ii[1] = num1 + num2 + num3 ;
+  ii[2] = ii[1] + ii[1] ; 
+  num3 = ii[2] ;
+}
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+
+inlist b/dat2 ;
+addnongridvars float: ff[2] ;
+ff[1]=ff[2]=0 ;
+{ ff[1] = ff[1] + num1 + num2 + num3 ;
+  dec1 = ff[1] ;
+} 
+if (num2==0) ff[num2+2] = ff[num2+2] + dec2 ;
+       else  ff[num2+1] = ff[num2+1] + dec2 ;
+dec2 = ff[2] ;
+if (hue1=="BLUE") dec2=0.01 ;
+sendoff(b/dat3) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(b/dat3) "TESTPGM37-1" ;

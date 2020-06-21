@@ -1,0 +1,23 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm36area" ;
+
+
+
+inlist a/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+addnongridvars  int: i j ;
+arrayrefs ii[] num1 num2 num3 ;
+{ num3=0;
+  for i = num1 to num2 : num3=num3+1 ;
+  for i = ii[1] to ii[2] :
+     for j = 1 to 3 :
+         ii[num2+3-num2]=num3+100 ;
+  for j = 0 to ii[ii[2]-ii[1]] : num3=num3+10000 ;
+}
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(b/dat2) "TESTPGM36-1" ;

@@ -1,0 +1,8 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm40area" ;
+
+
+printoptions b/prtfile1 12*80 ;
+print(a/dat1) "TESTPGM40-1" ;
+

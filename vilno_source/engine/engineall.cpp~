@@ -1,0 +1,140 @@
+// Copyright 2002-2006, Robert Wilkins (class 1984, Newton North HS, MA, USA)
+
+
+/*
+void mainengine();
+void closedownLVARS();
+void dpfengine();
+
+void printdatafile(const char * outputfilename, const char * inputfilename, 
+     int firstoutputthisfile, const vector<string> & varnames1, 
+     const vector<long> & colwidths, const string & title, 
+     long rowsperpage, long charsperline, int valuewrap, 
+     int showblank , char blankflag);
+
+void sortdgrid(dgrid & dg, 
+               const vector<long> & kscolnum, const vector<int> & ksdtype, 
+               const vector<int> & kscode,
+               const vector<long> & dscolnum, const vector<int> & dsdtype, 
+               const vector<int> & dscode)
+
+void sortdatafile(const char * inputfilename, const char * outputfilename, 
+                  const vector<string> & sortvarnames, const vector<int> & sortcodes)
+*/
+
+//#define DEBUG_CONSTRUCTORS
+
+//#define DEBUG_MERGEINGETREADY 
+
+//#define DEBUG_PRESORT 
+
+
+//#define DEBUG_SENDOFFGETREADY 
+//#define DEBUG_SETUPOUTFILE
+
+//#define DEBUG_MERGEININPUTDATA 
+
+//#define DEBUG_MAINENGINE
+//#define DEBUG_DPFENGINE
+
+//#define DEBUG_PRINTDATAFILE
+//#define DEBUG_READFILEBOSSMETADATA
+//#define DEBUG_JOINBYENGINE
+//#define DEBUG_GRIDFLIPENGINE
+
+#define ERRORCHECK_EACHROW 
+#define ERRORCHECK_WEAK
+
+#include </home/robert/vilno_etc/vilno_source/compilershare/exceptclasses2.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/tr2.h>
+
+// #include </home/robert/vilno_etc/vilno_source/compilershare/tempdatadirectories.h>
+
+#include </home/robert/vilno_etc/vilno_source/compilershare/filedirconvert.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/asciiconstants.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/filebossconstants.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/otherconstants.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/printconstants.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/fbossmetadata.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/insholderclasses.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/localbuffer.h>
+#include </home/robert/vilno_etc/vilno_source/compilershare/numstrconvert.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/RepeatedWord.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/sethowsort.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/ins.cpp>
+#include </home/robert/vilno_etc/vilno_source/compilershare/readfilebossmetadata.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/script/expire.h>
+#include </home/robert/vilno_etc/vilno_source/script/version_info.h>
+
+
+#include </home/robert/vilno_etc/vilno_source/engine2/os_special.cpp>
+#include </home/robert/vilno_etc/vilno_source/script/lintools2.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/errorcatch/errmsg_comshare.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch2/errmsg_agv.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch2/errmsg_aref.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch2/errmsg_ascbin.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch2/errmsg_dpfmisc.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch2/errmsg_fileboss.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch2/errmsg_printdat.cpp>
+#include </home/robert/vilno_etc/vilno_source/errorcatch2/errmsg_sort.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/string2int2.h>
+#include </home/robert/vilno_etc/vilno_source/engine/string2int2.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/stringtoint2.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/dgridrow.h>
+
+#include </home/robert/vilno_etc/vilno_source/engine/insholder1aux.h>
+#include </home/robert/vilno_etc/vilno_source/engine/ts.h>
+#include </home/robert/vilno_etc/vilno_source/engine/temp_selfchk.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine2/lessrow.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine2/sortdgrid.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/linkvars.h>
+
+#include </home/robert/vilno_etc/vilno_source/engine2/tempfilenamegive.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine2/table.h>
+#include </home/robert/vilno_etc/vilno_source/engine2/table1.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine2/table2.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine2/table3.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine2/table4.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine2/table5.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine2/agv.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/linkvars2.h>
+
+#include </home/robert/vilno_etc/vilno_source/engine2/sortengine.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/arefs.h>
+#include </home/robert/vilno_etc/vilno_source/engine/arefs.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/printdatafile.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/asciitobinary.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/joinbyengine.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/mergein.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/addgridvarsengine.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/gridflipengine.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/selectstats.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/selectengine.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/gridfuncengine.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/classicalfctns.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/classicalengine.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/sendoffengine.cpp>
+
+
+#include </home/robert/vilno_etc/vilno_source/engine/dpfengine.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/errormsgeng.cpp>
+#include </home/robert/vilno_etc/vilno_source/engine/warnmsgeng.cpp>
+
+#include </home/robert/vilno_etc/vilno_source/engine/mainengine.cpp>
+
+
+

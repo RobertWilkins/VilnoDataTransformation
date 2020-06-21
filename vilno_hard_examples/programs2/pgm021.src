@@ -1,0 +1,122 @@
+
+
+
+/// WARNING !!! THIS PRODUCES LARGE DATASETS 
+
+
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area021" ;
+
+windowsize 20000 ; 
+
+
+
+
+inlist ;
+addnongridvars int: bb1 bb2 bb3 bb4 ;
+addgridvars int: b1 b2 b3 b4 ct1=0 i1 i2  float: k1 k2 k3 k4 
+            str: s1 14 s2 14 s3 14 s4 14 ;
+{
+ for bb1 = 1 to 4 : 
+  for bb2 = 1 to 4 : 
+   for bb3 = 1 to 10 :
+    for bb4 = 1 to 10 : 
+     {   b1 = 5 - bb1 ;
+         b2 = 5 - bb2 ;
+         b3 = 11 - bb3 ;
+         b4 = 11 - bb4 ;
+         ct1=ct1+1; 
+         copyrow; 
+     }
+ deleterow ;
+}
+{ 
+  for i1 = 1 to 3 : { i2 = i1 + 3 ; copyrow ; }
+  for i1 = 1 to 3 : { i2 = i1 + 3 ; copyrow ; }
+  deleterow ;
+}
+sendoff(b/dat1) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4 ;
+turnoff ;
+
+
+
+/////////////////////
+
+
+inlist b/dat1 ;
+blockby -b1 -b2 ;
+readby -b3 -b4 ;
+addnongridvars int: j float: f[4] ;
+arrayrefs ss[] s1 s2 s3 s4 ;
+arrayrefs kk[] k1 k2 k3 k4 ;
+s1 = "A" ;
+s2 = "B" ;
+s3 = "C" ;
+s4 = "D" ;
+ss[i1] = "purpleheart" ;
+ss[2-i2+2*i2-2] = "purpleHEART" ;
+if (f[1] is null) f[1] = f[2] = f[3] = f[4] = 0 ;
+for j = 1 to 4 : f[j] = f[j] + strlen(ss[j]) ; 
+if (lastrow()) 
+   for j = 1 to 4 : kk[j] = f[j] ;
+sendoff(b/dat2) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4
+      where(lastrow()) ; 
+
+sendoff(b/dat2b) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4
+      where( b1==1 and b2==1 and b3==1 and b4==1) ; 
+
+sendoff(b/dat1) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4 ; 
+turnoff ;
+
+
+
+
+////////////////////////
+
+
+
+
+inlist b/dat1 ;
+blockby -b1 -b2 ;
+readby -b3 -b4 ;
+sendoff(b/dat3) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4 
+     where( firstrow(b3)  and b1==1 and b2==1 ) ;
+sendoff(b/dat4) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4 
+     where( firstrow(b3 b4)  and b1==1 and b2==1 ) ;
+sendoff(b/dat5) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4 
+     where( firstrow()  and b1==1 and b2==1 ) ;
+turnoff ;
+
+
+
+inlist b/dat1 ;
+blockby -b1 -b2 ;
+readby -b3 -b4 ;
+sendoff(b/dat6) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4 
+     where( lastrow(b3)  and b1==1 and b2==1 ) ;
+sendoff(b/dat7) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4 
+     where( lastrow(b3 b4)  and b1==1 and b2==1 ) ;
+sendoff(b/dat8) b1 b2 b3 b4  ct1 i1 i2  k1 k2 k3 k4 s1 s2 s3 s4 
+     where( lastrow()  and b1==1 and b2==1 ) ;
+turnoff ;
+
+
+//////////////////////////
+
+
+printoptions b/prtfile1 60*100 ;
+
+print(b/dat2b) "PGM021-1b : 1/1/1/1 subgroup with sum(strlen)" ;
+
+print(b/dat2) "PGM021-1 : last row with sum(strlen)" ;
+
+print(b/dat3) "PGM021-2 bb/rb, firstrow(b3)" ;
+print(b/dat4) "PGM021-3 bb/rb, firstrow(b3 b4)" ;
+print(b/dat5) "PGM021-4 bb/rb, firstrow()" ;
+
+print(b/dat6) "PGM021-5 bb/rb, lastrow(b3)" ;
+print(b/dat7) "PGM021-6 bb/rb, lastrow(b3 b4)" ;
+print(b/dat8) "PGM021-7 bb/rb, lastrow()" ;
+
+

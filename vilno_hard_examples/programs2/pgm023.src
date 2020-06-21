@@ -1,0 +1,144 @@
+
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area023" ;
+
+windowsize 5 ; 
+
+
+
+
+inlist ;
+addgridvars int: b1 b2 b3 ct1=0  float: f1   str: s1 14  ;
+{
+ for b1 = 1 to 4 : 
+  for b2 = 1 to 4 : 
+   for b3 = 1 to 10 :
+     {   ct1=ct1+1; 
+         f1 = ct1*100 ;
+         if (s1=="red") s1="purple" ; 
+           else s1="red" ;
+         copyrow; 
+     }
+ deleterow ;
+}
+sendoff(b/dat1) b1 b2 b3 ct1 f1 s1  ;
+turnoff ;
+
+
+sort(b/dat1->b/dat1) b1 b2 ;
+
+//////////////////////////
+
+
+
+convertfileformat
+    binarytoascii(b/dat1->"/home/???/vilno_hard_examples/testdata/area023/textdata1.txt")
+    varnames(b1 b2 b3 ct1 f1 s1) 
+    delimiter=','  ;
+
+
+convertfileformat
+    asciitobinary("/home/???/vilno_hard_examples/testdata/area023/textdata1.txt"->b/dat2)
+    varnames(b1 b2 b3 ct1 f1 s1) 
+    datatypes(i  i  i   i  f  s)
+    strlengths(14) 
+    delimiter=','  ;
+
+
+convertfileformat
+    binarytoascii(b/dat2->"/home/???/vilno_hard_examples/testdata/area023/textdata2.txt")
+    varnames(b1 b2 b3 ct1 f1 s1) 
+    delimiter=','  ;
+
+
+
+//////////////////////////
+
+
+printoptions b/prtfile1 ;
+
+print(b/dat1) "PGM023-1 : binary dset dat1" ;
+
+print(b/dat2) "PGM023-2 : binary dset dat2" ;
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+windowsize 1000 ;
+
+
+
+
+inlist ;
+addgridvars int: ct1  float: f1   str: s1 14  ;
+f1 = 0.3003e-7 ;
+{
+  for ct1 = 1 to 20 :
+     {   
+         f1 = f1*10 ;
+         if (s1=="red" or s1=="red  ") s1="purple" ; 
+           else s1="red" ;
+         if (ct1>15) s1 = s1 + "  " ;
+         copyrow; 
+     }
+ deleterow ;
+}
+sendoff(b/dat3) ct1 f1 s1  ;
+turnoff ;
+
+
+
+
+//////////////////////////
+
+
+
+convertfileformat
+    binarytoascii(b/dat3->"/home/???/vilno_hard_examples/testdata/area023/textdata3.txt")
+    varnames(f1 ct1 s1) 
+    delimiter=','  ;
+
+
+convertfileformat
+    asciitobinary("/home/???/vilno_hard_examples/testdata/area023/textdata3.txt"->b/dat4)
+    varnames(f1 ct1 s1) 
+    datatypes(f i s)
+    strlengths(14) 
+    delimiter=','  ;
+
+
+convertfileformat
+    binarytoascii(b/dat4->"/home/???/vilno_hard_examples/testdata/area023/textdata4.txt")
+    varnames(f1 ct1 s1) 
+    delimiter=','  ;
+
+
+
+//////////////////////////
+
+
+printoptions b/prtfile1 ;
+
+print(b/dat3) "PGM023-3 : binary dset dat3" ;
+
+print(b/dat4) "PGM023-4 : binary dset dat4" ;
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+                                                                              1 
+ TESTPGM66-1                                                                    
+                                                                                
+ hue1 hue2 hue3   hue3b  hue4   i1 i2    i3       f1                            
+                                                                                
+ BLUE BLUE               VIOLET _N  0 -7777 25000000                            
+ BLUE BLUE               VIOLET _N  0 -7777 25000000                            
+ RED  BLUE YELLOW YELLOW VIOLET _N  0 -7777 25000000                            
+ RED  RED  RED    RED    VIOLET _N  0 -7777 25000000                            
+ RED  RED  RED    RED    VIOLET _N  0 -7777 25000000                            
+                                                                                
+                                                                              1 
+ TESTPGM66-2                                                                    
+                                                                                
+ hue1 hue2 hue3   hue3b  hue4   z1 z2 i1 i2    i3       f1                      
+                                                                                
+ BLUE BLUE               VIOLET  1  1 _N  0 -7777 25000000                      
+ BLUE BLUE               VIOLET  1  1 _N  0 -7777 25000000                      
+ RED  BLUE YELLOW YELLOW VIOLET  1  1 _N  0 -7777 25000000                      
+ RED  RED  RED    RED    VIOLET  1  1 _N  0 -7777 25000000                      
+ RED  RED  RED    RED    VIOLET  1  1 _N  0 -7777 25000000                      
+                                                                                

@@ -1,0 +1,32 @@
+
+As of November/December 2018, to make it easier to install and configure
+
+
+Changes in locations of string variables that include hard-coded directory paths
+
+
+Move from globalvars.h to b_compiler.cpp, December 2018
+string colspecs_communicate_filename=
+       "/home/robert/tmp/colspecs_communicate.txt" ;
+
+Move from quickpreview.cpp to b_preview.cpp, December 2018
+string quickpreview_communicate_filename=
+         "/home/robert/tmp/vilnoquickpreview.txt" ;
+
+
+
+
+Move from script.cpp to b_script.cpp, December 2018
+const char * path_exe  = "/home/robert/bin"           ;
+const char * path_so   = "/home/robert/bin"           ;
+const char * path_doc2 = "/home/robert/vilno_etc" ;
+const char * path_tmp2 = "/home/robert/tmp"                     ;
+const char * gcc_alias = "c++"                      ;
+
+
+
+
+
+
+In addition, don't forget to update LICENSE.txt
+("Vilno" is too vague, specify "Vilno Data Transformation")

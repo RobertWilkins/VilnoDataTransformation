@@ -1,0 +1,37 @@
+                                                                              1 
+ TESTPGM54-1                                                                    
+                                                                                
+ x y z                                                                          
+                                                                                
+ 1 0 _NULL                                                                      
+ 2 0 FRANCE                                                                     
+ 3 0 LATVIA                                                                     
+ 4 0 ESTONIA                                                                    
+                                                                                
+                                                                              1 
+ TESTPGM54-2                                                                    
+                                                                                
+ x y z                                                                          
+                                                                                
+ 1 2 _NULL                                                                      
+ 0 3 __FRANCE_?                                                                 
+ 0 4 ___LATVIA__?                                                               
+ 0 5 ____ESTONIA___?                                                            
+                                                                                
+                                                                              1 
+ TESTPGM54-3                                                                    
+                                                                                
+ y1 y2 y3 y4                                                                    
+                                                                                
+  0  0  0  0                                                                    
+                                                                                
+                                                                              1 
+ TESTPGM54-4                                                                    
+                                                                                
+ x    y                                                                         
+                                                                                
+ 8    7                                                                         
+ 7   77                                                                         
+ 6  777                                                                         
+ 5 7777                                                                         
+                                                                                

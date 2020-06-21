@@ -1,0 +1,17 @@
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm32area" ;
+
+
+
+inlist a/dat1 ;
+screen a/dat1: hue1 hue2 hue3 num1 num2 num3 dec1 dec2 ;
+if(hue3=="RED") hue3="BIGRED" ;
+if(dec1<=0) num3=-9 ;
+sendoff(b/dat2) hue1 hue2 hue3 num1 num2 num3 dec1 dec2 
+       where (num3>=0) ;
+turnoff ;
+
+
+printoptions b/prtfile1 ;
+print(b/dat2) "TESTPGM32-1" ;

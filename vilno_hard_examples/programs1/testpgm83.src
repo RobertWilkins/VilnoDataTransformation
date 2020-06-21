@@ -1,0 +1,71 @@
+// int2 division , 
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/pgm83area" ;
+printoptions b/prtfile1 ;
+
+
+inlist ;
+addgridvars int: i=2147483647 j=0 k=-1 m m2 float: f1=0 ;
+{ 
+  m=i/j ;
+  copyrow ;
+  m=i ;
+  copyrow ;
+  m=i+1 ;
+  copyrow ;
+  m=-i ;
+  copyrow ;
+  m2=m-1 ;
+  copyrow ;
+  m=m2/-1 ;
+  copyrow ;
+  m=i/-1 ;
+  copyrow ;
+
+  m = 100/7 ;
+  copyrow ;
+  m=-1/17 ;
+  copyrow ;
+  m=(-1)/17 ;
+  copyrow ;
+  m=-(1/17) ;
+  copyrow ;
+  
+  m=1000000/1000 ;
+  copyrow ;
+  m=1000001/1000000;
+  copyrow ;
+}
+sendoff(b/dat1) m i j k m2 f1  ;
+turnoff ;
+
+print(b/dat1) "TESTPGM83-1"  ;
+
+
+
+
+inlist ;
+addgridvars int: i=2147483647 j=0 k=-1 m m2 n1 n2 float: f1=0 ;
+{ 
+  n1=71678234 ; n2=999999 ;
+  m=n1/n2 ;
+  copyrow ;
+
+  m=(-256*256)*(256*-127) ;
+  n1=256*(m/(256*127)) ;
+  m = n1-1+m ;
+  copyrow ;
+
+  m=-71000000/-999999 ;
+  copyrow ;
+}
+sendoff(b/dat1) m i j k m2 n1 n2 f1  ;
+turnoff ;
+
+print(b/dat1) "TESTPGM83-1"  ;
+
+
+
+
+

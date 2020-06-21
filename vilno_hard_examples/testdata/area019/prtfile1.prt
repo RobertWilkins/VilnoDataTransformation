@@ -1,0 +1,136 @@
+                                                                              1 
+ PGM019-1 bb, firstrow() & lastrow()                                            
+                                                                                
+ b1   b2 b3   b4 b5  ct1                                                        
+                                                                                
+ ZINC  4 BLUE  1  1 6001                                                        
+ ZINC  4 ZINC  4 25 6400                                                        
+                                                                                
+                                                                              1 
+ PGM019-2 bb, firstrow(b3) & lastrow(b3)                                        
+                                                                                
+ b1   b2 b3     b4 b5  ct1                                                      
+                                                                                
+ ZINC  4 BLUE    1  1 6001                                                      
+ ZINC  4 BLUE    4 25 6100                                                      
+ ZINC  4 RED     1  1 6101                                                      
+ ZINC  4 RED     4 25 6200                                                      
+ ZINC  4 YELLOW  1  1 6201                                                      
+ ZINC  4 YELLOW  4 25 6300                                                      
+ ZINC  4 ZINC    1  1 6301                                                      
+ ZINC  4 ZINC    4 25 6400                                                      
+                                                                                
+                                                                              1 
+ PGM019-3 bb, firstrow(b3 b4) & lastrow(b3 b4)                                  
+                                                                                
+ b1   b2 b3     b4 b5  ct1                                                      
+                                                                                
+ ZINC  4 BLUE    1  1 6001                                                      
+ ZINC  4 BLUE    1 25 6025                                                      
+ ZINC  4 BLUE    2  1 6026                                                      
+ ZINC  4 BLUE    2 25 6050                                                      
+ ZINC  4 BLUE    3  1 6051                                                      
+ ZINC  4 BLUE    3 25 6075                                                      
+ ZINC  4 BLUE    4  1 6076                                                      
+ ZINC  4 BLUE    4 25 6100                                                      
+ ZINC  4 RED     1  1 6101                                                      
+ ZINC  4 RED     1 25 6125                                                      
+ ZINC  4 RED     2  1 6126                                                      
+ ZINC  4 RED     2 25 6150                                                      
+ ZINC  4 RED     3  1 6151                                                      
+ ZINC  4 RED     3 25 6175                                                      
+ ZINC  4 RED     4  1 6176                                                      
+ ZINC  4 RED     4 25 6200                                                      
+ ZINC  4 YELLOW  1  1 6201                                                      
+ ZINC  4 YELLOW  1 25 6225                                                      
+ ZINC  4 YELLOW  2  1 6226                                                      
+ ZINC  4 YELLOW  2 25 6250                                                      
+ ZINC  4 YELLOW  3  1 6251                                                      
+ ZINC  4 YELLOW  3 25 6275                                                      
+ ZINC  4 YELLOW  4  1 6276                                                      
+ ZINC  4 YELLOW  4 25 6300                                                      
+ ZINC  4 ZINC    1  1 6301                                                      
+ ZINC  4 ZINC    1 25 6325                                                      
+ ZINC  4 ZINC    2  1 6326                                                      
+ ZINC  4 ZINC    2 25 6350                                                      
+ ZINC  4 ZINC    3  1 6351                                                      
+ ZINC  4 ZINC    3 25 6375                                                      
+ ZINC  4 ZINC    4  1 6376                                                      
+ ZINC  4 ZINC    4 25 6400                                                      
+                                                                                
+                                                                              1 
+ PGM019-3 bb , classical first/lastrow                                          
+                                                                                
+ b1   b2 b3     b4 b5  ct1       g1 g2     g3     g4                            
+                                                                                
+ ZINC  4 BLUE    1  1 6001   9.0000 _N 9.0000  _NULL                            
+ ZINC  4 BLUE    1  2 6002   9.4000 _N  _NULL  _NULL                            
+ ZINC  4 BLUE    1 24 6024  75.4000 _N  _NULL  _NULL                            
+ ZINC  4 BLUE    1 25 6025  78.4000 _N  _NULL 9.0000                            
+ ZINC  4 BLUE    2  1 6026  81.4000 _N 9.0000  _NULL                            
+ ZINC  4 BLUE    2  2 6027  84.4000 _N  _NULL  _NULL                            
+ ZINC  4 BLUE    2 24 6049 150.4000 _N  _NULL  _NULL                            
+ ZINC  4 BLUE    2 25 6050 153.4000 _N  _NULL 9.0000                            
+ ZINC  4 BLUE    3  1 6051 156.4000 _N 9.0000  _NULL                            
+ ZINC  4 BLUE    3  2 6052 159.4000 _N  _NULL  _NULL                            
+ ZINC  4 BLUE    3 24 6074 225.4000 _N  _NULL  _NULL                            
+ ZINC  4 BLUE    3 25 6075 228.4000 _N  _NULL 9.0000                            
+ ZINC  4 BLUE    4  1 6076 231.4000 _N 9.0000  _NULL                            
+ ZINC  4 BLUE    4  2 6077 234.4000 _N  _NULL  _NULL                            
+ ZINC  4 BLUE    4 24 6099 300.4000 _N  _NULL  _NULL                            
+ ZINC  4 BLUE    4 25 6100 303.4000 _N  _NULL 9.0000                            
+ ZINC  4 RED     1  1 6101 306.4000 _N 9.0000  _NULL                            
+ ZINC  4 RED     1  2 6102 309.4000 _N  _NULL  _NULL                            
+ ZINC  4 RED     1 24 6124 375.4000 _N  _NULL  _NULL                            
+ ZINC  4 RED     1 25 6125 378.4000 _N  _NULL 9.0000                            
+ ZINC  4 RED     2  1 6126 381.4000 _N 9.0000  _NULL                            
+ ZINC  4 RED     2  2 6127 384.4000 _N  _NULL  _NULL                            
+ ZINC  4 RED     2 24 6149 450.4000 _N  _NULL  _NULL                            
+ ZINC  4 RED     2 25 6150 453.4000 _N  _NULL 9.0000                            
+ ZINC  4 RED     3  1 6151 456.4000 _N 9.0000  _NULL                            
+ ZINC  4 RED     3  2 6152 459.4000 _N  _NULL  _NULL                            
+ ZINC  4 RED     3 24 6174 525.4000 _N  _NULL  _NULL                            
+ ZINC  4 RED     3 25 6175 528.4000 _N  _NULL 9.0000                            
+ ZINC  4 RED     4  1 6176 531.4000 _N 9.0000  _NULL                            
+ ZINC  4 RED     4  2 6177 534.4000 _N  _NULL  _NULL                            
+ ZINC  4 RED     4 24 6199 600.4000 _N  _NULL  _NULL                            
+ ZINC  4 RED     4 25 6200 603.4000 _N  _NULL 9.0000                            
+ ZINC  4 YELLOW  1  1 6201 606.4000 _N 9.0000  _NULL                            
+ ZINC  4 YELLOW  1  2 6202 609.4000 _N  _NULL  _NULL                            
+ ZINC  4 YELLOW  1 24 6224 675.4000 _N  _NULL  _NULL                            
+ ZINC  4 YELLOW  1 25 6225 678.4000 _N  _NULL 9.0000                            
+ ZINC  4 YELLOW  2  1 6226 681.4000 _N 9.0000  _NULL                            
+ ZINC  4 YELLOW  2  2 6227 684.4000 _N  _NULL  _NULL                            
+ ZINC  4 YELLOW  2 24 6249 750.4000 _N  _NULL  _NULL                            
+ ZINC  4 YELLOW  2 25 6250 753.4000 _N  _NULL 9.0000                            
+ ZINC  4 YELLOW  3  1 6251 756.4000 _N 9.0000  _NULL                            
+ ZINC  4 YELLOW  3  2 6252 759.4000 _N  _NULL  _NULL                            
+ ZINC  4 YELLOW  3 24 6274 825.4000 _N  _NULL  _NULL                            
+ ZINC  4 YELLOW  3 25 6275 828.4000 _N  _NULL 9.0000                            
+ ZINC  4 YELLOW  4  1 6276 831.4000 _N 9.0000  _NULL                            
+ ZINC  4 YELLOW  4  2 6277 834.4000 _N  _NULL  _NULL                            
+ ZINC  4 YELLOW  4 24 6299 900.4000 _N  _NULL  _NULL                            
+ ZINC  4 YELLOW  4 25 6300 903.4000 _N  _NULL 9.0000                            
+ ZINC  4 ZINC    1  1 6301 906.4000 _N 9.0000  _NULL                            
+ ZINC  4 ZINC    1  2 6302 909.4000 _N  _NULL  _NULL                            
+ ZINC  4 ZINC    1 24 6324 975.4000 _N  _NULL  _NULL                            
+ ZINC  4 ZINC    1 25 6325 978.4000 _N  _NULL 9.0000                            
+ ZINC  4 ZINC    2  1 6326 981.4000 _N 9.0000  _NULL                            
+ ZINC  4 ZINC    2  2 6327 984.4000 _N  _NULL  _NULL                            
+                                                                                
+                                                                              2 
+ PGM019-3 bb , classical first/lastrow                                          
+                                                                                
+ b1   b2 b3   b4 b5  ct1     g1     g2     g3     g4                            
+                                                                                
+ ZINC  4 ZINC  2 24 6349 1050.4  _NULL  _NULL  _NULL                            
+ ZINC  4 ZINC  2 25 6350 1053.4  _NULL  _NULL 9.0000                            
+ ZINC  4 ZINC  3  1 6351 1056.4  _NULL 9.0000  _NULL                            
+ ZINC  4 ZINC  3  2 6352 1059.4  _NULL  _NULL  _NULL                            
+ ZINC  4 ZINC  3 24 6374 1125.4  _NULL  _NULL  _NULL                            
+ ZINC  4 ZINC  3 25 6375 1128.4  _NULL  _NULL 9.0000                            
+ ZINC  4 ZINC  4  1 6376 1131.4  _NULL 9.0000  _NULL                            
+ ZINC  4 ZINC  4  2 6377 1134.4  _NULL  _NULL  _NULL                            
+ ZINC  4 ZINC  4 24 6399 1200.4  _NULL  _NULL  _NULL                            
+ ZINC  4 ZINC  4 25 6400 1203.4 9.0000  _NULL 9.0000                            
+                                                                                

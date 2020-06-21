@@ -1,0 +1,108 @@
+                                                                                        1 
+ PGM025-1 : original dset                                                                 
+                                                                                          
+ b1  c s1 s2 s3  s4   s5    s6                                                            
+                                                                                          
+ _N  1 A  _A __A __1A __ 1A __ 2A                                                         
+ _N  2 B  _B __B __1B __ 1B __ 2B                                                         
+ _N  3 C  _C __C __1C __ 1C __ 2C                                                         
+ _N  4 D  _D __D __1D __ 1D __ 2D                                                         
+ _N  5 E  _E __E __1E __ 1E __ 2E                                                         
+ _N  6 F  _F __F __1F __ 1F __ 2F                                                         
+ _N  7 G  _G __G __1G __ 1G __ 2G                                                         
+ _N  8 H  _H __H __1H __ 1H __ 2H                                                         
+ _N  9 I  _I __I __1I __ 1I __ 2I                                                         
+ _N 10 J  _J __J __1J __ 1J __ 2J                                                         
+ _N 11 K  _K __K __1K __ 1K __ 2K                                                         
+ _N 12 L  _L __L __1L __ 1L __ 2L                                                         
+                                                                                          
+                                                                                        1 
+ PGM025-1 : dat2                                                                          
+                                                                                          
+  d r1    r2    r3    r4    r5    r6    r7    r8    r9    r10   r11   r12                 
+                                                                                          
+ 11 A     B     C     D     E     F     G     H     I     J     K     L                   
+ 22 _A    _B    _C    _D    _E    _F    _G    _H    _I    _J    _K    _L                  
+ 33 __A   __B   __C   __D   __E   __F   __G   __H   __I   __J   __K   __L                 
+ 44 __1A  __1B  __1C  __1D  __1E  __1F  __1G  __1H  __1I  __1J  __1K  __1L                
+ 55 __ 1A __ 1B __ 1C __ 1D __ 1E __ 1F __ 1G __ 1H __ 1I __ 1J __ 1K __ 1L               
+ 66 __ 2A __ 2B __ 2C __ 2D __ 2E __ 2F __ 2G __ 2H __ 2I __ 2J __ 2K __ 2L               
+                                                                                          
+                                                                                        1 
+ PGM025-1 : dat3                                                                          
+                                                                                          
+  c s1 s2 s3  s4   s5    s6                                                               
+                                                                                          
+  1 A  _A __A __1A __ 1A __ 2A                                                            
+  2 B  _B __B __1B __ 1B __ 2B                                                            
+  3 C  _C __C __1C __ 1C __ 2C                                                            
+  4 D  _D __D __1D __ 1D __ 2D                                                            
+  5 E  _E __E __1E __ 1E __ 2E                                                            
+  6 F  _F __F __1F __ 1F __ 2F                                                            
+  7 G  _G __G __1G __ 1G __ 2G                                                            
+  8 H  _H __H __1H __ 1H __ 2H                                                            
+  9 I  _I __I __1I __ 1I __ 2I                                                            
+ 10 J  _J __J __1J __ 1J __ 2J                                                            
+ 11 K  _K __K __1K __ 1K __ 2K                                                            
+ 12 L  _L __L __1L __ 1L __ 2L                                                            
+                                                                                          
+                                                                                        1 
+ PGM025-1 : dat4                                                                          
+                                                                                          
+ b1  d r1    r2    r3    r4    r5    r6    r7    r8    r9    r10   r11   r12              
+                                                                                          
+ _N 11 A     B     C     D     E     F     G     H     I     J     K     L                
+ _N 22 _A    _B    _C    _D    _E    _F    _G    _H    _I    _J    _K    _L               
+ _N 33 __A   __B   __C   __D   __E   __F   __G   __H   __I   __J   __K   __L              
+ _N 44 __1A  __1B  __1C  __1D  __1E  __1F  __1G  __1H  __1I  __1J  __1K  __1L             
+ _N 55 __ 1A __ 1B __ 1C __ 1D __ 1E __ 1F __ 1G __ 1H __ 1I __ 1J __ 1K __ 1L            
+ _N 66 __ 2A __ 2B __ 2C __ 2D __ 2E __ 2F __ 2G __ 2H __ 2I __ 2J __ 2K __ 2L            
+                                                                                          
+                                                                                        1 
+ PGM025-1 : dat5                                                                          
+                                                                                          
+ b1  c s1 s2 s3  s4   s5    s6                                                            
+                                                                                          
+ _N  1 A  _A __A __1A __ 1A __ 2A                                                         
+ _N  2 B  _B __B __1B __ 1B __ 2B                                                         
+ _N  3 C  _C __C __1C __ 1C __ 2C                                                         
+ _N  4 D  _D __D __1D __ 1D __ 2D                                                         
+ _N  5 E  _E __E __1E __ 1E __ 2E                                                         
+ _N  6 F  _F __F __1F __ 1F __ 2F                                                         
+ _N  7 G  _G __G __1G __ 1G __ 2G                                                         
+ _N  8 H  _H __H __1H __ 1H __ 2H                                                         
+ _N  9 I  _I __I __1I __ 1I __ 2I                                                         
+ _N 10 J  _J __J __1J __ 1J __ 2J                                                         
+ _N 11 K  _K __K __1K __ 1K __ 2K                                                         
+ _N 12 L  _L __L __1L __ 1L __ 2L                                                         
+                                                                                          
+                                                                                        1 
+ PGM025-1 : dat6                                                                          
+                                                                                          
+ b1  d r1    r2    r3    r4    r5    r6    r7    r8    r9    r10   r11   r12              
+                                                                                          
+ _N 11 A     B     C     D     E     F     G     H     I     J     K     L                
+ _N 22 _A    _B    _C    _D    _E    _F    _G    _H    _I    _J    _K    _L               
+ _N 33 __A   __B   __C   __D   __E   __F   __G   __H   __I   __J   __K   __L              
+ _N 44 __1A  __1B  __1C  __1D  __1E  __1F  __1G  __1H  __1I  __1J  __1K  __1L             
+ _N 55 __ 1A __ 1B __ 1C __ 1D __ 1E __ 1F __ 1G __ 1H __ 1I __ 1J __ 1K __ 1L            
+ _N 66 __ 2A __ 2B __ 2C __ 2D __ 2E __ 2F __ 2G __ 2H __ 2I __ 2J __ 2K __ 2L            
+                                                                                          
+                                                                                        1 
+ PGM025-1 : dat7                                                                          
+                                                                                          
+ b1  c s1 s2 s3  s4   s5    s6                                                            
+                                                                                          
+ _N  1 A  _A __A __1A __ 1A __ 2A                                                         
+ _N  2 B  _B __B __1B __ 1B __ 2B                                                         
+ _N  3 C  _C __C __1C __ 1C __ 2C                                                         
+ _N  4 D  _D __D __1D __ 1D __ 2D                                                         
+ _N  5 E  _E __E __1E __ 1E __ 2E                                                         
+ _N  6 F  _F __F __1F __ 1F __ 2F                                                         
+ _N  7 G  _G __G __1G __ 1G __ 2G                                                         
+ _N  8 H  _H __H __1H __ 1H __ 2H                                                         
+ _N  9 I  _I __I __1I __ 1I __ 2I                                                         
+ _N 10 J  _J __J __1J __ 1J __ 2J                                                         
+ _N 11 K  _K __K __1K __ 1K __ 2K                                                         
+ _N 12 L  _L __L __1L __ 1L __ 2L                                                         
+                                                                                          

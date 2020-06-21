@@ -1,0 +1,159 @@
+
+
+directoryref a="/home/???/vilno_hard_examples/testdata/smalldbase" 
+             b="/home/???/vilno_hard_examples/testdata/area025" ;
+
+printoptions b/prtfile1 60*90 ;
+
+
+
+
+
+inlist ;
+addnongridvars int:  j1 j2   str: p1[6] p2[12] ;
+addgridvars   int: b1 c      str: s1 1 s2 2 s3 3 s4 4 s5 5 s6 5 ;
+arrayrefs ss[] s1 s2 s3 s4 s5 s6 ;
+
+p1[1] = "" ;
+p1[2] = "_" ;
+p1[3] = "__" ;
+p1[4] = "__1" ;
+p1[5] = "__ 1" ;
+p1[6] = "__ 2" ;
+
+p2[1] = "A" ;
+p2[2] = "B" ;
+p2[3] = "C" ;
+p2[4] = "D" ;
+p2[5] = "E" ;
+p2[6] = "F" ;
+p2[7] = "G" ;
+p2[8] = "H" ;
+p2[9] = "I" ;
+p2[10] = "J" ;
+p2[11] = "K" ;
+p2[12] = "L" ;
+
+{
+ for j1 = 1 to 12 : 
+ { for j2 = 1 to 6 : 
+     ss[j2] = p1[j2] + p2[j1] ;
+   c = j1 ;
+   copyrow ;
+ }
+ deleterow ;
+}
+sendoff(b/dat1) b1 c s1 s2 s3 s4 s5 s6 ;
+turnoff ;
+
+
+print(b/dat1) "PGM025-1 : original dset" ;
+
+
+
+/////////////////////
+
+
+windowsize 2 ;
+
+
+inlist b/dat1 ;
+gridflip  c(1,2,3,4,5,6,7,8,9,10,11,12)  s1 s2 s3 s4 s5 s6   -> 
+          d(11,22,33,44,55,66)     r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ;
+sendoff(b/dat2)  d r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ;
+turnoff ;
+
+
+inlist b/dat2 ;
+gridflip  d(11,22,33,44,55,66)    r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ->
+          c(1,2,3,4,5,6,7,8,9,10,11,12)  s1 s2 s3 s4 s5 s6   ;
+sendoff(b/dat3)  c  s1 s2 s3 s4 s5 s6  ;
+turnoff ;
+
+
+print(b/dat2) "PGM025-1 : dat2" ;
+print(b/dat3) "PGM025-1 : dat3" ;
+
+
+
+
+//////////////////////////
+
+
+
+
+
+windowsize 8 ;
+
+
+inlist b/dat1 ;
+blockby b1 ;
+gridflip  c(1,2,3,4,5,6,7,8,9,10,11,12)  s1 s2 s3 s4 s5 s6   -> 
+          d(11,22,33,44,55,66)     r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ;
+sendoff(b/dat4)  b1 d r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ;
+turnoff ;
+
+
+inlist b/dat4 ;
+blockby b1 ;
+gridflip  d(11,22,33,44,55,66)    r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ->
+          c(1,2,3,4,5,6,7,8,9,10,11,12)  s1 s2 s3 s4 s5 s6   ;
+sendoff(b/dat5) b1  c  s1 s2 s3 s4 s5 s6  ;
+turnoff ;
+
+
+print(b/dat4) "PGM025-1 : dat4" ;
+print(b/dat5) "PGM025-1 : dat5" ;
+
+
+
+
+//////////////////////////
+
+
+
+
+
+windowsize 500 ;
+
+
+inlist b/dat1 ;
+blockby b1 ;
+gridflip  c(1,2,3,4,5,6,7,8,9,10,11,12)  s1 s2 s3 s4 s5 s6   -> 
+          d(11,22,33,44,55,66)     r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ;
+sendoff(b/dat6) b1 d r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ;
+turnoff ;
+
+
+inlist b/dat6 ;
+blockby b1 ;
+gridflip  d(11,22,33,44,55,66)    r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12   ->
+          c(1,2,3,4,5,6,7,8,9,10,11,12)  s1 s2 s3 s4 s5 s6   ;
+sendoff(b/dat7) b1 c  s1 s2 s3 s4 s5 s6  ;
+turnoff ;
+
+
+print(b/dat6) "PGM025-1 : dat6" ;
+print(b/dat7) "PGM025-1 : dat7" ;
+
+
+
+
+//////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
